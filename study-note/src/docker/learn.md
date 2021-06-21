@@ -26,6 +26,8 @@ http://docs.docker.jp/get-started/overview.html#　を読んでいく．
 
 ### コンテナが起動される時の挙動
 
+https://docs.docker.jp/engine/reference/commandline/run.html
+
 ![launch container](http://docs.docker.jp/_images/architecture.png)
 
 ## コマンドたちの説明
