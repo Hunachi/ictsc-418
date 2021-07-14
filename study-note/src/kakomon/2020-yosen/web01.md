@@ -41,8 +41,8 @@ setenforce 0
 
 上記のコマンドを打つことで一時的に無効化することができるが、サーバの再起動後も無効化し続けるには、`/etc/selinux/config`において、`SELINUX=enforcing`と書かれているところを`SELINUX=disabled`とする
 
--   `/home/user/html`に`httpd_sys_content_t`コンテキストを付与
-    SELinux はもしユーザが乗っ取られても、例えば`httpd_sys_content_t`というコンテキストがファイルやディレクトリについていたら、`httpd`が実行するスクリプトでの読み込みしか許可しないので安全だよ〜という機能を持っている。
+-   `/home/user/html`に`httpd_sys_content_t`タイプを付与
+    SELinux はもしユーザが乗っ取られても、例えば`httpd_sys_content_t`というタイプがファイルやディレクトリについていたら、`httpd`が実行するスクリプトでの読み込みしか許可しないので安全だよ〜という機能を持っている。
     今回は再起動しても付与した状態にしたいので、
 
 ```shell=
@@ -52,12 +52,14 @@ restorecon -RF /home/user/html
 
 ### ※参考※
 
--   ドキュメントルート: <br>Apache が Web サーバとして外部に公開するコンテンツを配置するディレクトリ
-    > 例えばブラウザから http://www.example.com/index.html のようにルートにある index.html ファイルへアクセスした場合、 ドキュメントルートのディレクトリの中にある index.html ファイルがクライアントへ返されます。
--   SELinux: <br>通常のパーミッションなどで防ぎきれないセキュリティを提供するもの。有効化していると余計な挙動をすることもあって、無効化することも多いらしいヨ
+-   ドキュメントルート: <br> リクエストに対してどのファイルを送信するかを決定するときの Apache のデフォルトの動作は、リクエストの URL-Path (URL のホスト名と ポート番号の後に続く部分) を取り出して設定ファイルで指定されている DocumentRoot の最後に追加する、というものです。ですから、 DocumentRoot の下のディレクトリやファイルがウェブから見える基本のドキュメントの木構造を なします。(参考 URL より)
 
--   [ドキュメントルート参考 URL](https://engineers.weddingpark.co.jp/apache-403-forbidden/)
--   [SELinux 参考 URL](https://eng-entrance.com/linux-selinux)
+-   SELinux: <br>通常のパーミッションなどで防ぎきれないセキュリティを提供するもの。有効化していると余計な挙動をすることもあって、無効化することも多いらしいヨ。詳しいことは公式参考 URL へ。（結構難しそう）
+
+-   [ドキュメントルート参考 URL](https://httpd.apache.org/docs/2.4/urlmapping.html)
+-   [SELinux 参考 URL]
+    1. https://eng-entrance.com/linux-selinux (公式)
+    2. https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/security-enhanced_linux/chap-security-enhanced_linux-working_with_selinux#sect-Security-Enhanced_Linux-Working_with_SELinux-SELinux_Packages
 
 ---
 
@@ -88,7 +90,10 @@ SELinux policy enabled; httpd running as context system_u:system_r:httpd_t:s0
 sudo chcon -R -t httpd_sys_content_t /home/user/html
 ```
 
-(今回は無効化はなしという制約があったっぽい。semanage & restorecon コマンドの方でも ○ みたい) 
+(今回は無効化はなしという制約があったっぽい。semanage & restorecon コマンドの方でも ○ みたい)
+chcon は SELinux コンテキスト変更のコマンド([参考](https://access.redhat.com/documentation/ja-jp/red_hat_enterprise_linux/6/html/security-enhanced_linux/sect-security-enhanced_linux-working_with_selinux-selinux_contexts_labeling_files))
+`-R`: ディレクトリの変更
+`-t`: タイプの変更。タイプとは SELinux が定めているパーミッション制御方法のこと！`httpd_sys_content_t`の詳細は上に書いてあって、他のタイプについては、[ここ](https://access.redhat.com/documentation/ja_jp/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-managing_confined_services-the_apache_http_server-types)
 
 5. またまたエラーログを見る
 
