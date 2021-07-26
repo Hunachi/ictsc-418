@@ -8,13 +8,14 @@
 - Go
 
 ## バグの内容
-Dockerのマルチステージビルドを使って、Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない。Dockerfileが間違えている。
+Dockerのマルチステージビルドを使って,Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない.
+Dockerfileが間違えている.
 
-`~/app/Dockerfile`を用いて`docker image build -t ictsc2020:0.1 .`したあとに、`docker run -p 80:1323 [コンテナID]`をするとエラーが表示され、コンテナ上のバイナリが正常に実行できない。
+`~/app/Dockerfile`を用いて`docker image build -t ictsc2020:0.1 .`したあとに,`docker run -p 80:1323 [コンテナID]`をするとエラーが表示され,コンテナ上のバイナリが正常に実行できない.
 
 ## 理想の終了状態
-`curl localhost`で`Welcome to ICTSC2020!`が返ってくる。
-また、問題の解決が永続化されている。
+`curl localhost`で`Welcome to ICTSC2020!`が返ってくる.
+また,問題の解決が永続化されている．
 
 ----
 
