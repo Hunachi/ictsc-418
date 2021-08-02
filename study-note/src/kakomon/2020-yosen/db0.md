@@ -183,6 +183,9 @@ ID,Name,Name,Name,Price
 
 ### 解説に対するメモ
 
+コマンドラインのオプションたち
+参考：https://qiita.com/yulily@github/items/54cb6ccaacf39977455c
+
 自分が，`特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい`という条件をつけろという部分の意味が理解できてなくて， `where Manufacturing_company_list.ID=5 and Location_list.ID<=5` をつけ忘れたことが判明した．
 
 #### 本来すべきだったと思われる追加の作業
@@ -190,11 +193,11 @@ ID,Name,Name,Name,Price
 特定の条件を見つける．
 
 ```sql
-SELECT * FROM WHERE Manufacturing_company_list.Name = 'Manufacturing_company_E';
+SELECT * FROM Manufacturing_company_list　WHERE Manufacturing_company_list.Name = 'Manufacturing_company_E';
 ```
 
 ```sql
-SELECT * FROM WHERE Location_list.Name = 'HQ';
+SELECT * FROM Location_list　WHERE Location_list.Name = 'HQ';
 ```
 
 これらの結果から，以下を見出す必要があった．
