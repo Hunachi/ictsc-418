@@ -1,5 +1,5 @@
 # インターネット壊れた
-(問題リンク)[https://blog.icttoracon.net/2021/03/16/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e5%a3%8a%e3%82%8c%e3%81%9f/]
+[問題リンク](https://blog.icttoracon.net/2021/03/16/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e5%a3%8a%e3%82%8c%e3%81%9f/)
 
 ## 使用環境・ツール
 BGP(プロトコル)  
@@ -22,7 +22,7 @@ PC1からPC2までpingが正しく飛ぶ。
 
 ## 考えられる原因とその検証・修正手順
 pingが飛ばない原因について  
-(参考)[https://www.infraeye.com/2017/04/14/network014/]
+[参考](https://www.infraeye.com/2017/04/14/network014/)
 
 ### PCのNICの状態、IPアドレス設定など、PC側に問題がないかどうか
 - PCのNICにLANケーブルは接続されているか
@@ -34,7 +34,7 @@ ifconfigコマンドで(aオプションとか付けるとよさそう)NIC情報
 
 ### デフォルトゲートウェイへのpingを飛ばし、L2,L3デバイス設定の確認
 デフォルトゲートウェイとなるL3スイッチorルータでICMPをブロックする設定がないかどうか確認  
-(ACLの定義参考リンク参考、以下のように設定可能)[https://www.infraexpert.com/study/aclz9.html]
+[ACLの定義参考リンク参考、以下のように設定可能](https://www.infraexpert.com/study/aclz9.html)
 
 ```
 Cisco(config)# access-list 101 permit icmp any any echo-reply
@@ -72,7 +72,7 @@ R2とR3のルータ間のMTUが合っておらず、通信ができない
 
 ### 解決方法
 
-(両側のルータにアクセス可能な場合：Cisco解説サイト)[https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/116377-troubleshoot-bgp-mtu.html]
+[両側のルータにアクセス可能な場合：Cisco解説サイト](https://www.cisco.com/c/ja_jp/support/docs/ip/border-gateway-protocol-bgp/116377-troubleshoot-bgp-mtu.html)  
 
 今回の問題では、R3にアクセスすることができない。  
 よって、PC1からR2の192.168.19.26までpingを飛ばして、その経路上で、パケットがMTUを超過した際に返ってくるエラーメッセージからR3の192.168.19.25からR2の192.168.19.26までの間のMTU値を調べることができる。  
@@ -82,6 +82,10 @@ ping -s MTU値 -M do IPアドレスとするため、今回は```ping -s MTU値 
 ちなみに、MTU値を変えて複数回pingをする場合、linuxがMTU値をキャッシュするためpingをする前に```sudo ip route flush cache```を実行してキャッシュを削除する必要がある。  
 
 R3のMTU値が解ればR2のR3側のインターフェースに同じMTU値を設定すればOSPFのネイバーが確立できるのでEBGPのネイバーも張ることができ、PC1<–>PC2間でpingが通る。  
-MTUの設定は、```#ip mtu 1400```とすればできるはず。(参考リンクより)[https://hirotanoblog.com/ospf-mtu/1059/]  
+MTUの設定は、```#ip mtu 1400```とすればできるはず。  
 
-なお、R2のVyOS上でtcpdump(ネットワーク通信の生のデータをキャプチャし、その結果を出力してくれるキャプチャツール)を行って、OSPFのパケットの中身からMTU値を割り出す方法もある。(tcpdump使用法参考リンク)[https://qiita.com/tossh/items/4cd33693965ef231bd2a]  
+[参考リンクより](https://hirotanoblog.com/ospf-mtu/1059/)  
+
+なお、R2のVyOS上でtcpdump(ネットワーク通信の生のデータをキャプチャし、その結果を出力してくれるキャプチャツール)を行って、OSPFのパケットの中身からMTU値を割り出す方法もある。  
+
+[tcpdump使用法参考リンク](https://qiita.com/tossh/items/4cd33693965ef231bd2a)  
