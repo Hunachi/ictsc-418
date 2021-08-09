@@ -11,7 +11,7 @@ Apacheのライバル。「Webサーバのソフト」。
 
 普通のコンピュータに「Webサーバのソフト」を入れることによって、Webサーバとしてのお仕事ができるコンピュータになります。
 
-![nginx6](https://wa3.i-3-i.info/img/data/2800/d002859-6.png)
+![nginx6](image/nginx.png)
 
 nginxの一番の特徴は、リバースプロキシの機能があることでしょうか。
 
@@ -23,14 +23,14 @@ reverse proxyとは（https://wa3.i-3-i.info/word1755.html）：
 
 Webサーバさんの身代わりになってホームページのファイルを返してくれるサーバさんのこと。
 
-![リバースプロキシ19](https://wa3.i-3-i.info/img/data/700/d000755-19.png)
+![リバースプロキシ19](image/reversepro.png)
 
 ちなみに、リバースプロキシを使うメリットは
 
 **(1)．身元を隠せる
 (2)．[負荷分散](https://wa3.i-3-i.info/word11011.html)ができる**
 
-![リバースプロキシ21](https://wa3.i-3-i.info/img/data/700/d000755-21.png)
+![リバースプロキシ2](image/reversepro2.png)
 
 ## バグの内容
 
