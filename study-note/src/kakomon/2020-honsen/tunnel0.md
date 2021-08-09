@@ -101,4 +101,18 @@ tcpdumpを使いこなして解く。
 すると、systemdの挙動のコンフィグが ```/opt/netprob/init.sh```で展開されていることがわかり、実行コンフィグがここにあることがわかる。  
 gNBというホストにおけるinit.shのコンフィグの ```--f-tid 200```として、 ```hdr-creation 0 200 192.168.21.33 2152``` として期待されている200のTEIDに揃える。  
 
+
+```
+#!/bin/sh
+sleep 0.1
+ip addr add 10.0.0.1/24 dev lo
+sh /home/adam/libgtp5gnl/tools/gtp5g-link add gtptun --ran &amp;
+sleep 0.1
+sh /home/adam/libgtp5gnl/tools/gtp5g-tunnel add far gtptun 1 --action 2
+sh /home/adam/libgtp5gnl/tools/gtp5g-tunnel add far gtptun 2 --action 2 --hdr-creation 0 100 192.168.21.34 2152
+sh /home/adam/libgtp5gnl/tools/gtp5g-tunnel add pdr gtptun 1 --pcd 1 --hdr-rm 0 --ue-ipv4 10.0.0.1 --f-teid 200 192.168.21.33 --far-id 1
+sh /home/adam/libgtp5gnl/tools/gtp5g-tunnel add pdr gtptun 2 --pcd 2 --ue-ipv4 10.0.0.1 --far-id 2
+ip r add 192.168.21.48/28 dev gtptun
+```
+
 受け取り側のTEIDと送られる側のTEIDを期待通りにしておく必要がある。
