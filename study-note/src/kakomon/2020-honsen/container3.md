@@ -96,7 +96,7 @@ Q. コンテナ間の接続は再開される？<br>
 ref: [Docker Compose restart の挙動](https://junchang1031.hatenablog.com/entry/2016/05/18/000605)
 
 ### Dockerデーモン、Dockerコンテナ、及びコンテナ内のサービスアプリの自動起動について
-デフォルトは手動なのかな?
+デフォルトは手動なのかな? 再起動の時には自動設定する必要があるっぽい。
 
 #### Dockerデーモンの自動起動
 ブート時に自動起動する
@@ -204,6 +204,15 @@ systemctl enable docker
 
 途中で上手くいっちゃうし、めっちゃ引っかかりそう。restartしてすぐ直るからググってもあんまり出てこなくてこういう問題は意外と厄介かも😅
 
-## 参考リンク
+## その他リンク
+時間上説明しなかったものたち。
+
+Webが繋がらないという内容で調べたやつ
 - 汎用的に使えそうなやつ: https://web.plus-idea.net/on/docker-web-server-access-denied/
 - 全般的に使えそうなやつ: https://qiita.com/amuyikam/items/ef3f8e8e25c557f68f6a
+
+Dockerデーモンが気になって調べたやつ
+- [さわって理解する Docker 入門](https://www.ogis-ri.co.jp/otc/hiroba/technical/docker/part6.html)
+    - Dockerデーモンは Linux のデーモンプロセスで、Docker Engine API が呼び出されるのを待ち受けています。Dockerデーモンは、呼び出された Docker Engine API に応じて、イメージのビルドやコンテナの起動などを行います。
+- [Linux リテラシ - 第4回 デーモン](https://rat.cis.k.hosei.ac.jp/article/rat/linuxliteracy/2005/daemon.html)
+    - デーモンはユーザーが意識することがないような裏の部分で動いており、システムを維持したりユーザーにサービスを提供したりといったことを行っています
