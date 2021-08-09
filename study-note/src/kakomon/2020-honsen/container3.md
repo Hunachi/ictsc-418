@@ -6,7 +6,6 @@ Edit by 鳥山
 ## 使用環境・ツール
 - docker
 - docker-compose
-- curl
 
 ## 前提条件
 - `~/web-server/docker-compose.yml`があり編集可能
