@@ -116,6 +116,7 @@ apache    2780  0.0  1.6 1356172 16760 ?       Sl   18:48   0:00 /usr/sbin/httpd
 apache    2781  0.0  1.7 1487424 18028 ?       Sl   18:48   0:00 /usr/sbin/httpd -DFOREGROUND
 apache    2993  0.0  1.6 1356308 17012 ?       Sl   18:48   0:00 /usr/sbin/httpd -DFOREGROUND
 # /usr/sbin/httpd -S 2>&amp;1 | grep port
+// バーチャルホストの設定を一覧表示した上でシンタックスチェック 標準エラー出力を標準出力に流す |
          port 443 namevhost fe80::9ea3:baff:fe30:1584 (/etc/httpd/conf.d/ssl.conf:40)
          port 443 namevhost old-diary.ictsc.net (/etc/httpd/conf.d/virtualhost.conf:6)
          port 443 namevhost new-diary.ictsc.net (/etc/httpd/conf.d/virtualhost.conf:32)
