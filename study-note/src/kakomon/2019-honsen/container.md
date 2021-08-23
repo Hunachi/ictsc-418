@@ -5,10 +5,10 @@ Edit by 鳥山
 
 ## 使用環境・ツール
 - docker
-- marinaDB
+- MariaDB
 
 ## 問題文
-- marinaDBのコンテナがすぐに落ちる
+- MariaDBのコンテナがすぐに落ちる
 - VM上でdocker ps -aをするとmariaDBコンテナが1つ存在している
 - VM上でdocker start mariaDB→docker exec -it mariaDB bashをしても落ちて開けない
 
