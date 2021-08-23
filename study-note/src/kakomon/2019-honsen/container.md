@@ -14,7 +14,7 @@ Edit by 鳥山
 
 ## 理想の終了状態
 - コンテナが継続して起動している状態である
-- docker exec -it mariaDB bashでコンテナに入ることができ、入った際にMariaDBのDBictsc_incのusersテーブルを見たとき
+- docker exec -it mariaDB bashでコンテナに入ることができ、入った際にMariaDBのDBのictsc_incのusersテーブルを見たとき
 ```
 +----+------------+-----------+------+-------+
 | ID | First_Name | Last_Name | Age  | Sex   |
@@ -141,3 +141,5 @@ $ mysql -u root -p ${MYSQL_ROOT_PASSWORD}
 // selectの結果が表示される
 ```
 
+### コメント
+`$ docker stats`使う時は、一秒ずつ表示が増えてウザいので、`$ docker stats --no-stream`とするといいらしい。
