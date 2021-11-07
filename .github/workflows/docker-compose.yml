@@ -16,5 +16,5 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         external_repository: Hunachi/ictsc-418
-        PUBLISH_BRANCH: main
+        PUBLISH_BRANCH: release
         PUBLISH_DIR: ./book
