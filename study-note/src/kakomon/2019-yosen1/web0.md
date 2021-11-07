@@ -1,6 +1,7 @@
 # APIが飛ばないんですけど
+解いた人:[maimai-y](https://github.com/maimai-y)
 
-[APIが飛ばないんですけど…](https://blog.icttoracon.net/2019/09/01/ictsc2019-一次予選-問題解説-apiが飛ばないんですけど/)
+参照した問題・解説のサイト:[APIが飛ばないんですけど…](https://blog.icttoracon.net/2019/09/01/ictsc2019-一次予選-問題解説-apiが飛ばないんですけど/)
 
 ## 問題文
 

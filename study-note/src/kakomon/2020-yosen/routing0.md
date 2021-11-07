@@ -1,8 +1,6 @@
 # networkが作成できない？
 
-[問題文](https://blog.icttoracon.net/2020/11/02/network%e3%81%8c%e4%bd%9c%e6%88%90%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%ef%bc%9f/)
-
-![問題の写真](https://i.imgur.com/bIF3cGp.png)
+参照した問題・解説のサイト:[networkが作成できない？](https://blog.icttoracon.net/2020/11/02/network%e3%81%8c%e4%bd%9c%e6%88%90%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%ef%bc%9f/)
 
 ## 使用環境・ツール
 - docker-compose

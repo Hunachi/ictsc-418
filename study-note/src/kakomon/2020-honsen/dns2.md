@@ -1,5 +1,7 @@
 # DNSサーバを作りたかったらしい
-[問題リンク](https://blog.icttoracon.net/2021/03/16/dns%e3%82%b5%e3%83%bc%e3%83%90%e3%82%92%e4%bd%9c%e3%82%8a%e3%81%9f%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%89%e3%81%97%e3%81%84/)  
+解いた人:[nonnonno](https://github.com/nonnonno)
+
+参照した問題・解説のサイト:[DNSサーバを作りたかったらしい](https://blog.icttoracon.net/2021/03/16/dns%e3%82%b5%e3%83%bc%e3%83%90%e3%82%92%e4%bd%9c%e3%82%8a%e3%81%9f%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%89%e3%81%97%e3%81%84/)  
 
 ## 概要
 あなたは同僚から助けを求められた。彼は社内のDNSサーバの構築ログに基づいて環境構築を試みたが、テストとして実行したコマンドでは期待していた出力が行われなかったらしい。原因を調査して、エラーを解決してあげよう。  
@@ -43,13 +45,12 @@ Berkley Internet Name Domainの略で、世界中で最も多く利用されて�
 例えば、今回であればdigコマンドがうまくいっておらず、digコマンドの設定ファイルはBINDのものなので、
 ```systemctl status bind9```とする。  
 
-![ログ表示結果](https://user-images.githubusercontent.com/46861288/130339607-836f732b-90d4-4f0e-8990-6784770abf82.png)
 
 このログを見ると、BINDが設定ファイルのエラーによって起動していないことがわかる。  
 ```/etc/bind/named.conf.prob```についてエラーが出ているので、この設定部分を変更する必要がある。  
 
 ### viewとzoneとは
-[参考リンク](https://ygg-tech.com/2020/09/bind_view/)  
+[参考リンク https://ygg-tech.com/2020/09/bind_view/](https://ygg-tech.com/2020/09/bind_view/)  
 
 viewは、一言で言ってしまえば「接続条件によってDNSクエリ結果を変える機能」である。  
 Bindの Ver.8 から使用可能であり、CentOS7であれば Ver.9 なので問題なく利用可能。
@@ -60,9 +61,8 @@ viewステートメントによって、アクセス元のIPアドレスに応�
 - 各LANのクライアントには、自身が所属するLANのWebサーバのIPを返したい
 - DNSは1台で済ませたい
 
-![view説明画像](https://user-images.githubusercontent.com/46861288/130374774-e48a9a6b-f68a-4b72-8354-010abdff9b6b.png)
+[参考リンク https://ygg-tech.com/2020/09/bind_view/](https://ygg-tech.com/2020/09/bind_view/)の画像の中では、
 
-この画像の中では、
 - Secure LANに所属するクライアントには192.168.0.1を返す
 - Remote Access LANに所属するクライアントには、172.24.0.1を返す
 というフローが実現できる。  

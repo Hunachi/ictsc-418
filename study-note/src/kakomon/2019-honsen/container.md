@@ -1,7 +1,7 @@
 # 生き返れMariaDB
-Edit by 鳥山
+解いた人:[とり](https://twitter.com/lnamikol)
 
-[生き返れMariaDB](https://blog.icttoracon.net/2020/03/01/%E7%94%9F%E3%81%8D%E8%BF%94%E3%82%8Cmariadb/)
+参照した問題・解説のサイト:[生き返れMariaDB](https://blog.icttoracon.net/2020/03/01/%E7%94%9F%E3%81%8D%E8%BF%94%E3%82%8Cmariadb/)
 
 ## 使用環境・ツール
 - docker

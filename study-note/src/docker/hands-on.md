@@ -1,4 +1,5 @@
 # Docker を触ってみる
+書いた人:[Hunachi](https://twitter.com/_hunachi)
 
 ## Docker を使うための環境構築
 Docker DesktopのDownloadとinstallをする．

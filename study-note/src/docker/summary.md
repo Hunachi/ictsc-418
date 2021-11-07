@@ -1,4 +1,5 @@
 # Docker 勉強会
+書いた人:[Hunachi](https://twitter.com/_hunachi)
 
 [テキスト](learn.md)と[ハンズオン](hands-on.md)
 

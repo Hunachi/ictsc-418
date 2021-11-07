@@ -1,6 +1,7 @@
 # jsonが壊れた！！
+解いた人:[maimai-y](https://github.com/maimai-y)
 
-[jsonが壊れた！！](https://blog.icttoracon.net/2020/11/02/json%e3%81%8c%e5%a3%8a%e3%82%8c%e3%81%9f%ef%bc%81%ef%bc%81/)
+参照した問題・解説のサイト:[jsonが壊れた！！](https://blog.icttoracon.net/2020/11/02/json%e3%81%8c%e5%a3%8a%e3%82%8c%e3%81%9f%ef%bc%81%ef%bc%81/)
 
 ## 使用環境・ツール
 - Go

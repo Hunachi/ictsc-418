@@ -1,6 +1,7 @@
 # 備品は何処へ
+解いた人:[Hunachi](https://twitter.com/_hunachi)
 
-[備品は何処へ](https://blog.icttoracon.net/2020/11/02/%e5%82%99%e5%93%81%e3%81%af%e4%bd%95%e5%87%a6%e3%81%b8/)
+参照した問題・解説のサイト:[備品は何処へ](https://blog.icttoracon.net/2020/11/02/%e5%82%99%e5%93%81%e3%81%af%e4%bd%95%e5%87%a6%e3%81%b8/)
 
 ## 使用環境・ツール
 - MySQL

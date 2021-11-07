@@ -1,6 +1,7 @@
 # v4v6 移行が終わらない
+解いた人:[momom-i](https://github.com/momom-i)
 
-[v4v6 移行が終わらない](https://blog.icttoracon.net/2020/03/01/v4v6%E7%A7%BB%E8%A1%8C%E3%81%8C%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84/)
+参照した問題・解説のサイト:[v4v6 移行が終わらない](https://blog.icttoracon.net/2020/03/01/v4v6%E7%A7%BB%E8%A1%8C%E3%81%8C%E7%B5%82%E3%82%8F%E3%82%89%E3%81%AA%E3%81%84/)
 
 # 問題
 

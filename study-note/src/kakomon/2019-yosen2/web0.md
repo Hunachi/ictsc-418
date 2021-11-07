@@ -1,6 +1,7 @@
 # すごく匿名ダイヤリー
+解いた人:[maimai-y](https://github.com/maimai-y)
 
-[すごく匿名ダイヤリー](https://blog.icttoracon.net/2019/12/10/ictsc2019-二次予選-問題解説-すごく匿名ダイヤリー/)
+参照した問題・解説のサイト:[すごく匿名ダイヤリー](https://blog.icttoracon.net/2019/12/10/ictsc2019-二次予選-問題解説-すごく匿名ダイヤリー/)
 
 ## 問題文
 
