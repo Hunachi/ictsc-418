@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Web問題 - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html" class="active"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#適当に俳句投稿サービス作ったらxsrf脆弱性孕んでた件" id="適当に俳句投稿サービス作ったらxsrf脆弱性孕んでた件">適当に俳句投稿サービス作ったらXSRF脆弱性孕んでた件。</a></h1>
+<p>解いた人:<a href="https://github.com/maimai-y">maimai-y</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2020/03/01/%E9%81%A9%E5%BD%93%E3%81%AB%E4%BF%B3%E5%8F%A5%E6%8A%95%E7%A8%BF%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E4%BD%9C%E3%81%A3%E3%81%9F%E3%82%89xsrf%E8%84%86%E5%BC%B1%E6%80%A7%E5%AD%95%E3%82%93%E3%81%A7/">適当に俳句投稿サービス作ったらXSRF脆弱性孕んでた件。</a></p>
+<h2><a class="header" href="#問題文" id="問題文">問題文</a></h2>
+<p>俳句投稿サービスHikerを作成した。Hikerでは、ユーザー作成後ログインして俳句を詠むことができる。詠んだ俳句は公開される。また、他のユーザーが詠んだ俳句に対してmogamigawaする機能（所謂お気に入り機能）がある。</p>
+<p>ユーザーからのフィードバックで、意図しない俳句がmogamigawaされており困っているという情報が複数あった。それらのユーザーは共通して特定のWebサイトを閲覧したようである。
+以上のことからHikerはXSRF脆弱性を孕んでいることが予想される。これらのユーザーはこの脆弱性を利用して、意図しない俳句をmogamigawaさせられたと考えられる。</p>
+<p>任意の方法でこの脆弱性に対して対策を施してMerge Requestを建ててほしい。</p>
+<h2><a class="header" href="#使用環境ツール" id="使用環境ツール">使用環境・ツール</a></h2>
+<ul>
+<li>サーバーサイド: Golang, Gin    // GinはGo言語の人気webフレームワーク</li>
+<li>フロントエンド: multitemplate + Bootstrap4</li>
+<li>データベース: MySQL + GORM</li>
+<li>docker-compose</li>
+</ul>
+<h2><a class="header" href="#初期状態" id="初期状態">初期状態</a></h2>
+<ul>
+<li>各チームのVMはHikeのステージング環境である。remoteRepositoryは削除されているので、各自でfork先urlを設定すること。
+<ul>
+<li>url: https://gitlab.com/ictsc2019-teamチーム番号/ictsc2019-f21-xsrf</li>
+<li>urlのチーム番号部分には1,2,3,…,15のような自分のチーム番号を代入すること</li>
+</ul>
+</li>
+<li>既に<code>ictsc</code>というユーザーが俳句を投稿している</li>
+<li>Hikeで各自アカウントを新規作成後、ログインし https://hackmd.io/tRks_vT-QjasH9hUsEJ-BA?view にアクセスすると<code>ictsc</code>というユーザーの俳句をmogamigawaしてしまう</li>
+<li>ソースコードはGitLabで管理されており、問題解答開始時にチームリーダーにOWNER権限のinviteのメールが送信される</li>
+<li>Hikerが動いているときは、http://192.168.15.1:8080 でサービスにアクセスできる</li>
+</ul>
+<h2><a class="header" href="#終了状態" id="終了状態">終了状態</a></h2>
+<ul>
+<li>適切なXSRF対策がされている</li>
+<li>初期状態に示されているURL上の検証コードはあくまで一例であることに注意すること</li>
+<li>修正されたソースコードのMerge RequestをGitLab上で作成する   // Merge RequestはGitHubでいうPull Request</li>
+<li>スコアサーバに、Merge RequestのURLを提出する</li>
+</ul>
+<hr />
+<h2><a class="header" href="#解決方法" id="解決方法">解決方法</a></h2>
+<h3><a class="header" href="#csrfとは" id="csrfとは">CSRFとは</a></h3>
+<p>CSRF ... Cross-Site Request Forgeries／クロスサイト・リクエスト・フォージェリ（偽サイトを使ってリクエストを偽造する）</p>
+<p>https://medium-company.com/%E3%82%AF%E3%83%AD%E3%82%B9%E3%82%B5%E3%82%A4%E3%83%88%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%82%B8%E3%82%A7%E3%83%AA/</p>
+<p>他の参考サイト：</p>
+<p>https://www.ipa.go.jp/security/vuln/websecurity-HTML-1_6.html</p>
+<p>https://qiita.com/wanko5296/items/142b5b82485b0196a2da#csrf%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%8B</p>
+<h3><a class="header" href="#解決の流れ" id="解決の流れ">解決の流れ</a></h3>
+<blockquote>
+<p>CSRFへの代表的な対策</p>
+<p><strong>Formページ返却時のトークン付与</strong>
+今回の例でいうと、はじめに掲示板への書き込み画面を表示する際にサーバがクライアントに対して特定の文字列（トークン）を設定します。実際に書き込みのリクエストがあった際にサーバーが**「この人に送ったトークンと同じトークンがリクエストに入ってる？」**と確認することで、攻撃者からの不正なリクエストを防ぐことができます。これは、攻撃者は利用者に送信したトークンの値を知らないためです。</p>
+</blockquote>
+<ol>
+<li>mogamigawaする画面を要求されたら、暗号論的擬似乱数生成器を用いて機密情報を作るようにする</li>
+<li>機密情報も入れてmogamigawaする画面を返すようにする</li>
+<li>mogamigawaするときに、hiddenタグで機密情報も送るようにする</li>
+<li>セクションIDと機密情報があっているか確認するようにする</li>
+</ol>
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<p>ハッカソン的なイベントでよく適当にwebサービスを作ると思います。作りますね。そんなときの<em>あるある</em>ですが、割とWebのセキュリティを考えずにデプロイして成果発表みたいなノリです。良くないですね。そんな問題でした。</p>
+<p>XSRF脆弱性の対策をします。様々な手法が考えられますが、今回はWeb Application Framework(WAF)にGinを採用しているので、utrack/gin-csrfを使って対策するケースで解説します。
+utrack/gin-csrfで実装する理由は、問題環境はステージング環境でありdocker-composeで管理されていることから、様々な場所で実行されることを考慮して、utrack/gin-csrfのような環境に依存しにくい実装をしたいためです。</p>
+<h3><a class="header" href="#リモートリポジトリを追加する" id="リモートリポジトリを追加する">リモートリポジトリを追加する</a></h3>
+<p>ステージング環境にデプロイされているソースコードのディレクトリに移動してリモートリポジトリを追加します。</p>
+<pre><code>$ git remote add origin https://gitlab.com/ictsc2019-teamチーム番号/ictsc2019-f21-xsrf
+</code></pre>
+<p>この問題では解答にMerge Requestを建てなければいけないので、cloneしたときかこのタイミングでbranchを切ります。</p>
+<pre><code>$ git checkout -b xsrf-fix
+$ git push --set-upstream origin xsrf-fix   // これを書くと毎回origin xsrf-fixの部分を書かなくて良くなるっぽい
+</code></pre>
+<p>あとはcommit~~と徳~~を積んでMerge Requestをします。</p>
+<h3><a class="header" href="#servergo-の修正" id="servergo-の修正"><code>server.go</code> の修正</a></h3>
+<p>utrack/gin-csrfの<code>README.md</code>を参考に頑張ります。 // https://github.com/utrack/gin-csrf#readme
+変更点は次の通りです。</p>
+<h4><a class="header" href="#import部分の追記" id="import部分の追記">import部分の追記</a></h4>
+<ul>
+<li><code>&quot;net/http&quot;</code>を追加しました。csrfのErrorFuncで<code>http.StatusBadRequest</code>を使用するためです。</li>
+<li><code>&quot;github.com/utrack/gin-csrf&quot;</code>を追加しました。gin-csrfを使います。</li>
+<li><code>&quot;ictsc2019-f21-xsrf/util&quot;</code>を追加しました。csrfのSecretをランダムな文字列にする関数を<code>app/util/util.go</code>に追記して、それを使用するためです。</li>
+</ul>
+<pre><code>import (
+    &quot;log&quot;
+    &quot;net/http&quot;
+    &quot;path/filepath&quot;
+ 
+    &quot;github.com/gin-contrib/multitemplate&quot;
+    &quot;github.com/gin-contrib/sessions&quot;
+    &quot;github.com/gin-contrib/sessions/cookie&quot;
+    &quot;github.com/gin-gonic/gin&quot;
+    csrf &quot;github.com/utrack/gin-csrf&quot;
+ 
+    &quot;ictsc2019-f21-xsrf/domain&quot;
+    &quot;ictsc2019-f21-xsrf/handler&quot;
+    &quot;ictsc2019-f21-xsrf/util&quot;
+)
+</code></pre>
+<h4><a class="header" href="#func-main部分の変更" id="func-main部分の変更">func main部分の変更</a></h4>
+<p>以下の記述を追加します。utrack/gin-csrfの<code>README.md</code>の通りです。</p>
+<pre><code>// csrf
+r.Use(csrf.Middleware(csrf.Options{
+    Secret: util.RandString(10),
+    ErrorFunc: func(c *gin.Context) {
+        c.JSON(http.StatusBadRequest, gin.H{
+            &quot;error&quot;: &quot;CSRF token mismatch&quot;,
+        })
+        c.Abort()
+    },
+}))
+</code></pre>
+<p>そして、mogamigawaするAPIをPOSTに変更します。</p>
+<pre><code>apiRouter.POST(&quot;/mogamigawa&quot;, handler.NewMogamigawa)
+</code></pre>
+<p>以上が<code>server.go</code>の更新作業になります。</p>
+<h3><a class="header" href="#utilgo-に追記" id="utilgo-に追記"><code>util.go</code> に追記</a></h3>
+<p><code>server.go</code>で呼び出されている<code>util.RandString(n int)</code>を、<code>util.go</code>に作成します。
+<code>&quot;math/rand&quot;</code>を追加でimportしてください。</p>
+<pre><code>const rs2Letters = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;
+ 
+func RandString(n int) string {
+    b := make([]byte, n)
+    for i := range b {
+        b[i] = rs2Letters[rand.Intn(len(rs2Letters))]
+    }
+    return string(b)
+}
+</code></pre>
+<p>RandString(n int)を叩くことでn文字のランダムな文字列を返すことができます。これをcsrfのSecretに使います。</p>
+<p>このSecretですが、文字列が固定されている解答がありました。これは第三者から推測が困難ではないかもしれないので適切ではありません。(減点はしてません)</p>
+<p>RandString(n int)を叩くことでn文字のランダムな文字列を返すことができます。これをcsrfのSecretに使います。</p>
+<p>このSecretですが、文字列が固定されている解答がありました。これは第三者から推測が困難ではないかもしれないので適切ではありません。(減点はしてません)</p>
+<h3><a class="header" href="#xsrf対策をする" id="xsrf対策をする">XSRF対策をする</a></h3>
+<p>今回は全てのFORM要素にhiddenなinputを用意して、そこにtokenを持たせ、送信させることにします。</p>
+<h4><a class="header" href="#hikelinehtml-の修正" id="hikelinehtml-の修正"><code>hikeline.html</code> の修正</a></h4>
+<p>17行目にhiddenなinputを追加します。</p>
+<pre><code>&lt;form method=&quot;POST&quot; action=&quot;api/newhike&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;_csrf&quot; value=&quot;{{ .csrfToken }}&quot;&gt;
+</code></pre>
+<p>また、<code>hikeline.html</code>のmogamigawaのbutton部分は以下のように入れ替えます。この変更でmogamigawaのAPIをPOSTにした変更に対応し、XSRF対策ができます。</p>
+<pre><code>&lt;!-- mogamigawa button --&gt;
+&lt;div&gt;
+  &lt;form action=&quot;/api/mogamigawa?hike_id={{ .Hike_id }}&quot; method=&quot;POST&quot;&gt;
+    &lt;input type=&quot;hidden&quot; name=&quot;_csrf&quot; value=&quot;{{ $.csrfToken }}&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;
+      &lt;a href=&quot;&quot;&gt;&lt;i class=&quot;fas fa-water&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;/button&gt;
+    &lt;style&gt;
+      button {
+        padding: 0, 0;
+        border-style: none;
+      }
+ 
+    &lt;/style&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+<p><code>signin.html</code>と<code>signup.html</code>にもformがありますが、ここはXSRFから保護しなければならない場所ではありませんよね?</p>
+<p>55%の採点を受けたチームは、この部分で<code>api/mogamigawa</code>の対策はできてるんだけど、<code>api/newhike</code>の対策がなされてない解答になっていました。</p>
+<p>以上がhtmlの修正作業になります。</p>
+<h4><a class="header" href="#resgoの修正" id="resgoの修正"><code>res.go</code>の修正</a></h4>
+<p>htmlに<code>{{ .csrfToken }}</code>という新しいプレースホルダーを追加しました。これに対応して<code>/app/handler/res.go</code>を更新します。</p>
+<p><code>&quot;github.com/utrack/gin-csrf&quot;</code>を追加でimportしてください。gin-csrfを使います。
+<code>hikeline.html</code>を返す部分の<code>c.HTML(http.StatusOK, hikeline.html, gin.H{})</code>に、以下のように記述を追加します。冗長なので、全箇所の記述は省略します。</p>
+<pre><code>c.HTML(http.StatusOK, hikeline.html, gin.H{
+&quot;csrfToken&quot;: csrf.GetToken(c),
+})
+</code></pre>
+<h3><a class="header" href="#merge-request" id="merge-request">Merge Request</a></h3>
+<p>以上の変更をcommitしたらpushして、GitLabでMerge Requestを建てます。</p>
+<p>解説は以上です。</p>
+<h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>
+<ol>
+<li>適切なMerge Requestがなされている: +10%
+<ul>
+<li>あまりにも杜撰な解答は許されません。:angry:</li>
+</ul>
+</li>
+<li>任意の手法でXSRF対策をしている: +90%
+<ul>
+<li>mogamigawaのAPIとフロントエンドにのみ修正を加えた場合は半分の +45% にしています。</li>
+<li>mogamigawaのAPIに加えてXSRF対策の必要なnewhikeのAPIにも対策をした場合に +90% としました。</li>
+<li>適切なXSRF対策がなされている場合にのみ点数を取れるようにしました。</li>
+</ul>
+</li>
+</ol>
+<h2><a class="header" href="#講評" id="講評">講評</a></h2>
+<p>10チームが解答を提出してくれました。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2019-honsen/ipv6_0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2019-yosen1/summary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2019-honsen/ipv6_0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2019-yosen1/summary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

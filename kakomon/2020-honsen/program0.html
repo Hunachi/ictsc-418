@@ -1,0 +1,372 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>プログラム問題(1) - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html" class="active"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#何かがおかしい" id="何かがおかしい">何かがおかしい。。。。</a></h1>
+<p>解いた人:<a href="https://twitter.com/_hunachi">Hunachi</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2021/03/16/%e4%bd%95%e3%81%8b%e3%81%8c%e3%81%8a%e3%81%8b%e3%81%97%e3%81%84%e3%80%82%e3%80%82%e3%80%82%e3%80%82/">何かがおかしい。。。。</a></p>
+<h2><a class="header" href="#使用環境ツール" id="使用環境ツール">使用環境・ツール</a></h2>
+<ul>
+<li>Go言語</li>
+</ul>
+<h4><a class="header" href="#ライブラリ" id="ライブラリ">ライブラリ</a></h4>
+<ul>
+<li><a href="https://github.com/spf13/cobra">Cobra</a>
+<ul>
+<li>モダンなCLIアプリケーションを簡単に作れるようにしてくれるライブラリ．</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
+<p><a href="https://blog.icttoracon.net/2021/03/16/%e4%bd%95%e3%81%8b%e3%81%8c%e3%81%8a%e3%81%8b%e3%81%97%e3%81%84%e3%80%82%e3%80%82%e3%80%82%e3%80%82/">何かがおかしい。。。。</a>の1枚目の画像を参照する。
+R1にて自作のルーティングアプリケーションを作ったが，そのアプリケーションのミスでそれぞれのHostにpingを飛ばしてもパケットロスを起こしてしまう。</p>
+<p>それぞれのHostにpingを飛ばしても、パケットロスを起こしてしまう。
+(pingができる時と出来ないときがある。)</p>
+<h2><a class="header" href="#前提条件" id="前提条件">前提条件</a></h2>
+<ul>
+<li>kernelパラメーターの変更をしてはならない．</li>
+</ul>
+<h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
+<ul>
+<li>それぞれのHostにpingを飛ばして、パケットロスが起こらない状態にする．</li>
+</ul>
+<h2><a class="header" href="#その他公開してくれている情報" id="その他公開してくれている情報">その他，公開してくれている情報</a></h2>
+<p>ーー起動方法ーー</p>
+<blockquote>
+<p>cd ~/go/src/github.com/yoneyan/ictsc-ace/cmd/routing
+go get .
+go build .
+sudo ./routing start eth1 eth2 eth3 eth4</p>
+</blockquote>
+<p>（メモ：eth1とかの部分は書き換えてあげる必要がある）</p>
+<p><a href="https://drive.google.com/file/d/1njTGorOGDsI1yUYpZlMj0bFLBlbukjX4/view?usp=sharing">Source Code</a></p>
+<hr />
+<h2><a class="header" href="#技術調査" id="技術調査">技術調査</a></h2>
+<h4><a class="header" href="#調査方法" id="調査方法">調査方法</a></h4>
+<p>ログの仕込み</p>
+<pre><code class="language-go">log.Println(&quot;label&quot;, &quot;出力させたいもの&quot;)
+</code></pre>
+<h4><a class="header" href="#コードを読んでみる" id="コードを読んでみる">コードを読んでみる</a></h4>
+<ul>
+<li>
+<p>CLIアプリケーションを作るためのライブラリとしてCobraが使われてた．</p>
+<ul>
+<li><a href="https://github.com/Hunachi/minihuna">あそんだ</a></li>
+</ul>
+</li>
+<li>
+<p>buildとかはできた</p>
+<ul>
+<li>NICを用意したりパケットを飛ばし合うのが無理だったので，実際に動かして確認はできなかった．</li>
+</ul>
+</li>
+<li>
+<p>コマンドとしてあるもの</p>
+<ul>
+<li>routor init</li>
+<li>routor start ←今回叩いているコマンド</li>
+<li>routor recieve</li>
+<li>未実装
+<ul>
+<li>routor init</li>
+<li>routor store</li>
+<li>routor router</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ファイル別の実装されている内容</p>
+<ul>
+<li>cmd/routing/routing.go
+<ul>
+<li>メイン関数が書いてあるだけ．</li>
+</ul>
+</li>
+<li>pkg/routing/arp/*
+<ul>
+<li>Macアドレスを取得するためのコード（arp.go）とMacアドレスの情報を入れるための構造体（interface.go）</li>
+</ul>
+</li>
+<li>pkg/routing/cmd/*
+<ul>
+<li>CLIのコマンドの実装</li>
+</ul>
+</li>
+<li>pkg/routing/route/*
+<ul>
+<li>今回使われていない</li>
+</ul>
+</li>
+<li>pkg/routing/router/*
+<ul>
+<li>ルーティングの処理が書かれている部（router.go）とルーティング情報を詰めるための構造体（interface.go）</li>
+</ul>
+</li>
+<li>pkg/routing/tool/*
+<ul>
+<li>今回使われていない</li>
+</ul>
+</li>
+<li>pkg/routing/interface.go
+<ul>
+<li>今回使われていない</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#考えられる検証手順" id="考えられる検証手順">考えられる検証手順</a></h2>
+<ul>
+<li>コードを読む（読んだ）</li>
+<li>Logを埋め込む</li>
+<li>どんなパケットが落ちてるかみる</li>
+</ul>
+<h2><a class="header" href="#原因の候補" id="原因の候補">原因の候補</a></h2>
+<ul>
+<li>コードを読んだ感想
+<ul>
+<li>Ipv6に対応してないから？
+<ul>
+<li>これだったらトラコンじゃない．</li>
+</ul>
+</li>
+<li>MacアドレスとIPアドレスの組みが変わったときに対応できないから？</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<h3><a class="header" href="#原因" id="原因">原因</a></h3>
+<blockquote>
+<p>原因はGolangにてルーティングの実装に問題があることが原因です。
+Golangにて、Channelを使った処理にミスが生じており、適切なNICにパケットを送り出せていないため起きている問題です。</p>
+</blockquote>
+<blockquote>
+<p>HostA =&gt; HostD宛にPingを飛ばした場合でも、Channelの実装ミスによりHostA,B,C,Dのどれかにパケット転送してしまうというバグによって引き起こされる問題です。</p>
+</blockquote>
+<h3><a class="header" href="#解決方法" id="解決方法">解決方法</a></h3>
+<pre><code class="language-go">pkg/routing/router/router.go
+ 
+ 
+ func routerReceive(device string) error {
+                                if err != nil {
+                                        log.Println(err)
+                                }
++                       } else {
++                               packets &lt;- msg
+                        }
+                }
+        }()
+
+</code></pre>
+<h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
+<p><code>router.go</code>内の，</p>
+<pre><code class="language-go">msg := &lt;-packets
+			if msg.Interface == mac.String() {
+				err := handle.WritePacketData(msg.Packets)
+				if err != nil {
+					log.Println(err)
+				}
+			}
+</code></pre>
+<p>の部分で，あるスレッド（goroutine）が指定したネットワークデバイス(NIC)で送信しないパケットを受け取った場合にパケットを破棄してしまっていることが原因．
+本当は，自分が送信するパケットじゃなかったら他のNICを指定したスレッド（goroutine）に渡してあげないといけない．
+と言うことに気が付けなくてﾋﾟｴﾝ🥺</p>
+<h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>
+<p>パケットロスをせずにpingが飛ぶこと(100%)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2020-honsen/k8s1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2020-honsen/program1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2020-honsen/k8s1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2020-honsen/program1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

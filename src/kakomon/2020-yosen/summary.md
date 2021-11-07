@@ -1,1 +1,0 @@
-参照した問題・解説のサイト: [https://blog.icttoracon.net/2020/11/02/](https://blog.icttoracon.net/2020/11/02/)

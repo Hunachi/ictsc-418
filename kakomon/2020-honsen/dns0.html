@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DNS問題(1) - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html" class="active"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#名前解決ができなくなった" id="名前解決ができなくなった">名前解決ができなくなった？</a></h1>
+<p>解いた人:<a href="https://github.com/momom-i">momom-i</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2021/03/16/%e5%90%8d%e5%89%8d%e8%a7%a3%e6%b1%ba%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9f%ef%bc%9f/">名前解決ができなくなった？</a></p>
+<h2><a class="header" href="#前提条件" id="前提条件">前提条件</a></h2>
+<ul>
+<li><code>$ dig @192.168.2.131 pc1.ictsc.net</code>で名前解決ができない</li>
+<li>権威サーバーを使っているキャッシュサーバーは一つしかない</li>
+</ul>
+<h2><a class="header" href="#問題文でされた操作" id="問題文でされた操作">問題文でされた操作</a></h2>
+<ol>
+<li>権威サーバで KSK ロールオーバーを行った</li>
+<li><code>$ dig @192.168.2.131 pc1.ictsc.net</code>を実行した</li>
+</ol>
+<h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
+<p>クライアントから<code>dig @192.168.2.131 pc1.ictsc.net +dnssec</code>を実行しても，名前解決ができない．</p>
+<h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
+<p>クライアントから dig @192.168.2.131 pc1.ictsc.net +dnssec を実行して，dnssec の検証が成功して名前解決ができる．</p>
+<hr />
+<h2><a class="header" href="#考えられる原因" id="考えられる原因">考えられる原因</a></h2>
+<ul>
+<li>権威サーバが落ちてるなど DNS サーバ自体に異常がある（KSK の話が出ているので可能性は低い）</li>
+<li>DNSSEC 検証を有効にしているキャッシュサーバ等のトラストアンカーの更新がされていない</li>
+<li>KSK ロールオーバーで一時的に DNS の応答サイズが大きくなっていて応答を正しく受け取れない</li>
+</ul>
+<h2><a class="header" href="#解決方法" id="解決方法">解決方法</a></h2>
+<p>基本的に<a href="https://www.nic.ad.jp/ja/dns/ksk-rollover/">ここ</a>を参照した。</p>
+<h3><a class="header" href="#原因-1-dns-サーバ自体に異常がある" id="原因-1-dns-サーバ自体に異常がある">原因 1. DNS サーバ自体に異常がある</a></h3>
+<ol>
+<li>dig コマンドの<code>+norec</code>あるなしで結果がどう変わるかを観察する。<code>+norec</code>をつけるとキャッシュ DNS サーバから権威サーバへの問い合わせ結果を表示するため、このオプションをつけた時だけ失敗する場合は、権威サーバに問題がある。逆にオプションをつけない時に失敗する場合は、キャッシュ DNS サーバの方に問題がある。</li>
+</ol>
+<h3><a class="header" href="#原因-2-トラストアンカーの更新がされていない" id="原因-2-トラストアンカーの更新がされていない">原因 2. トラストアンカーの更新がされていない</a></h3>
+<ol>
+<li>上記リンク「トラストアンカーの更新」を、みて DNSSEC 検証が有効かどうか、named.conf の option などで dnssec-validation が no など設定されているかを確認する。特に設定されてない場合 BIND9.5 以前のデフォルトは無効、9.5 以降は有効になってる。無効の場合、トラストアンカーの更新が原因ではない。</li>
+<li>更新後の権威サーバ KSK があるか確認。(更新した、ってあるから多分ある)named.conf の trusted-keys ディレクティブを書き換える。</li>
+</ol>
+<h3><a class="header" href="#原因-3-一時的に-dns-の応答サイズが大きくなっていて応答を正しく受け取れない" id="原因-3-一時的に-dns-の応答サイズが大きくなっていて応答を正しく受け取れない">原因 3. 一時的に DNS の応答サイズが大きくなっていて応答を正しく受け取れない</a></h3>
+<ol>
+<li>これが原因の場合、dig コマンドで flags に tc が立ってるか UDP では扱えません！みたいなエラーが出ると思われる。「DNS 応答サイズ増大への対応」に沿って確認しながら受け取れるようにする。</li>
+</ol>
+<h3><a class="header" href="#参考" id="参考">※参考※</a></h3>
+<ul>
+<li>
+<p>DNS: <br>DNS ( Domain Name System ) は、ドメイン名（コンピュータを識別する名称）を IP アドレスに自動的に変換してくれるアプリケーション層プロトコル(<a href="https://www.infraexpert.com/study/tcpip15.html">参照</a>)</p>
+</li>
+<li>
+<p>トラストアンカー: <br>インターネットなどで行われる、 電子的な認証の手続きのために置かれる基点。(<a href="https://www.nic.ad.jp/ja/basics/terms/trust-anchor.html">参照</a>)</p>
+</li>
+<li>
+<p>権威サーバー: <br>(DNS コンテンツサーバともいう) DNS において、あるゾーンの情報を保持し、他のサーバーに問い合わせることなく応答を返すことができるサーバーのこと(<a href="https://jprs.jp/glossary/index.php?ID=0145">参照</a>)</p>
+</li>
+<li>
+<p>KSK ロールオーバー: <br> KSK(鍵署名鍵)のロールオーバー(更新)。KSK(key string key)は DESSEC にて、公開鍵に署名するための鍵(<a href="https://jprs.jp/glossary/index.php?ID=0232">参照</a>)</p>
+</li>
+<li>
+<p>DESSEC: <br>電子署名の仕組みを応用し、DNS 応答の出自および DNS 応答の完全性を検証することができるもの(<a href="https://www.nic.ad.jp/ja/newsletter/No43/0800.html">わかりやすい参照 URL</a>)</p>
+</li>
+<li>
+<p>dig コマンド: <br>ip アドレスやネームサーバを DNS に問い合わせる BIND のコマンド。nslookup コマンドと似ていて、結果の出力が dig の方が詳細(<a href="https://www.atmarkit.co.jp/ait/articles/1409/25/news001.html">参照</a>)<br>+dnnsec: DNSSEC 付きでの問い合わせ<br>+cd: DNSSEC なし問い合わせ<br>+norec: キャッシュ DNS サーバから権威サーバへの問い合わせ</p>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<ol>
+<li>まず、クライアントから権威サーバで名前解決をできるかを確認します。</li>
+</ol>
+<pre><code class="language-shell="># 192.168.2.20は権威サーバのIPアドレス
+
+$ dig @192.168.2.20 pc1.ictsc.net
+
+; &lt;&lt;&gt;&gt; DiG 9.11.20-RedHat-9.11.20-5.el8 &lt;&lt;&gt;&gt; @192.168.2.20 pc1.ictsc.net
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 49438
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 2
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+; COOKIE: fb2922914c429f5fa65713d2603b3d6486e5d706011553e6 (good)
+;; QUESTION SECTION:
+;pc1.ictsc.net.                 IN      A
+
+;; ANSWER SECTION:
+pc1.ictsc.net.          86400   IN      A       192.168.2.151
+
+;; AUTHORITY SECTION:
+ictsc.net.              86400   IN      NS      master-ns.ictsc.net.
+
+;; ADDITIONAL SECTION:
+master-ns.ictsc.net.    86400   IN      A       192.168.2.20
+
+;; Query time: 1 msec
+;; SERVER: 192.168.2.20#53(192.168.2.20)
+;; WHEN: Sun Feb 28 15:51:16 JST 2021
+;; MSG SIZE  rcvd: 126
+</code></pre>
+<ol start="2">
+<li>次に，キャッシュサーバで名前解決ができるかを確認します．</li>
+</ol>
+<pre><code class="language-shell=">$ dig @192.168.2.131 pc1.ictsc.net +dnssec
+; &lt;&lt;&gt;&gt; DiG 9.11.20-RedHat-9.11.20-5.el8 &lt;&lt;&gt;&gt; @192.168.2.131 pc1.ictsc.net +dnssec
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: SERVFAIL, id: 27168
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 956
+; COOKIE: 6fbba7982beede01a541f72f603b3d788b89e7b7d3c4fbc1 (good)
+;; QUESTION SECTION:
+;pc1.ictsc.net.                 IN      A
+
+;; Query time: 3 msec
+;; SERVER: 192.168.2.131#53(192.168.2.131)
+;; WHEN: Sun Feb 28 15:51:36 JST 2021
+;; MSG SIZE  rcvd: 70
+</code></pre>
+<ol start="3">
+<li>キャッシュサーバで名前解決ができないことがわかったので、コマンド引数に+cd を追加して DNSSEC の検証をせずに名前解決を行います</li>
+</ol>
+<pre><code class="language-shell=">$ dig @192.168.2.131 pc1.ictsc.net +cd
+
+; &lt;&lt;&gt;&gt; DiG 9.11.20-RedHat-9.11.20-5.el8 &lt;&lt;&gt;&gt; @192.168.2.131 pc1.ictsc.net +cd
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 25924
+;; flags: qr rd ra cd; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 956
+; COOKIE: 67453de86c9abd57bee0655c603b3d852c5c6647f116587d (good)
+;; QUESTION SECTION:
+;pc1.ictsc.net.                 IN      A
+
+;; ANSWER SECTION:
+pc1.ictsc.net.          86329   IN      A       192.168.2.151
+
+;; AUTHORITY SECTION:
+ictsc.net.              86338   IN      NS      master-ns.ictsc.net.
+
+;; Query time: 0 msec
+;; SERVER: 192.168.2.131#53(192.168.2.131)
+;; WHEN: Sun Feb 28 15:51:49 JST 2021
+;; MSG SIZE  rcvd: 110
+</code></pre>
+<p>名前解決が成功するため，DNSSEC の検証に失敗していることがわかります。</p>
+<ol start="4">
+<li>クライアントから署名の有効期限を確認します．2 月 10 日に署名の有効期限が切れていることが確認できます</li>
+</ol>
+<pre><code class="language-shell=">$ dig @192.168.2.20 pc1.ictsc.net +dnssec
+
+pc1.ictsc.net 86400 IN RRSIG A 8 3 86400 20210210004000 20210111004000 ...
+</code></pre>
+<ol start="5">
+<li>権威サーバで新しい KSK 鍵のみを用いて、ゾーンに再署名を行います．
+(ゾーンの再署名も必要だったのか！)</li>
+</ol>
+<pre><code class="language-shell=">$ sudo su
+$ cd /var/named
+$ vim ictsc.net.zone
+
+$TTL 1D                                     ;
+
+@         IN  SOA  master-ns.ictsc.net.  root.master-ns.ictsc.net. (  ;
+                   2020123101             ;
+                   3H                     ;
+                   1H                     ;
+                   1W                     ;
+                   1H )                   ;
+
+          IN  NS   master-ns.ictsc.net.  ;
+
+cache-ns  IN  A    192.168.2.131         ;
+master-ns IN  A    192.168.2.20         ;
+pc1       IN  A    192.168.2.151         ;
+pc2       IN  A    192.168.2.152         ;
+pc3       IN  A    192.168.2.153         ;
+
+$INCLUDE &quot;Kictsc.net.+008+63885.key&quot;
+$INCLUDE &quot;Kictsc.net.+008+63439.key&quot;
+$INCLUDE &quot;Kictsc.net.+008+63829.key&quot; # 古いksk鍵を削除
+
+# -x: KSKの更新のみ
+# -o: ゾーンの起点
+# -k: 署名鍵
+$ dnssec-signzone -x -o ictsc.net -k Kictsc.net.+008+63439.key ictsc.net.zone
+
+Verifying the zone using the following algorithms: RSASHA256.
+Zone fully signed:
+Algorithm: RSASHA256: KSKs: 1 active, 0 stand-by, 0 revoked
+                      ZSKs: 1 active, 0 present, 0 revoked
+ictsc.net.zone.signed
+</code></pre>
+<p>※ dnssec-signzone: (<a href="https://linux.die.net/man/8/dnssec-signzone">参照</a>) 6. ゾーンのリロードを行います．</p>
+<pre><code class="language-shell=">$ rndc reload ictsc.net
+</code></pre>
+<ol start="7">
+<li>クライアント側で KSK 公開鍵を取得し，古いトラストアンカーを削除し新しいトラストアンカーの設定を行います．</li>
+</ol>
+<pre><code class="language-shell="># 257は現在の有効なKSKを示す
+$ dig @192.168.2.20 ictsc.net dnskey | grep 'DNSKEY.*257'
+ictsc.net.              86400   IN      DNSKEY  257 3 8 AwEAAePGnJDVqiEhjCRcnYYNP+Pf2DFnJwoj3sTlJwkh2aM1LZR4ajtR sxidDJi59Hf/lcwCBiEnW8eNvpuHz5NfrUTuc/hI/jKI38VkH4m+b68B feNyJtS9IUn8Naln/9r4hQBFCCEHJNmiMo5XnKdD3oEuDSgIsCeP8IOJ c1tlEcimy
+fBfijuQleTr7MyoxW3iK0Q7kUuy8kIGelWKMogbUwrFFeBV CNvIAiofQOy7UDkjuGe9UpEXozZ5LNQkrBONzkUvr8Dt3YlhhWWYAjbX W5WzrLiQS9PTr3HMRlOOvTk4XlxQu0LDyqalyuBQnvMMg0AleQ7Q5c+M LU3l96yAg50=
+
+$ sudo vim /var/named/chroot/etc/named.conf
+trusted-keys {
+
+        &quot;ictsc.net.&quot;  257 3 8 &quot;AwEAAePGnJDVqiEhjCRcnYYNP+Pf2DFnJwoj3sTlJwkh2aM1LZR4ajtR sxidDJi59Hf/lcwCBiEnW8eNvpuHz5NfrUTuc/hI/jKI38VkH4m+b68B feNyJtS9IUn8Naln/9r4hQBFCCEHJNmiMo5XnKdD3oEuDSgIsCeP8IOJ c1tlEcimyfBfijuQleTr7MyoxW3iK0Q7kU
+uy8kIGelWKMogbUwrFFeBV CNvIAiofQOy7UDkjuGe9UpEXozZ5LNQkrBONzkUvr8Dt3YlhhWWYAjbX W5WzrLiQS9PTr3HMRlOOvTk4XlxQu0LDyqalyuBQnvMMg0AleQ7Q5c+M LU3l96yAg50=&quot;;
+};
+
+$ sudo systemctl restart named-chroot
+</code></pre>
+<ol start="8">
+<li>最後に、クライアント側でキャッシュサーバを使用して，DNSSEC の検証が成功するかを確認します．</li>
+</ol>
+<pre><code class="language-shell=">$ dig @192.168.2.131 pc1.ictsc.net +dnssec
+; &lt;&lt;&gt;&gt; DiG 9.11.20-RedHat-9.11.20-5.el8 &lt;&lt;&gt;&gt; @192.168.2.131 pc1.ictsc.net +dnssec
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 50967
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 956
+; COOKIE: 11c4d3fa9bdf7a63dc315b95603de72eaeb7725d8de23282 (good)
+;; QUESTION SECTION:
+;pc1.ictsc.net.         IN  A
+;; ANSWER SECTION:
+pc1.ictsc.net.      86258   IN  A   192.168.2.151
+pc1.ictsc.net.      86258   IN  RRSIG   A 8 3 86400 20210401061624 20210302061624 63885 ictsc.net. K2/YRHfbne6RIqBzkt0/bZ7T62QTNr52S/SGuD9omC5ClbsJjOydBvXm THSSR0BtxlzbSGVzhggkBDzXcfc7lS8Iv8tbUWDKlvNp+heAo+PhDnWY 8VZWolD2Y2n9HNuBNXhidvIXHyrJbuhtzbamelgnEDx9zKlazeGrbjSZ Kqo=
+;; Query time: 0 msec
+;; SERVER: 192.168.2.131#53(192.168.2.131)
+;; WHEN: Tue Mar 02 16:20:14 JST 2021
+;; MSG SIZE  rcvd: 255
+</code></pre>
+<p>flags に ad が含まれているため成功。ad は DNSSEC の検証に成功していることを表す。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2020-honsen/container3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2020-honsen/dns2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2020-honsen/container3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2020-honsen/dns2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

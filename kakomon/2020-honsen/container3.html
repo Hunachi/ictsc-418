@@ -1,0 +1,447 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>コンテナ問題 - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html" class="active"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#いつの間にか復活している君" id="いつの間にか復活している君">いつの間にか復活している君</a></h1>
+<p>解いた人:<a href="https://twitter.com/lnamikol">とり</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2021/03/16/%e3%81%84%e3%81%a4%e3%81%ae%e9%96%93%e3%81%ab%e3%81%8b%e5%be%a9%e6%b4%bb%e3%81%97%e3%81%a6%e3%81%84%e3%82%8b%e5%90%9b/">いつの間にか復活している君</a></p>
+<h2><a class="header" href="#使用環境ツール" id="使用環境ツール">使用環境・ツール</a></h2>
+<ul>
+<li>docker</li>
+<li>docker-compose</li>
+</ul>
+<h2><a class="header" href="#前提条件" id="前提条件">前提条件</a></h2>
+<ul>
+<li><code>~/web-server/docker-compose.yml</code>があり編集可能
+<ul>
+<li>わざわざ明記しているあたり、これを編集して問題を解決する必要がありそう</li>
+<li>⇨ ひっかけポイントだったらしいw そういうパターンもあるのね。</li>
+</ul>
+</li>
+<li><code>docker ps -a</code>などで確認するとコンテナが起動している</li>
+</ul>
+<h2><a class="header" href="#問題文でされた操作" id="問題文でされた操作">問題文でされた操作</a></h2>
+<ul>
+<li>docker-composeを使用してWEBサーバを構築した</li>
+<li>無事に起動し、WEBページも確認できたのですが、 再起動するとアクセスできなくなってしまった
+<ul>
+<li>自動的に再起動するように記述してあるので不可解</li>
+</ul>
+</li>
+<li>トラブルシュートしているといつの間にかアクセスできるようになります</li>
+</ul>
+<h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
+<p>踏み台から <code>$ curl 192.168.17.1</code> をしても応答がない</p>
+<h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
+<p>再起動しても踏み台から $ curl -I 192.168.17.1 をするとステータスコード200のレスポンスが返ってくる</p>
+<h2><a class="header" href="#考えられる検証修正手順" id="考えられる検証修正手順">考えられる検証、修正手順</a></h2>
+<ul>
+<li><code>docker build -t test:local . </code>と Docker でビルドしてみて永遠と転送しているか確認
+<ul>
+<li>大量のファイルを裏で Docker daemon が読み込んでいる</li>
+<li><code>.dockerignore</code> で、大量ファイルのあるディレクトリを除外しておき、docker-compose.json 内で別途マウント</li>
+<li>起動の時間によりそう</li>
+</ul>
+</li>
+</ul>
+<p>ref:<a href="https://qiita.com/KEINOS/items/42aae92d00675c8b0b78">docker-compose で一向にビルドがはじまらない、もしくは起動しない。はたまた忘れたころに起動する。</a></p>
+<ul>
+<li>Webサーバーにアクセスできない時の確認ポイント(なさそう)
+<ul>
+<li>コンテナ内のWebサーバーがちゃんと起動して動いているか
+<ul>
+<li>以下のようにして確認</li>
+</ul>
+<pre><code>docker exec -it ＜起動したコンテナ名＞ bash
+curl http://localhost:8080/
+</code></pre>
+<ul>
+<li>エラーが返ってくる、レスポンスが帰ってこない場合はWebサーバーの起動がうまくいっていない
+<ul>
+<li>今回の問題は時間が経てば直る問題なのでこれはなさそう</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>localhost以外ではアクセスできるか
+<ul>
+<li>localhostではなく、実IPアドレスでアクセスしたらどうか？</li>
+<li>以下のコマンドでコンテナに割り振られているネットワークアドレスがわかる</li>
+</ul>
+<pre><code>docker inspect –format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}’ con_name
+curl http://172.17.0.2:8080/
+</code></pre>
+<ul>
+<li>これでうまくいった場合は、ポートなどの問題になる。</li>
+</ul>
+</li>
+<li>コンテナで特定のポートが公開されているか
+<ul>
+<li>ポートの公開を</li>
+</ul>
+<pre><code># Dockerfileファイル中に以下のような記述を追加し、8080番ポートを公開する
+EXPOSE 8080
+# composeファイル中にならこんな感じ
+expose:
+- '3306'
+- '8080'
+</code></pre>
+<ul>
+<li>yamlも修正可能なので、なくはないかもしれない。簡単すぎるが。</li>
+<li>でも、時間が経てば直る問題なのでなさそう</li>
+</ul>
+</li>
+<li>公開されたポートにつながるように設定できているか(ポートフォワード)
+<ul>
+<li>コンテナで公開されたポートにホストOSから「localhost:8081」のように接続するには、ホストOSの8081番ポートとコンテナの8080番ポートをつないであげる必要があります。</li>
+<li>localhost:8081 -&gt; コンテナ:8080
+<ul>
+<li>「localhost:8081」に来たリクエストを「コンテナ:8080」に転送してあげるようにする</li>
+</ul>
+</li>
+</ul>
+<pre><code>docker run -p 8081:8080 –name ＜起動するコンテナ名＞
+</code></pre>
+<ul>
+<li>これも、時間が経てば直る問題なのでなさそう
+ref: <a href="https://web.plus-idea.net/on/docker-web-server-access-denied/">Dockerコンテナで起動したサーバにアクセスできないときの確認と対処方法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#docker-compose-restart-の挙動" id="docker-compose-restart-の挙動">Docker Compose restart の挙動</a></h3>
+<ul>
+<li>ホストOSを起動したタイミングであるアプリケーションを自動で立ち上げたい、 あるいは何らかの問題で落ちた時に、自動で再起動して欲しいというときにrestart使うらしい。</li>
+<li>Docker 及び Compose では、 run/upの restart policy の設定することにより、 コンテナが停止した際の再起動にまつわる設定ができる。</li>
+</ul>
+<table><thead><tr><th>オプション</th><th>意味</th></tr></thead><tbody>
+<tr><td>no</td><td>再起動しない (デフォルト)</td></tr>
+<tr><td>on-failure[:max-retries]</td><td>プロセスが 0 以外のステータスで終了した場合、 最大:max_retries の分だけ再起動を行う</td></tr>
+<tr><td>always</td><td>明示的に stop がされない限り、終了ステータスに関係なく常に再起動が行われる</td></tr>
+<tr><td>unless-stopped</td><td>最後にdocker daemon が起動していた際に ステータスが終了状態だった場合は再起動しない。それ以外はalwaysと同じ。</td></tr>
+</tbody></table>
+<p>ちゃんと再起動の設定はしないといけない。</p>
+<p>Q. 従属 コンテナのプロセスはそのまま？ それとも再起動される？<br>
+A. そのまま</p>
+<p>Q. コンテナ間の接続は再開される？<br>
+再起動後も接続は問題なさそう</p>
+<p>ref: <a href="https://junchang1031.hatenablog.com/entry/2016/05/18/000605">Docker Compose restart の挙動</a></p>
+<h3><a class="header" href="#dockerデーモンdockerコンテナ及びコンテナ内のサービスアプリの自動起動について" id="dockerデーモンdockerコンテナ及びコンテナ内のサービスアプリの自動起動について">Dockerデーモン、Dockerコンテナ、及びコンテナ内のサービスアプリの自動起動について</a></h3>
+<p>デフォルトは手動なのかな? 再起動の時には自動設定する必要があるっぽい。</p>
+<h4><a class="header" href="#dockerデーモンの自動起動" id="dockerデーモンの自動起動">Dockerデーモンの自動起動</a></h4>
+<p>ブート時に自動起動する</p>
+<pre><code>$ sudo systemctl enable docker
+# 他のディストリビューションでは、次のように実行します
+$ sudo chkconfig docker on
+</code></pre>
+<p>通常時の起動</p>
+<pre><code>$ sudo systemctl start docker
+# 他のディストリビューションでは、次のように実行します
+$ sudo service docker start
+</code></pre>
+<p>設定確認・状態確認は以下のコマンドで行います。</p>
+<pre><code>$ systemctl status docker
+</code></pre>
+<h4><a class="header" href="#dockerコンテナの自動起動" id="dockerコンテナの自動起動">Dockerコンテナの自動起動</a></h4>
+<ul>
+<li>restartオプションを利用
+<ul>
+<li>Dockerが以上終了した場合に自動的に再起動させることが可能</li>
+<li>さっきの上の表を参考</li>
+<li>「always」「unless-stopped」がコンテナの自動起動に利用可能
+<ul>
+<li>「always」を指定した場合は、Dockerデーモン終了時のDockerコンテナの状態に関係なく自動起動されます</li>
+<li>「unless-stopped」は、Dockerデーモン終了時に停止状態（例えば「docker stop」コマンドにて停止）のコンテナは自動起動されません</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Dockerホストのsystemdを利用する
+<ul>
+<li>「docker start」と「docker stop」をsystemdに登録するだけ</li>
+<li>systemdって起動するときに動いてくれるやつらしい</li>
+</ul>
+</li>
+</ul>
+<h4><a class="header" href="#dockerコンテナ内のサービスの自動起動" id="dockerコンテナ内のサービスの自動起動">Dockerコンテナ内のサービスの自動起動</a></h4>
+<ul>
+<li>composeファイルに設定がちゃんと書いてあれば特に問題はなさそう</li>
+</ul>
+<p>ref: </p>
+<ul>
+<li><a href="https://www.memotansu.jp/docker/575/">Dockerデーモンやコンテナ、コンテナ内のサービスの自動起動方法の解説（Linux版）</a></li>
+<li><a href="http://docs.docker.jp/v1.11/engine/admin/systemd.html">systemd で Docker の管理・設定</a></li>
+<li><a href="https://qiita.com/bluesDD/items/eaf14408d635ffd55a18">これからSystemd入門する</a></li>
+</ul>
+<h3><a class="header" href="#修正手順案詳細" id="修正手順案詳細">修正手順案詳細</a></h3>
+<ul>
+<li><code>$ curl 192.168.17.1</code>と<code>docker ps -a</code>を試してみる</li>
+<li>自動起動されてないようなら、<code>systemctl status docker</code>で自動起動を調べる。</li>
+<li>yamlの<code>restart</code>オプションを確認して、もしオプションがうまく機能してなさそうなら設定してみる</li>
+</ul>
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<h3><a class="header" href="#原因" id="原因">原因</a></h3>
+<p>デーモンの起動はできているが、dockerの自動起動が出来ていない</p>
+<h3><a class="header" href="#原因究明方法" id="原因究明方法">原因究明方法</a></h3>
+<p>初期状態を確認</p>
+<pre><code>$ curl 192.168.17.1
+curl: (7) Failed to connect to 192.168.17.1 port 80: Connection refused
+</code></pre>
+<p>コンテナの様子を確認</p>
+<pre><code>user@docker:~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                  PORTS                NAMES
+4e7db3e7cc97        nginx:latest        &quot;/docker-entrypoint.…&quot;   3 minutes ago       Up Less than a second   0.0.0.0:80-&gt;80/tcp   web-server_nginx_1
+</code></pre>
+<p>もう一度curlを確認する</p>
+<pre><code>$ curl 192.168.17.1 -I
+HTTP/1.1 200 OK
+Server: nginx/1.19.6
+Date: Sun, 07 Mar 2021 03:33:11 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Tue, 15 Dec 2020 13:59:38 GMT
+Connection: keep-alive
+ETag: &quot;5fd8c14a-264&quot;
+Accept-Ranges: bytes
+</code></pre>
+<p>実はdockerコマンドを叩くとデーモンが起動するという罠があります．先ほどのdocker ps -aを見てみるとUp Less than a secondとあり，起動したてなのがわかります</p>
+<p>さらに<code>systemctl status docker</code>で詳しく確認してみる。</p>
+<pre><code>ictsc@docker:~$ systemctl status docker
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; disabled; vendor preset: enabled)
+     Active: active (running) since Sun 2021-03-07 12:32:53 JST; 9min ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 2176 (dockerd)
+      Tasks: 17
+     Memory: 114.7M
+     CGroup: /system.slice/docker.service
+             ├─2176 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+             └─2362 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 80 -container-ip 172.18.0.2 -container-port 80
+              
+ 
+ictsc@docker:~$ systemctl is-enabled docker
+disabled
+</code></pre>
+<p>↑ でdisabledになっているのが悪かった。</p>
+<h3><a class="header" href="#解決手順" id="解決手順">解決手順</a></h3>
+<p>解放は単純にenableするだけ。</p>
+<pre><code>systemctl enable docker
+</code></pre>
+<p>途中で上手くいっちゃうし、めっちゃ引っかかりそう。restartしてすぐ直るからググってもあんまり出てこなくてこういう問題は意外と厄介かも😅</p>
+<h2><a class="header" href="#その他リンク" id="その他リンク">その他リンク</a></h2>
+<p>時間上説明しなかったものたち。</p>
+<p>Webが繋がらないという内容で調べたやつ</p>
+<ul>
+<li>汎用的に使えそうなやつ: https://web.plus-idea.net/on/docker-web-server-access-denied/</li>
+<li>全般的に使えそうなやつ: https://qiita.com/amuyikam/items/ef3f8e8e25c557f68f6a</li>
+</ul>
+<p>Dockerデーモンが気になって調べたやつ</p>
+<ul>
+<li><a href="https://www.ogis-ri.co.jp/otc/hiroba/technical/docker/part6.html">さわって理解する Docker 入門</a>
+<ul>
+<li>Dockerデーモンは Linux のデーモンプロセスで、Docker Engine API が呼び出されるのを待ち受けています。Dockerデーモンは、呼び出された Docker Engine API に応じて、イメージのビルドやコンテナの起動などを行います。</li>
+</ul>
+</li>
+<li><a href="https://rat.cis.k.hosei.ac.jp/article/rat/linuxliteracy/2005/daemon.html">Linux リテラシ - 第4回 デーモン</a>
+<ul>
+<li>デーモンはユーザーが意識することがないような裏の部分で動いており、システムを維持したりユーザーにサービスを提供したりといったことを行っています</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2020-honsen/summary.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2020-honsen/dns0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2020-honsen/summary.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2020-honsen/dns0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

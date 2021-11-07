@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DNS問題(2) - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html" class="active"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#dnsサーバを作りたかったらしい" id="dnsサーバを作りたかったらしい">DNSサーバを作りたかったらしい</a></h1>
+<p>解いた人:<a href="https://github.com/nonnonno">nonnonno</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2021/03/16/dns%e3%82%b5%e3%83%bc%e3%83%90%e3%82%92%e4%bd%9c%e3%82%8a%e3%81%9f%e3%81%8b%e3%81%a3%e3%81%9f%e3%82%89%e3%81%97%e3%81%84/">DNSサーバを作りたかったらしい</a></p>
+<h2><a class="header" href="#概要" id="概要">概要</a></h2>
+<p>あなたは同僚から助けを求められた。彼は社内のDNSサーバの構築ログに基づいて環境構築を試みたが、テストとして実行したコマンドでは期待していた出力が行われなかったらしい。原因を調査して、エラーを解決してあげよう。</p>
+<h2><a class="header" href="#前提条件" id="前提条件">前提条件</a></h2>
+<ul>
+<li>ns01はmaster、ns02はslaveサーバとして機能させたい</li>
+<li>トラブルに関係しない要素については変更しない</li>
+<li>ns01,ns02についての接続情報が与えられている</li>
+</ul>
+<h2><a class="header" href="#初期状態" id="初期状態">初期状態</a></h2>
+<p>ns02で<code>dig @localhost red.prob.final.ictsc.net</code>が解決できない</p>
+<h2><a class="header" href="#終了状態" id="終了状態">終了状態</a></h2>
+<ul>
+<li>ns02で<code>dig @localhost red.prob.final.ictsc.net</code>が解決できる</li>
+<li>原因が特定されて報告される
+<ul>
+<li>トラブル解決前に期待されていた動作をしている</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#考えられる原因解決方法" id="考えられる原因解決方法">考えられる原因・解決方法</a></h2>
+<h3><a class="header" href="#digコマンドについて" id="digコマンドについて">digコマンドについて</a></h3>
+<p><a href="https://qiita.com/hana_shin/items/e99f64a01f2632b7a719">参考Qiita</a>
+digコマンドは、DNSサーバに対して問い合わせを行い、その結果を表示する。</p>
+<h4><a class="header" href="#ちなみに" id="ちなみに">ちなみに</a></h4>
+<p>DNSサーバにはキャッシュDNSと権威DNSの二種類がある。
+権威DNSにアクセスが集中しないよう、しばらくの間はキャッシュDNSサーバが権威DNSから受け取った応答を保持して、その内容を使ってクライアントに応答する。</p>
+<p>digコマンドの話に戻るが、digコマンドはBIND 9に付属するコマンドである。<br />
+nslookupと機能が似ているが、digコマンドによって得られる情報量が格段に多い。</p>
+<h3><a class="header" href="#bind-9とは" id="bind-9とは">BIND 9とは</a></h3>
+<p>Berkley Internet Name Domainの略で、世界中で最も多く利用されているDNSサーバのこと。<br />
+他にもDNS機能を提供するソフトウェアは存在するが、BINDを使うサーバがほとんどである。</p>
+<p><a href="https://dnsops.jp/event/20140626/dns-beginners-guide2014-mizuno.pdf">DNSサーバの構築トラブルシューティング</a><br />
+本問題のdigの実行結果がわからないので、考えられる要因が多岐にわたる</p>
+<h2><a class="header" href="#解法" id="解法">解法</a></h2>
+<p>今回の問題文に、『彼は社内のDNSサーバの<strong>構築ログ</strong>に基づいて環境構築を試みたが、テストとして実行したコマンドでは期待していた出力が行われなかった』とあるので、ログを見る必要がある。<br />
+どのログを見るかについては、コマンドを起動するための設定ファイルに関するものを見る必要がありそう。<br />
+例えば、今回であればdigコマンドがうまくいっておらず、digコマンドの設定ファイルはBINDのものなので、
+<code>systemctl status bind9</code>とする。</p>
+<p>このログを見ると、BINDが設定ファイルのエラーによって起動していないことがわかる。<br />
+<code>/etc/bind/named.conf.prob</code>についてエラーが出ているので、この設定部分を変更する必要がある。</p>
+<h3><a class="header" href="#viewとzoneとは" id="viewとzoneとは">viewとzoneとは</a></h3>
+<p><a href="https://ygg-tech.com/2020/09/bind_view/">参考リンク https://ygg-tech.com/2020/09/bind_view/</a></p>
+<p>viewは、一言で言ってしまえば「接続条件によってDNSクエリ結果を変える機能」である。<br />
+Bindの Ver.8 から使用可能であり、CentOS7であれば Ver.9 なので問題なく利用可能。
+viewステートメントによって、アクセス元のIPアドレスに応じて、検索クエリに応答するゾーン情報を分けることができる。<br />
+活用する状況としては以下が挙げられる。</p>
+<ul>
+<li>社内にWebサーバがあり、複数のLANに足を出している</li>
+<li>各LANのクライアントには、自身が所属するLANのWebサーバのIPを返したい</li>
+<li>DNSは1台で済ませたい</li>
+</ul>
+<p><a href="https://ygg-tech.com/2020/09/bind_view/">参考リンク https://ygg-tech.com/2020/09/bind_view/</a>の画像の中では、</p>
+<ul>
+<li>Secure LANに所属するクライアントには192.168.0.1を返す</li>
+<li>Remote Access LANに所属するクライアントには、172.24.0.1を返す
+というフローが実現できる。</li>
+</ul>
+<p>設定ファイルの書き方は<a href="https://ygg-tech.com/2020/09/bind_view/">参考リンク</a>参照。</p>
+<p>ちなみに、zoneをドメイン名や単一DNSサーバと関連づけることは間違いである。<br />
+DNSゾーンは複数のサブドメインを含むことができ、複数のゾーンが同じサーバに存在できる。<br />
+ゾーンファイルに、DNSサーバに保存されているゾーン内の全てのドメインの全てのレコードが含まれ、記載される。</p>
+<h3><a class="header" href="#解法に戻る" id="解法に戻る">解法に戻る</a></h3>
+<p>viewの説明箇所で記述したように、複数のviewを使う際に、同じ名前がついた実態は異なるzoneを含んでいても、クライアント毎に異なるレスポンスを返すことが可能である。<br />
+しかし時には、複数のviewが同一のzoneを持つことが望まれる場合もある。<br />
+そこで用いられるのが <code>in-view</code> zone オプションである。 
+<a href="https://bind9.readthedocs.io/en/latest/reference.html?highlight=in-view#multiple-views">in-view公式解説</a><br />
+これは一言で言うと、viewをまたいだゾーンの共有である。<br />
+<code>in-view</code> オプションによって、事前に設定されたviewの中で定義されたzoneを、viewが参照することができるようになる。<br />
+これは設定ファイルにおいて後の部分に記述されているviewを参照することはできない。</p>
+<p>2つ以上のviewで同じzone(type slave)を設定するとエラーになるので、2回目以降に使用する際にはin-viewオプションを使うとエラーが回避できる。</p>
+<h3><a class="header" href="#bindの設定方法" id="bindの設定方法">BINDの設定方法</a></h3>
+<p><a href="https://go-journey.club/archives/395">DNSサーバ構築手順参考リンク</a><br />
+全体設定ファイルnamed.confは、デフォルトでは/etc/named.confに配置されている。</p>
+<p>ちなみに、BINDをchrootしておくと、bind サービスは /var/named/chroot より上のディレクトリには行けなくなり、仮に bind を乗っ取られても他のディレクトリには被害が及ばない。<br />
+つまり、セキュリティを確保することができる。</p>
+<p>chrootの場合には、自動的に<code>/var/named/chroot/etc/named</code>配下に named.conf などの設定ファイルができている。</p>
+<p><code>systemctl restart named</code>として再起動ができる。<br />
+ちなみに、named-chrootをインストールした場合、</p>
+<ul>
+<li>named　→　自動起動　disable</li>
+<li>named-chroot　→　自動起動　enable</li>
+</ul>
+<p>の設定をしないと、namedが二つ起動している状態になってしまうので注意が必要である。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2020-honsen/dns0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2020-honsen/k8s1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2020-honsen/dns0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2020-honsen/k8s1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

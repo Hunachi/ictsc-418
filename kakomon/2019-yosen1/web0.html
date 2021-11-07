@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Web問題 - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html" class="active"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#apiが飛ばないんですけど" id="apiが飛ばないんですけど">APIが飛ばないんですけど</a></h1>
+<p>解いた人:<a href="https://github.com/maimai-y">maimai-y</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2019/09/01/ictsc2019-%E4%B8%80%E6%AC%A1%E4%BA%88%E9%81%B8-%E5%95%8F%E9%A1%8C%E8%A7%A3%E8%AA%AC-api%E3%81%8C%E9%A3%9B%E3%81%B0%E3%81%AA%E3%81%84%E3%82%93%E3%81%A7%E3%81%99%E3%81%91%E3%81%A9/">APIが飛ばないんですけど…</a></p>
+<h2><a class="header" href="#問題文" id="問題文">問題文</a></h2>
+<p>Webアプリケーションからドメインが異なるAPIにリクエストを発行する際には、クロスオリジンについて注意する必要があります。
+CORS (Cross-Origin Resource Sharing) に関する以下の問いについて、それぞれ適切な選択肢を選んでください。</p>
+<h2><a class="header" href="#問１" id="問１">問１</a></h2>
+<h3><a class="header" href="#問題文-1" id="問題文-1">問題文</a></h3>
+<p><code>https://example.com</code> と同じOriginを選んで下さい。</p>
+<ul>
+<li>A. https://example.com/hoge</li>
+<li>B. <a href="https://example.com:8080/">https://example.com:8080</a></li>
+<li>C. <a href="https://hoge.example.com/">https://hoge.example.com</a></li>
+<li>D. <a href="http://example.com/">http://example.com</a></li>
+</ul>
+<h3><a class="header" href="#解答" id="解答">解答</a></h3>
+<blockquote>
+<p><strong>オリジン Origin</strong> は、ウェブコンテンツにアクセスするために使われる URL のスキーム (プロトコル)、 ホスト (ドメイン)、 ポート によって定義されます。 スキーム、ホスト、ポートがすべて一致した場合のみ、二つのオブジェクトは同じ<strong>オリジン</strong>であると言えます。</p>
+</blockquote>
+<p>A</p>
+<p>理由：</p>
+<p>B サーバーは既定で80番ポートで HTTP コンテンツを配信するため <code>https://example.com</code> は <code>https://example.com:80</code> と同じ</p>
+<p>C ホストが異なる</p>
+<p>D プロトコルが異なる</p>
+<h3><a class="header" href="#解説" id="解説">解説</a></h3>
+<p>ポート番号、プロトコル（HTTP か HTTPS か）、ホストが一致するときのみ同一のOriginとなります。したがって <code>https://example.com/hoge</code> のみが正解です。</p>
+<p>参考: https://developer.mozilla.org/ja/docs/Glossary/Origin</p>
+<h2><a class="header" href="#問２" id="問２">問２</a></h2>
+<h3><a class="header" href="#問題文-2" id="問題文-2">問題文</a></h3>
+<p><code>app.ictsc</code> で動いているアプリケーションから <code>api.ictsc</code> へ以下のような <code>fetch()</code> を実行したところ、CORSのエラーで正常に動きませんでした。 <code>api.ictsc</code> に設定する必要があるHTTP response headerをすべて選んでください。</p>
+<pre><code>fetch({
+  method: &quot;POST&quot;,
+  headers: {
+    &quot;Content-Type&quot;: &quot;application/json&quot;
+  },
+  &quot;body&quot;: JSON.stringify(data)
+})
+</code></pre>
+<ul>
+<li>Access-Control-Allow-Origin</li>
+<li>Access-Control-Allow-Headers</li>
+<li>Access-Control-Allow-Methods</li>
+</ul>
+<h3><a class="header" href="#解答-1" id="解答-1">解答</a></h3>
+<p>全部</p>
+<p>CORS (Cross-Origin Resource Sharing) とは...：</p>
+<blockquote>
+<p>あるオリジンで動いている Web アプリケーションに対して、別のオリジンのサーバーへのアクセスをオリジン間 HTTP リクエストによって許可できる仕組みのこと</p>
+</blockquote>
+<p>Access-Control-Allow-Origin：</p>
+<blockquote>
+<p>指定された<a href="https://developer.mozilla.org/ja/docs/Glossary/Origin">オリジン</a>からのリクエストを行うコードでレスポンスが共有できるかどうかを示します。</p>
+</blockquote>
+<p>Access-Control-Allow-Headers：</p>
+<blockquote>
+<p>実際のリクエストの間に使用できる HTTP ヘッダーを示すために使用されます。</p>
+</blockquote>
+<p>Access-Control-Allow-Methods</p>
+<blockquote>
+<p>リソースにアクセスするときに利用できる1つまたは複数のメソッドを指定します。</p>
+<p>例：</p>
+<pre><code>Access-Control-Allow-Methods: POST, GET, OPTIONS
+Access-Control-Allow-Methods: *
+</code></pre>
+</blockquote>
+<h3><a class="header" href="#解説-1" id="解説-1">解説</a></h3>
+<p>問題文中の fetch では <code>https://api.ictsc</code> へ <code>https://app.ictsc</code> から POST リクエストが実行されます。これはホストが異なるため、異なるOriginへのリクエストになるので、応答の HTTP ヘッダに <code>Access-Control-Allow-Origin</code> が必要です。</p>
+<p>リクエストには <code>Content-Type</code> ヘッダが含まれており、その値が <code>application/json</code> になっています。<code>Content-Type</code> が以下の3つの値以外のときは、実際のリクエストの前に preflight request が発行されます。</p>
+<ul>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+<p>preflight request は <code>OPTIONS</code>メソッドで行われ、サーバ側の許可するメソッドやヘッダが応答の HTTP ヘッダ内の情報として返されます。問題文のように <code>Content-Type: application/json</code> のリクエストを送る場合は、サーバ側で prefilght request への応答の HTTP ヘッダに <code>Access-Control-Allow-Headers: Content-Type</code> と設定しておく必要があります。</p>
+<p>一方で、メソッドが<code>GET</code>, <code>HEAD</code>, <code>POST</code> の場合は preflight request への応答の HTTP ヘッダに <code>Access-Control-Allow-Methods</code> をつける必要はありません。</p>
+<p>したがって、設定するべきヘッダは <code>Access-Control-Allow-Origin</code> と <code>Access-Control-Allow-Headers</code> となります。</p>
+<p>参考: https://developer.mozilla.org/ja/docs/Web/HTTP/CORS#Preflighted_requests</p>
+<h2><a class="header" href="#問３" id="問３">問３</a></h2>
+<h3><a class="header" href="#問題文-3" id="問題文-3">問題文</a></h3>
+<p>選択肢に示すHTTPメソッドのうち、いかなる場合においてもpreflight requestが行われるものを選んでください。</p>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>HEAD</li>
+<li>DELETE</li>
+</ul>
+<h3><a class="header" href="#解答-2" id="解答-2">解答</a></h3>
+<p>DELETE</p>
+<p>CORS のプリフライトリクエストは <a href="https://developer.mozilla.org/ja/docs/Glossary/CORS">CORS</a> のリクエストの一つであり、サーバーが CORS プロトコルを理解していて準備がされていることを、特定のメソッドとヘッダーを使用してチェックします。</p>
+<p>プリフライトリクエストはブラウザーが自動的に発行するものであり、通常は、フロントエンドの開発者が自分でそのようなリクエストを作成する必要はありません。これはリクエストが<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CORS#preflighted_requests">&quot;to be preflighted&quot;</a>と修飾されている場合に現れ、<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/CORS#simple_requests">単純リクエスト</a>の場合は省略されます。</p>
+<p>「単純リクエスト」は、<strong>以下のすべての条件を満たす</strong>ものです。</p>
+<ul>
+<li>許可されているメソッドのうちの一つであること。
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Methods/GET"><code>GET</code></a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Methods/HEAD"><code>HEAD</code></a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Methods/POST"><code>POST</code></a></li>
+</ul>
+</li>
+<li>...</li>
+</ul>
+<h3><a class="header" href="#解説-2" id="解説-2">解説</a></h3>
+<p>preflight request の概要については問2の解説で説明したとおりです。メソッドが以下に挙げるものの場合は、必ず preflight request が発行されます。</p>
+<ul>
+<li><code>PUT</code></li>
+<li><code>DELETE</code></li>
+<li><code>CONNECT</code></li>
+<li><code>OPTIONS</code></li>
+<li><code>TRACE</code></li>
+<li><code>PATCH</code></li>
+</ul>
+<p>したがって正解は <code>DELETE</code> となります。</p>
+<h2><a class="header" href="#問４" id="問４">問４</a></h2>
+<h3><a class="header" href="#問題文-4" id="問題文-4">問題文</a></h3>
+<p>preflight requestについて示した文章のうち、正しいものを全て選んでください。</p>
+<ul>
+<li>リクエスト元のドメインとリクエスト先のドメインが同じ場合は、いかなる場合においてもpreflight requestは行われない。</li>
+<li>クロスオリジンで独自HTTPメソッド <code>TEST</code> を発行するためには、<code>Access-Control-Allow-Methods</code> に <code>*</code> を追加することで必ず正しく動く。</li>
+<li>preflight requestに対する応答は、<code>Access-Control-Allow-*</code> ヘッダの内容が正しいHTTP responseであれば他の内容はなんでもよい。</li>
+<li><code>Access-Control-Allow-Origin</code> に <code>*</code> を設定しておけば、他のヘッダが適切である限りいかなる場合でも動作する。</li>
+</ul>
+<h3><a class="header" href="#解答-3" id="解答-3">解答</a></h3>
+<p>x x x o</p>
+<ul>
+<li>Access-Control-Allow-Methods
+<ul>
+<li><code>*</code> (ワイルドカード)</li>
+<li>&quot;<code>*</code>&quot; の値は、資格情報のないリクエスト (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies">HTTP Cookie</a> や HTTP 認証情報のないリクエスト) の特殊なワイルドカードです。</li>
+</ul>
+</li>
+</ul>
+<h3><a class="header" href="#解説-3" id="解説-3">解説</a></h3>
+<blockquote>
+<p>リクエスト元のドメインとリクエスト先のドメインが同じ場合は、いかなる場合においてもpreflight requestは行われない。</p>
+</blockquote>
+<p>ドメインが同じであってもOriginが同じであるとは限りません。ポート番号やプロトコルが異なる場合は異なるOriginとなります。Originが異なる場合、特定の条件を満たせばpreflight requestが行われるため、この文章は間違っています。</p>
+<blockquote>
+<p>クロスオリジンで独自HTTPメソッド <code>TEST</code> を発行するためには、<code>Access-Control-Allow-Methods</code> に <code>*</code> を追加することで必ず正しく動く。</p>
+</blockquote>
+<p><code>Access-Control-Allow-Methods: *</code> と設定した場合の独自メソッドの動作は実装に依存しています。Ubuntu 18.0.4 上で Python3.6.8 の Bottle v0.12.17 によりHTTPサーバを<code>http://localhost:8090</code>, <code>http://localhost:8080</code>に立てて、前者から後者に JavaScript の fetch でリクエストを送って検証しました。Chromium 76.0.3809 で <code>TEST</code>リクエストを行ってみると成功しますが、FireFox 68.0.1 では失敗しました。 したがって、「必ず正しく動く」とするこの文章は間違っています。</p>
+<p>参考: https://developer.mozilla.org/ja/docs/Web/HTTP/CORS/Errors/CORSMethodNotFound</p>
+<blockquote>
+<p>preflight requestに対する応答は、<code>Access-Control-Allow-*</code> ヘッダの内容が正しいHTTP responseであれば他の内容はなんでもよい。</p>
+</blockquote>
+<p>preflight request に対する応答のステータスコードが200番台でない場合、リクエストを送ることができません。上記と同様の検証環境で、preflight requestに対するHTTP responseのステータスコードを404にするとPOSTリクエストが飛ばないことを確かめられました。したがってこの文章は間違っています。</p>
+<p>参考:<a href="https://www.w3.org/TR/cors/#preflight-request"> </a>https://fetch.spec.whatwg.org/#cors-preflight-fetch</p>
+<blockquote>
+<p><code>Access-Control-Allow-Origin</code> に <code>*</code> を設定しておけば、他のヘッダが適切である限りいかなる場合でも動作する。</p>
+</blockquote>
+<p>リクエストにCookieなどのリクエスト情報が含まれている場合、<code>Access-Control-Allow-Origin: *</code>というワイルドカードの指定ではなく、具体的なOriginの指定が必要です。したがって、「いかなる場合でも動作する」とするこの文章は間違っています。</p>
+<p>参考: https://developer.mozilla.org/ja/docs/Web/HTTP/CORS#Requests_with_credentials</p>
+<p>以上より、全ての文が間違っているので、何も選択しないのが正解です。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2019-yosen1/routing0.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2019-yosen2/summary.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2019-yosen1/routing0.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2019-yosen2/summary.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DB問題 - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html" class="active"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#mysqlの復旧をお願いします" id="mysqlの復旧をお願いします">MySQLの復旧をお願いします！！</a></h1>
+<p>解いた人:<a href="https://twitter.com/_hunachi">Hunachi</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-mysql%e3%81%ae%e5%be%a9%e6%97%a7%e3%82%92%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99%ef%bc%81%ef%bc%81/">MySQLの復旧をお願いします！！</a></p>
+<h2><a class="header" href="#使用環境ツール" id="使用環境ツール">使用環境・ツール</a></h2>
+<h3><a class="header" href="#環境" id="環境">環境</a></h3>
+<ul>
+<li>IPアドレス: 192.168.0.1</li>
+<li>ユーザー: admin</li>
+<li>パスワード: USerPw@19</li>
+<li>DBユーザー: root</li>
+<li>DBパスワード: root</li>
+</ul>
+<h3><a class="header" href="#状況" id="状況">状況</a></h3>
+<ul>
+<li>このMySQLは毎日定時に<code>sysbench database</code>のバックアップを取得していて(コンテスト問題の作成上truncate table文が実行された日まで)、偶然truncate文が実行される(数分)前にこの日のバックアップが完了していた</li>
+<li>バックアップは以下のコマンドで取得されている</li>
+<li><code>mysqldump --opt --single-transaction --master-data=2 --default-character-set=utf8mb4 --databases sysbench &gt; /root/backup/backup.dump</code></li>
+<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>でバックアップが取得された時点に復旧できる</li>
+<li>adminユーザからsudo suすることでrootユーザから操作してください</li>
+</ul>
+<h2><a class="header" href="#問題" id="問題">問題</a></h2>
+<h3><a class="header" href="#問１" id="問１">問１</a></h3>
+<p><code>truncate table sbtest3;</code>というクエリが実行された日時を<code>yymmdd HH:MM:SS</code>のフォーマットで報告してください。
+また、どのようにこの日時を特定したかを説明してください。</p>
+<h3><a class="header" href="#問２" id="問２">問２</a></h3>
+<p><code>truncate table</code>が実行される直前の状態(<code>truncate table</code>が実行される1つ前のクエリが実行された状態)にデータを復旧し、復旧後<code>checksum table sysbench.sbtest3;</code>の結果を報告してください。
+また、データの復旧に必要な手順を説明してください。</p>
+<hr />
+<h2><a class="header" href="#技術調査" id="技術調査">技術調査</a></h2>
+<h3><a class="header" href="#問１について" id="問１について">問１について</a></h3>
+<ul>
+<li>実行されたmysqlコマンドの履歴を表示する方法
+<code>cat ~/.mysql_history</code>
+で実行されたmysqlコマンドの履歴を表示することができるはず．<a href="https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries">参考</a></li>
+</ul>
+<p>これで試した結果(dockerで環境作ってクエリを適当に打った)</p>
+<pre><code># cat ~/.mysql_history
+_HiStOrY_V2_
+show\040databases;
+quit;
+</code></pre>
+<p>\040はASCIIコードのスペースだけど，見づらいのでこれはスペースで表示させるようにする．</p>
+<pre><code># sed &quot;s/\\\040/ /g&quot;  ~/.mysql_history
+_HiStOrY_V2_
+show databases;
+quit;
+</code></pre>
+<p><a href="https://hydrocul.github.io/wiki/commands/sed.html">sedコマンドについて参考になるサイト</a></p>
+<p>日時が表示されてないのでだめ！</p>
+<p>どうやらデフォで日時を取得する方法ないかも．．? 　
+https://forums.mysql.com/read.php?10,400933
+https://forums.mysql.com/read.php?10,400933,401057#msg-401057</p>
+<p>そこで，
+<code>general_log</code>が有効になっているかを確認する．
+<code>show variables like 'general_log';</code>
+もし，</p>
+<pre><code class="language-mysql&gt;showvariableslike'general_log';">+---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| general_log   | ON    |
++---------------+-------+
+1 row in set (0.00 sec)
+</code></pre>
+<p>ならラッキー，いける．
+OFFなら自分にはお手上げ😭🙌</p>
+<p>ONだったら，
+<code>show variables like 'general_log_file';</code>
+でわかるファイルをみてみる．</p>
+<p><strong>実験した</strong></p>
+<ol>
+<li>デフォではOFFだったので，
+<code>mysql&gt; set global general_log = 'ON';</code>を設定．</li>
+<li>色々コマンドを打つ．</li>
+<li><code>cat /var/lib/mysql/${general_log_file's value}.log</code></li>
+<li>表示される例．</li>
+</ol>
+<pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-08-16T08:48:21.048791Z	   15 Query	SELECT DATABASE()
+2021-08-16T08:48:21.049349Z	   15 Init DB	hunadb
+2021-08-16T08:48:21.052633Z	   15 Query	show databases
+2021-08-16T08:48:21.053892Z	   15 Query	show tables
+2021-08-16T08:48:21.055342Z	   15 Field List	piyo 
+2021-08-16T08:48:32.444434Z	   15 Quit	
+2021-08-16T08:48:34.020718Z	   16 Connect	root@localhost on  using Socket
+2021-08-16T08:48:34.021351Z	   16 Query	select @@version_comment limit 1
+2021-08-16T08:48:36.401359Z	   16 Query	show variables like 'general_log'
+2021-08-16T08:48:46.839490Z	   16 Query	create table hunadb.piyo (id int, cost int)
+2021-08-16T08:49:06.218438Z	   16 Query	create table hunadb.hiyo (id int, cost int)
+2021-08-16T08:49:43.064247Z	   16 Query	truncate table hunadb.piyo
+2021-08-16T08:49:48.068001Z	   16 Quit
+</code></pre>
+<p>↑の日時を解答として提出すれば良さそう！！</p>
+<h3><a class="header" href="#問2について" id="問2について">問2について</a></h3>
+<p>状況にて，バックアップの復旧方法を教えてくれてるのでそれをする．(括弧内は自分が打ったコマンド．ログも実際も私の物．)</p>
+<ol>
+<li><code>mysqldump --opt --single-transaction --master-data=2 --default-character-set=utf8mb4 --databases sysbench &gt; /root/backup/backup.dump</code> (を打つべきだけどこの時は手を抜いて<code>mysqldump hunadb &gt; dump.sql</code>)</li>
+<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>(実際に打ったのは，<code>mysql hunadb &lt; dump.sql</code>)</li>
+<li><code>.mysql_history</code>を確認してみる．</li>
+</ol>
+<pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-08-16T08:48:21.048791Z	   15 Query	SELECT DATABASE()
+2021-08-16T08:48:21.049349Z	   15 Init DB	hunadb
+2021-08-16T08:48:21.052633Z	   15 Query	show databases
+2021-08-16T08:48:21.053892Z	   15 Query	show tables
+2021-08-16T08:48:21.055342Z	   15 Field List	piyo 
+2021-08-16T08:48:32.444434Z	   15 Quit	
+2021-08-16T08:48:34.020718Z	   16 Connect	root@localhost on  using Socket
+2021-08-16T08:48:34.021351Z	   16 Query	select @@version_comment limit 1
+2021-08-16T08:48:36.401359Z	   16 Query	show variables like 'general_log'
+2021-08-16T08:48:46.839490Z	   16 Query	create table hunadb.piyo (id int, cost int)
+2021-08-16T08:49:06.218438Z	   16 Query	create table hunadb.hiyo (id int, cost int)
+2021-08-16T08:49:43.064247Z	   16 Query	truncate table hunadb.piyo
+2021-08-16T08:49:48.068001Z	   16 Quit	
+2021-08-16T09:43:42.989880Z	   17 Connect	root@localhost on  using Socket
+2021-08-16T09:43:42.990214Z	   17 Query	select @@version_comment limit 1
+2021-08-16T10:08:24.906898Z	   17 Query	SELECT * FROM msdb.dbo
+2021-08-16T10:08:34.540831Z	   17 Query	show databases
+2021-08-16T10:10:22.024284Z	   17 Quit	
+
+--- ここでバックアップを取った --- （ mysqldump hunadb &gt; dump.sql ) 
+
+2021-08-16T10:10:31.893768Z	   18 Connect	root@localhost on  using Socket
+2021-08-16T10:10:31.893799Z	   18 Connect	Access denied for user 'root'@'localhost' (using password: NO)
+2021-08-16T10:11:05.935347Z	   19 Connect	root@localhost on  using Socket
+2021-08-16T10:11:05.935406Z	   19 Connect	Access denied for user 'root'@'localhost' (using password: NO)
+2021-08-16T10:11:29.099579Z	   20 Connect	root@localhost on  using Socket
+2021-08-16T10:11:29.099723Z	   20 Query	/*!40100 SET @@SQL_MODE='' */
+2021-08-16T10:11:29.099984Z	   20 Query	/*!40103 SET TIME_ZONE='+00:00' */
+2021-08-16T10:11:29.100167Z	   20 Query	/*!80000 SET SESSION information_schema_stats_expiry=0 */
+2021-08-16T10:11:29.100304Z	   20 Query	SET SESSION NET_READ_TIMEOUT= 86400, SESSION NET_WRITE_TIMEOUT= 86400
+2021-08-16T10:11:29.101544Z	   20 Query	SHOW VARIABLES LIKE 'gtid\_mode'
+2021-08-16T10:11:29.103106Z	   20 Query	SELECT LOGFILE_GROUP_NAME, FILE_NAME, TOTAL_EXTENTS, INITIAL_SIZE, ENGINE, EXTRA FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'UNDO LOG' AND FILE_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IS NOT NULL AND LOGFILE_GROUP_NAME IN (SELECT DISTINCT LOGFILE_GROUP_NAME FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('hunadb'))) GROUP BY LOGFILE_GROUP_NAME, FILE_NAME, ENGINE, TOTAL_EXTENTS, INITIAL_SIZE ORDER BY LOGFILE_GROUP_NAME
+2021-08-16T10:11:29.110332Z	   20 Query	SELECT DISTINCT TABLESPACE_NAME, FILE_NAME, LOGFILE_GROUP_NAME, EXTENT_SIZE, INITIAL_SIZE, ENGINE FROM INFORMATION_SCHEMA.FILES WHERE FILE_TYPE = 'DATAFILE' AND TABLESPACE_NAME IN (SELECT DISTINCT TABLESPACE_NAME FROM INFORMATION_SCHEMA.PARTITIONS WHERE TABLE_SCHEMA IN ('hunadb')) ORDER BY TABLESPACE_NAME, LOGFILE_GROUP_NAME
+2021-08-16T10:11:29.112213Z	   20 Query	SHOW VARIABLES LIKE 'ndbinfo\_version'
+2021-08-16T10:11:29.114053Z	   20 Init DB	hunadb
+2021-08-16T10:11:29.114225Z	   20 Query	show tables
+2021-08-16T10:11:29.115254Z	   20 Query	LOCK TABLES `hiyo` READ /*!32311 LOCAL */,`piyo` READ /*!32311 LOCAL */
+2021-08-16T10:11:29.116322Z	   20 Query	show table status like 'hiyo'
+2021-08-16T10:11:29.117349Z	   20 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2021-08-16T10:11:29.117507Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.117621Z	   20 Query	show create table `hiyo`
+2021-08-16T10:11:29.117877Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.118037Z	   20 Query	show fields from `hiyo`
+2021-08-16T10:11:29.119264Z	   20 Query	show fields from `hiyo`
+2021-08-16T10:11:29.120115Z	   20 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `hiyo`
+2021-08-16T10:11:29.120363Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.120561Z	   20 Query	use `hunadb`
+2021-08-16T10:11:29.120795Z	   20 Query	select @@collation_database
+2021-08-16T10:11:29.121025Z	   20 Query	SHOW TRIGGERS LIKE 'hiyo'
+2021-08-16T10:11:29.122437Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.122713Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.122975Z	   20 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$.&quot;number-of-buckets-specified&quot;')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'hunadb' AND TABLE_NAME = 'hiyo'
+2021-08-16T10:11:29.123610Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.123849Z	   20 Query	show table status like 'piyo'
+2021-08-16T10:11:29.124940Z	   20 Query	SET SQL_QUOTE_SHOW_CREATE=1
+2021-08-16T10:11:29.125141Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.125352Z	   20 Query	show create table `piyo`
+2021-08-16T10:11:29.125741Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.125958Z	   20 Query	show fields from `piyo`
+2021-08-16T10:11:29.127051Z	   20 Query	show fields from `piyo`
+2021-08-16T10:11:29.128547Z	   20 Query	SELECT /*!40001 SQL_NO_CACHE */ * FROM `piyo`
+2021-08-16T10:11:29.128818Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.128976Z	   20 Query	use `hunadb`
+2021-08-16T10:11:29.129195Z	   20 Query	select @@collation_database
+2021-08-16T10:11:29.129379Z	   20 Query	SHOW TRIGGERS LIKE 'piyo'
+2021-08-16T10:11:29.130227Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.130402Z	   20 Query	SET SESSION character_set_results = 'binary'
+2021-08-16T10:11:29.130667Z	   20 Query	SELECT COLUMN_NAME,                       JSON_EXTRACT(HISTOGRAM, '$.&quot;number-of-buckets-specified&quot;')                FROM information_schema.COLUMN_STATISTICS                WHERE SCHEMA_NAME = 'hunadb' AND TABLE_NAME = 'piyo'
+2021-08-16T10:11:29.131010Z	   20 Query	SET SESSION character_set_results = 'utf8mb4'
+2021-08-16T10:11:29.131201Z	   20 Query	UNLOCK TABLES
+2021-08-16T10:11:29.132686Z	   20 Quit	
+
+---- 多分ここまでがバックアップのためのコード ----
+
+2021-08-16T10:12:17.133740Z	   22 Connect	root@localhost on  using Socket
+2021-08-16T10:12:17.134045Z	   22 Query	select @@version_comment limit 1
+2021-08-16T10:12:27.437396Z	   22 Query	SELECT DATABASE()
+2021-08-16T10:12:27.437700Z	   22 Init DB	hunadb
+2021-08-16T10:12:27.438758Z	   22 Query	show databases
+2021-08-16T10:12:27.439753Z	   22 Query	show tables
+2021-08-16T10:12:27.440834Z	   22 Field List	hiyo 
+2021-08-16T10:12:27.442166Z	   22 Field List	piyo 
+2021-08-16T10:12:31.924121Z	   22 Query	show tables
+2021-08-16T10:12:40.044363Z	   22 Query	truncate table hiyo
+2021-08-16T10:12:42.415083Z	   22 Query	show tables
+2021-08-16T10:13:24.213758Z	   22 Query	drop table hiyo
+2021-08-16T10:13:26.758317Z	   22 Query	show tables
+2021-08-16T10:13:30.474725Z	   22 Quit	
+
+---- ここで復元を始めた　---- （ mysql hunadb &lt; dump.sql ）
+
+2021-08-16T10:13:58.825694Z	   23 Connect	root@localhost on hunadb using Socket
+2021-08-16T10:13:58.826015Z	   23 Query	select @@version_comment limit 1
+2021-08-16T10:13:58.826260Z	   23 Query	/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+2021-08-16T10:13:58.826450Z	   23 Query	/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+2021-08-16T10:13:58.826626Z	   23 Query	/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+2021-08-16T10:13:58.826805Z	   23 Query	/*!50503 SET NAMES utf8mb4 */
+2021-08-16T10:13:58.827039Z	   23 Query	/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */
+2021-08-16T10:13:58.827220Z	   23 Query	/*!40103 SET TIME_ZONE='+00:00' */
+2021-08-16T10:13:58.827404Z	   23 Query	/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */
+2021-08-16T10:13:58.827586Z	   23 Query	/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */
+2021-08-16T10:13:58.827784Z	   23 Query	/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */
+2021-08-16T10:13:58.827967Z	   23 Query	/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */
+2021-08-16T10:13:58.828183Z	   23 Query	DROP TABLE IF EXISTS `hiyo`
+2021-08-16T10:13:58.832544Z	   23 Query	/*!40101 SET @saved_cs_client     = @@character_set_client */
+2021-08-16T10:13:58.832736Z	   23 Query	/*!50503 SET character_set_client = utf8mb4 */
+2021-08-16T10:13:58.832935Z	   23 Query	CREATE TABLE `hiyo` (
+  `id` int DEFAULT NULL,
+  `cost` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+2021-08-16T10:13:58.846132Z	   23 Query	/*!40101 SET character_set_client = @saved_cs_client */
+2021-08-16T10:13:58.846305Z	   23 Query	LOCK TABLES `hiyo` WRITE
+2021-08-16T10:13:58.847102Z	   23 Query	/*!40000 ALTER TABLE `hiyo` DISABLE KEYS */
+2021-08-16T10:13:58.848155Z	   23 Query	/*!40000 ALTER TABLE `hiyo` ENABLE KEYS */
+2021-08-16T10:13:58.849204Z	   23 Query	UNLOCK TABLES
+2021-08-16T10:13:58.849372Z	   23 Query	DROP TABLE IF EXISTS `piyo`
+2021-08-16T10:13:58.857241Z	   23 Query	/*!40101 SET @saved_cs_client     = @@character_set_client */
+2021-08-16T10:13:58.857442Z	   23 Query	/*!50503 SET character_set_client = utf8mb4 */
+2021-08-16T10:13:58.857621Z	   23 Query	CREATE TABLE `piyo` (
+  `id` int DEFAULT NULL,
+  `cost` int DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+2021-08-16T10:13:58.869241Z	   23 Query	/*!40101 SET character_set_client = @saved_cs_client */
+2021-08-16T10:13:58.869410Z	   23 Query	LOCK TABLES `piyo` WRITE
+2021-08-16T10:13:58.870143Z	   23 Query	/*!40000 ALTER TABLE `piyo` DISABLE KEYS */
+2021-08-16T10:13:58.871175Z	   23 Query	/*!40000 ALTER TABLE `piyo` ENABLE KEYS */
+2021-08-16T10:13:58.872237Z	   23 Query	UNLOCK TABLES
+2021-08-16T10:13:58.872430Z	   23 Query	/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */
+2021-08-16T10:13:58.872583Z	   23 Query	/*!40101 SET SQL_MODE=@OLD_SQL_MODE */
+2021-08-16T10:13:58.872726Z	   23 Query	/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */
+2021-08-16T10:13:58.872864Z	   23 Query	/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */
+2021-08-16T10:13:58.873030Z	   23 Query	/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+2021-08-16T10:13:58.873174Z	   23 Query	/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+2021-08-16T10:13:58.873287Z	   23 Query	/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+2021-08-16T10:13:58.873427Z	   23 Query	/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */
+2021-08-16T10:13:58.873506Z	   23 Quit	
+
+---- ここまでが復元された時のログ ----
+
+2021-08-16T10:14:05.000746Z	   24 Connect	root@localhost on  using Socket
+2021-08-16T10:14:05.001258Z	   24 Query	select @@version_comment limit 1
+2021-08-16T10:14:12.021449Z	   24 Query	SELECT DATABASE()
+2021-08-16T10:14:12.021944Z	   24 Init DB	hunadb
+2021-08-16T10:14:12.023879Z	   24 Query	show databases
+2021-08-16T10:14:12.025276Z	   24 Query	show tables
+2021-08-16T10:14:12.026755Z	   24 Field List	hiyo 
+2021-08-16T10:14:12.027480Z	   24 Field List	piyo 
+2021-08-16T10:14:13.866961Z	   24 Query	show tables
+2021-08-16T10:14:16.344213Z	   24 Quit	
+</code></pre>
+<p>ログの見方がよくわからないけど，これのバックアップが始まってそうな部分を見つけて，それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）</p>
+<hr />
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<p>公式の解説が丁寧なのでそちらを参照．</p>
+<h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
+<ul>
+<li>'DML' = Data Manipulation Language(select文，insert文など)<a href="https://e-words.jp/w/DML.html">参考</a> </li>
+<li><code>--base64-output=DECODE-ROWS</code> はバイナリログが元々ROW形式なので読めるようにするためにつける．</li>
+<li><code>-vv</code> = <code>--verbose --verbose</code> (詳細なメッセージを表示) </li>
+<li><code>-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;</code> の <code>binlog.000018</code> と <code>34626719</code>が大事． </li>
+<li><code>binlog.000018</code> からバックアップ後のデータを復旧する．</li>
+<li>startpositionは<code>34626719</code> になる．</li>
+<li><code>mysqlbinlog</code> は MySQLのバイナリログの解析に使われる．</li>
+</ul>
+<h3><a class="header" href="#試してみた" id="試してみた">試してみた</a></h3>
+<p>（私の環境に合わせたコマンドにしてる）</p>
+<p><code>mysqldump --password=passwordh --opt --single-transaction --master-data=2  hunadb &gt; dump.sql</code></p>
+<p>--master-data=2が大事だったとは（ちゃんと調べてなきゃ．．）<a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">参考</a></p>
+<p><code>dump.sql</code>の<code>-- CHANGE MASTER TO </code> のとこの情報をバックアップ以降の更新の始まりを知るべく確認．</p>
+<p><code>binlog</code>もあったのでこれに対して</p>
+<p><code>mysqlbinlog --no-defaults --base64-output=DECODE-ROWS -vv --start-position=$MASTER_LOG_POS  binlog.000002 | grep -B 10 truncate</code>
+で，出てきた．</p>
+<p>truncateを打った時のtimestampがわかったので，
+問1は，<code>select from_unixtime(timestamp);</code>を打てば良さそう．</p>
+<p><code>mysqlbinlog --no-defaults --start-position=$MASTER_LOG_POS --stop-position=$timestamp binlog.000018 | mysql -u root -p</code>
+で，復旧の手順は行えることが確認できたと思う．（最初の設定ミスってて，データのバックアップをとってすぐにtrancateしたので確認できなかった😂）</p>
+<h3><a class="header" href="#感想" id="感想">感想</a></h3>
+<p>全然違くて🥺 DBの授業取ってたのに🥺</p>
+<h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>
+<ul>
+<li>問1: 30%</li>
+<li>問2: 70%</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2019-yosen2/container.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2019-yosen2/ipv6_0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2019-yosen2/container.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2019-yosen2/ipv6_0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

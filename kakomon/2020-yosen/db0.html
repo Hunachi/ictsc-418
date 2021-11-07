@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>DB問題 - study-note</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../index.html"><strong aria-hidden="true">1.</strong> これは何？</a></li><li class="chapter-item expanded "><a href="../../result.html"><strong aria-hidden="true">2.</strong> 結果</a></li><li class="chapter-item expanded "><a href="../../learn-schedule.html"><strong aria-hidden="true">3.</strong> 勉強会のスケジュール</a></li><li class="chapter-item expanded "><a href="../../kakomon/summary.html"><strong aria-hidden="true">4.</strong> 過去問勉強会</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/summary.html"><strong aria-hidden="true">4.1.</strong> 2019-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/container.html"><strong aria-hidden="true">4.1.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/ipv6_0.html"><strong aria-hidden="true">4.1.2.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-honsen/web0.html"><strong aria-hidden="true">4.1.3.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/summary.html"><strong aria-hidden="true">4.2.</strong> 2019-1次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/routing0.html"><strong aria-hidden="true">4.2.1.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen1/web0.html"><strong aria-hidden="true">4.2.2.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/summary.html"><strong aria-hidden="true">4.3.</strong> 2019-2次予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/container.html"><strong aria-hidden="true">4.3.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/db0.html"><strong aria-hidden="true">4.3.2.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/ipv6_0.html"><strong aria-hidden="true">4.3.3.</strong> IPv6問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2019-yosen2/web0.html"><strong aria-hidden="true">4.3.4.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/summary.html"><strong aria-hidden="true">4.4.</strong> 2020-本選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/container3.html"><strong aria-hidden="true">4.4.1.</strong> コンテナ問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns0.html"><strong aria-hidden="true">4.4.2.</strong> DNS問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/dns2.html"><strong aria-hidden="true">4.4.3.</strong> DNS問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/k8s1.html"><strong aria-hidden="true">4.4.4.</strong> k8s問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program0.html"><strong aria-hidden="true">4.4.5.</strong> プログラム問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/program1.html"><strong aria-hidden="true">4.4.6.</strong> プログラム問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/routing0.html"><strong aria-hidden="true">4.4.7.</strong> ルーティング問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/tunnel0.html"><strong aria-hidden="true">4.4.8.</strong> トンネル問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-honsen/web0.html"><strong aria-hidden="true">4.4.9.</strong> Web問題</a></li></ol></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/summary.html"><strong aria-hidden="true">4.5.</strong> 2020-予選-</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container1.html"><strong aria-hidden="true">4.5.1.</strong> コンテナ問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/container2.html"><strong aria-hidden="true">4.5.2.</strong> コンテナ問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/db0.html" class="active"><strong aria-hidden="true">4.5.3.</strong> DB問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/programming0.html"><strong aria-hidden="true">4.5.4.</strong> プログラム問題</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing0.html"><strong aria-hidden="true">4.5.5.</strong> ルーティング問題(1)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing1.html"><strong aria-hidden="true">4.5.6.</strong> ルーティング問題(2)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/routing3.html"><strong aria-hidden="true">4.5.7.</strong> ルーティング問題(3)</a></li><li class="chapter-item expanded "><a href="../../kakomon/2020-yosen/web01.html"><strong aria-hidden="true">4.5.8.</strong> Web問題</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../docker/summary.html"><strong aria-hidden="true">5.</strong> docker</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../docker/learn.html"><strong aria-hidden="true">5.1.</strong> learn</a></li><li class="chapter-item expanded "><a href="../../docker/hands-on.html"><strong aria-hidden="true">5.2.</strong> hands-on</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">study-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#備品は何処へ" id="備品は何処へ">備品は何処へ</a></h1>
+<p>解いた人:<a href="https://twitter.com/_hunachi">Hunachi</a></p>
+<p>参照した問題・解説のサイト:<a href="https://blog.icttoracon.net/2020/11/02/%e5%82%99%e5%93%81%e3%81%af%e4%bd%95%e5%87%a6%e3%81%b8/">備品は何処へ</a></p>
+<h2><a class="header" href="#使用環境ツール" id="使用環境ツール">使用環境・ツール</a></h2>
+<ul>
+<li>MySQL</li>
+</ul>
+<h2><a class="header" href="#初期状態" id="初期状態">初期状態</a></h2>
+<ul>
+<li>MySQLが起動しroot権限にて正常動作することを確認している</li>
+<li>使用するデータベースはListである</li>
+<li>データベースListのテーブルには以下がある
+<ul>
+<li>Equipment_list(備品リスト)</li>
+<li>Order_company_list(注文会社リスト)</li>
+<li>Manufacturing_company_list(製造会社リスト)</li>
+<li>Location_list(所在地リスト)</li>
+</ul>
+</li>
+</ul>
+<h2><a class="header" href="#終了状態" id="終了状態">終了状態</a></h2>
+<ul>
+<li>提出されたCSVデータは値段(priceカラム)の高い順位にソートされている</li>
+<li>提出時に付随するカラムは以下の通り
+<ul>
+<li>Equipment_list.ID</li>
+<li>Equipment_list.Name</li>
+<li>Order_company_list.Name</li>
+<li>Manufacturing_company_list.Name</li>
+<li>Equipment_list.Price</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2><a class="header" href="#技術調査" id="技術調査">技術調査</a></h2>
+<h3><a class="header" href="#mysqlの使い方" id="mysqlの使い方">MySQLの使い方</a></h3>
+<h4><a class="header" href="#csvを生成する方法" id="csvを生成する方法">CSVを生成する方法</a></h4>
+<pre><code class="language-sql">SELECT * FROM {DB_NAME} INFO OUTFILE 'hoge.csv'
+</code></pre>
+<p><code> INTO OUTFILE 'hoge.csv'</code>のところで出力するファイルを指定している．</p>
+<p>参考：https://qiita.com/catatsuy/items/9fdf4423d5f4885b9bf9
+csvからデータのimportをする方法も書いてるサイト：
+https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
+<h4><a class="header" href="#テーブルの結合方法" id="テーブルの結合方法">テーブルの結合方法</a></h4>
+<h5><a class="header" href="#外部結合" id="外部結合">外部結合</a></h5>
+<p>条件に一致するもの同士を結合させるのに加えて，どちらかのテーブルにしか存在しないレコードも残して結合する． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<p><code>LEFT OUTER JOIN</code>の場合は，先に書いたテーブル側のカラムが消えない．
+<code>RIGHT OUTER JOIN</code>の場合は，後に書いたテーブルのカラムが消えない．</p>
+<pre><code>SELECT * FROM hoge
+    LEFT OUTER JOIN piyo ON hoge.id = piyo.id;
+</code></pre>
+<p>↑hogeのうち，どのpiyo.idとも一致しないhoge.idのレコードも残されてpiyoの方の値はnullになる．どのhoge.idとも一致しないレコードは消される．</p>
+<h5><a class="header" href="#内部結合" id="内部結合">内部結合</a></h5>
+<p>テーブルの指定したカラムが一致するものだけを結合する方法．
+条件に合う相手がいないレコードは消される． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<pre><code>SELECT * FROM hoge
+    INNER JOIN piyo ON hoge.id = piyo.id;
+</code></pre>
+<h5><a class="header" href="#自然結合" id="自然結合">自然結合</a></h5>
+<p>結合条件として，同じ名前のカラム同士で結合する場合，<code>NATURAL</code>を付けることで結合条件を省略することができる方法． https://www.dbonline.jp/sqlite/join/index4.html</p>
+<pre><code>SELECT * FROM hoge
+    NATURAL INNER JOIN piyo ON hoge.id = piyo.id;
+</code></pre>
+<h5><a class="header" href="#複数テーブルの結合方法" id="複数テーブルの結合方法">複数テーブルの結合方法</a></h5>
+<pre><code>SELECT * FROM hoge
+    INNER JOIN piyo ON hoge.id = piyo.id
+    INNER JOIN fuga ON piyo.f_id = fuga.id;
+</code></pre>
+<p>のように書けばいい．</p>
+<h2><a class="header" href="#解決方法" id="解決方法">解決方法</a></h2>
+<p>コーディングテストのようにいい感じのSELECT文を書けば良さそう．（トラブルシューティングではなさそう）</p>
+<h3><a class="header" href="#step-0" id="step-0">STEP 0.</a></h3>
+<p>DB(List)に接続する．</p>
+<ul>
+<li><code>sudo mysql</code></li>
+<li><code>mysql&gt; use List;</code></li>
+</ul>
+<p>一応テーブルの構造も確認する</p>
+<ul>
+<li><code>mysql&gt; desc List;</code></li>
+</ul>
+<h3><a class="header" href="#step-1" id="step-1">STEP 1.</a></h3>
+<p>各テーブルのカラムを確認するために，それぞれに対して
+<code>mysql&gt; SELECT * FROM {DB_NAME}</code> をする．</p>
+<p>IDの指定が被っている部分を確認して結合する時の条件を考える．</p>
+<h3><a class="header" href="#step-2" id="step-2">STEP 2.</a></h3>
+<p>SELECT文をかく．</p>
+<ol start="0">
+<li>必要なカラムを出力するようにする</li>
+</ol>
+<pre><code class="language-sql">SELECT e.id, e.name, o.name, m.name, e.price
+</code></pre>
+<ol>
+<li>テーブルの結合を行う
+どういうデータが入ってるのかよくわからないので，内部結合で行うべきか外部結合で行うべきかわからないぞ．(内部結合で書いてみるぞい．)</li>
+</ol>
+<pre><code class="language-sql">FROM Equipment_list as e 
+INNER JOIN Order_company_list as o ON {条件} 
+INNER JOIN Manufacturing_company_list as m ON {条件}
+INNER JOIN Location_list as l ON {条件}
+</code></pre>
+<ol start="2">
+<li>並べ替える条件を入れる</li>
+</ol>
+<pre><code>ORDER BY e.price DESC
+</code></pre>
+<ol start="3">
+<li>CSVにするように</li>
+</ol>
+<pre><code class="language-sql">INTO OUTFILE 'submit.csv'
+</code></pre>
+<ol start="4">
+<li>今までのを結合 </li>
+</ol>
+<pre><code class="language-sql">SELECT e.id, e.name, o.name, m.name, e.price
+INTO OUTFILE 'submit.csv'
+FROM Equipment_list as e 
+INNER JOIN Order_company_list as o ON {条件} 
+INNER JOIN Manufacturing_company_list as m ON {条件}
+INNER JOIN Location_list as l ON {条件}
+ORDER BY e.price DESC;
+</code></pre>
+<hr />
+<h2><a class="header" href="#解説" id="解説">解説</a></h2>
+<p>複数のテーブルから必要な情報を結合し情報を出力できるかという問題です．
+余分なデータを表示させたくないため内部結合を使います．</p>
+<p><code>Equipment_list</code>のIDを各テーブルのIDと結合させ表示、そして条件に合わせて検索、ソートを行うという問題でした。</p>
+<h3><a class="header" href="#答え" id="答え">答え</a></h3>
+<pre><code class="language-sql">select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Date,Equipment_list.Price  from Equipment_list 
+inner join Order_company_list on Equipment_list.Order_company= Order_company_list.ID
+inner join Manufacturing_company_list on Equipment_list.Manufacturing_campany = Manufacturing_company_list.ID
+inner join Location_list on Equipment_list.Use_place = Location_list.ID
+where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
+order by Price DESC
+</code></pre>
+<p>で確認した後，</p>
+<pre><code class="language-sql">$(sudo) mysql -u root -p -D List -e &quot; select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Price  from Equipment_list inner join Order_company_list on Equipment_list.Order_company= Order_company_list.ID inner join Manufacturing_company_list on Equipment_list.Manufacturing_company = Manufacturing_company_list.ID inner join Location_list on Equipment_list.Use_place = Location_list.ID where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5 order by Price DESC;&quot; |sed 's/\t/,/g'&gt; re.csv
+</code></pre>
+<p>CSV形式で出力↑．</p>
+<pre><code class="language-sql">$cat re.csv
+ID,Name,Name,Name,Price
+24,pc_x,Order_company_E,Manufacturing_company_E,1600
+17,pc_q,Order_company_J,Manufacturing_company_E,800
+</code></pre>
+<h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
+<p>コマンドラインのオプションたち
+参考：https://qiita.com/yulily@github/items/54cb6ccaacf39977455c</p>
+<p>自分が，<code>特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい</code>という条件をつけろという部分の意味が理解できてなくて， <code>where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5</code> をつけ忘れたことが判明した．</p>
+<h4><a class="header" href="#本来すべきだったと思われる追加の作業" id="本来すべきだったと思われる追加の作業">本来すべきだったと思われる追加の作業</a></h4>
+<p>特定の条件を見つける．</p>
+<pre><code class="language-sql">SELECT * FROM Manufacturing_company_list　WHERE Manufacturing_company_list.Name = 'Manufacturing_company_E';
+</code></pre>
+<pre><code class="language-sql">SELECT * FROM Location_list　WHERE Location_list.Name = 'HQ';
+</code></pre>
+<p>これらの結果から，以下を見出す必要があった．</p>
+<pre><code class="language-sql">where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
+</code></pre>
+<h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>
+<ul>
+<li>上記のカラムが表示できるSQL文を作成できている。[40%]</li>
+<li>正しく出力できている。[20%]</li>
+<li>売り上げ１位から順表示ができている。[40%]</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../kakomon/2020-yosen/container2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../kakomon/2020-yosen/programming0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../kakomon/2020-yosen/container2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../kakomon/2020-yosen/programming0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
