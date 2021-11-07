@@ -9,7 +9,7 @@
 - Django
 
 ## バグの内容
-`curl 192.168.7.2:8000/message/`ではエラーが返ってくる．
+`curl 192.168.7.2:8000/message/`ではエラーが返ってくる。
 
 ## 理想の終了状態
 `192.168.7.2:8000/message/`にアクセスし、メッセージを確認できるようにすること
@@ -20,8 +20,8 @@
 ----
 
 ## 考えられる検証、修正手順
-- curlを叩いた時のエラーの内容を確認する．
-    - `curl -v`などする．
+- curlを叩いた時のエラーの内容を確認する。
+    - `curl -v`などする。
 - `python3 manage.py runserver`でググる
     - `django`に関する情報ばっかり出てくるので，djangoが使われている？
 - 以下の技術調査をしたときの構成と比較してみておかしなとこがないかを確認🔍🔍
@@ -33,8 +33,8 @@
 0. Djangoとは
     - Webアプリを簡単に作れるようにするためのPythonフレームワーク
     - https://www.djangoproject.com/
-1. `Pycharm`でプロジェクトを作った．
-    - ぼたんぽちぽちするだけ．
+1. `Pycharm`でプロジェクトを作った。
+    - ぼたんぽちぽちするだけ。
 2. セットアップするためのコマンドをぽちぽち
     - `python3 manage.py migrate`
     - `python3 manage.py createsuperuser` 
@@ -43,36 +43,36 @@
     - 　`Starting development server at http://127.0.0.1:8000/`とのことなので， `curl http://127.0.0.1:8000/`
     - 　なんかエラーもテキストも返ってこなかった.
     - 　アクセスすると![](https://i.imgur.com/lmbYQUR.png)
-    - 　寂しいので，　`urlpatterns` に`path('', admin.site.urls),`を追加した．（←なぜかadminページを表示させる人．．）
+    - 　寂しいので，　`urlpatterns` に`path('', admin.site.urls),`を追加した。（←なぜかadminページを表示させる人。。）
     - 　verboseオプションつけてリベンジだぜ！
-    - `< HTTP/1.1 302 Found　< Date: Mon, 23 Aug 2021 10:00:00 GMT　< Server: WSGIServer/0.2 CPython/3.9.6　< Content-Type:　text/html; charset=utf-8　< Location: /admin/login/?next=/　`とのことなので， `curl http://127.0.0.1:8000/admin/login/` で結果を見てみる．
-    - いい感じにhtmlが返ってきていた．
-    - 　せっかくなのでアクセスもしてみる．![](https://i.imgur.com/vzpbXTD.png)
-    - 　なんかいい感じに表示されていた．動いてそう．
-4. /message/時の動きも知りたい．
-    - とりあえず`http://127.0.0.1:8000/message/`ができるようにしする．
-    - 公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく．
-    - 王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる．
+    - `< HTTP/1.1 302 Found　< Date: Mon, 23 Aug 2021 10:00:00 GMT　< Server: WSGIServer/0.2 CPython/3.9.6　< Content-Type:　text/html; charset=utf-8　< Location: /admin/login/?next=/　`とのことなので， `curl http://127.0.0.1:8000/admin/login/` で結果を見てみる。
+    - いい感じにhtmlが返ってきていた。
+    - 　せっかくなのでアクセスもしてみる。![](https://i.imgur.com/vzpbXTD.png)
+    - 　なんかいい感じに表示されていた。動いてそう。
+4. /message/時の動きも知りたい。
+    - とりあえず`http://127.0.0.1:8000/message/`ができるようにしする。
+    - 公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく。
+    - 王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる。
     - `python3 manage.py startapp message`
-    - なんかmessageディレクトリができた．楽ちんだ．
-    - あとはチュートリアルを真似て`views.py`のコード書いた．
+    - なんかmessageディレクトリができた。楽ちんだ。
+    - あとはチュートリアルを真似て`views.py`のコード書いた。
         - https://docs.djangoproject.com/en/3.2/intro/tutorial01/#write-your-first-view
         - `def index(request): return HttpResponse("This is Message's View.")`
-    - `urls.py`の`urlpatterns`に`path('message/', message.views.index),`追加.（チュートリアルより最短経路なので真面目に何か作るときは`message.urls.py`も作るなどちゃんとしたがいいと思われる．）
-    - `python3 manage.py runserver`し直す．
+    - `urls.py`の`urlpatterns`に`path('message/', message.views.index),`追加.（チュートリアルより最短経路なので真面目に何か作るときは`message.urls.py`も作るなどちゃんとしたがいいと思われる。）
+    - `python3 manage.py runserver`し直す。
     - `curl http://127.0.0.1:8000/message/`
         - 結果：`This is Message's View.%`
 5. ホストを指定して実行してみる
     - ループバックアドレス以外を指定してみたいので，自分の環境で使えるIPアドレスを探した
         - `172.16.0.21`が自分のPCに割り当てられてたのでこれを使う
-        - もっといい方法色々ありそうだなぁ．
+        - もっといい方法色々ありそうだなぁ。
     - `python3 manage.py runserver 172.16.0.21:8000`
     - ` curl http://172.16.0.21:8000/message`
-    - なんかさっきと違う．．
+    - なんかさっきと違う。。
     - サイトを見てみる
     ![](https://i.imgur.com/ORxnwD5.png)
     - `settings.py`で`ALLOW_HOSTS = ['172.16.0.21']`
-        - 同じエラーを起こして[ブログ](https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159)書いてる人がいた．
+        - 同じエラーを起こして[ブログ](https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159)書いてる人がいた。
     - 治った! `http://172.16.0.21:8000/message`![](https://i.imgur.com/yzED450.png)
     - `curl http://172.16.0.21:8000/message/`
         - `This is Message's View.%`
@@ -85,7 +85,7 @@
 ## 解説
 
 ### 原因
-`Django`の`settings.py`の中の`ALLOWED_HOSTS`に何も指定されていなかったため、トラブルが発生していた．
+`Django`の`settings.py`の中の`ALLOWED_HOSTS`に何も指定されていなかったため、トラブルが発生していた。
 
 解決方法は，↑の技術調査と同じ◎！
 
@@ -99,10 +99,10 @@
     </p>
   </div>
 ```
-をみると`debug`がTrueになっているからバグってると言われるので，これをFalseにする．つまり`settings.py`の`DEBUG=False`にする．
+をみると`debug`がTrueになっているからバグってると言われるので，これをFalseにする。つまり`settings.py`の`DEBUG=False`にする。
 
 すると，
-`CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.`というエラーが出るので，`ALLOW_HOSTS = ['172.16.0.21']`としてあげる．
+`CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.`というエラーが出るので，`ALLOW_HOSTS = ['172.16.0.21']`としてあげる。
 
 
 ## ふなちの感想

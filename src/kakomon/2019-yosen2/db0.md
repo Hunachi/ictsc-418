@@ -38,7 +38,7 @@
 
 - 実行されたmysqlコマンドの履歴を表示する方法
 `cat ~/.mysql_history`
-で実行されたmysqlコマンドの履歴を表示することができるはず．[参考](https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries)
+で実行されたmysqlコマンドの履歴を表示することができるはず。[参考](https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries)
 
 これで試した結果(dockerで環境作ってクエリを適当に打った)
 ```
@@ -48,7 +48,7 @@ show\040databases;
 quit;
 ```
 
-\040はASCIIコードのスペースだけど，見づらいのでこれはスペースで表示させるようにする．
+\040はASCIIコードのスペースだけど、見づらいのでこれはスペースで表示させるようにする。
 
 ```
 # sed "s/\\\040/ /g"  ~/.mysql_history
@@ -61,14 +61,14 @@ quit;
 
 日時が表示されてないのでだめ！
 
-どうやらデフォで日時を取得する方法ないかも．．? 　
+どうやらデフォで日時を取得する方法ないかも。。? 　
 https://forums.mysql.com/read.php?10,400933
 https://forums.mysql.com/read.php?10,400933,401057#msg-401057
 
-そこで，
-`general_log`が有効になっているかを確認する．
+そこで、
+`general_log`が有効になっているかを確認する。
 `show variables like 'general_log';`
-もし，
+もし、
 
 ```mysql> show variables like 'general_log';
 +---------------+-------+
@@ -78,19 +78,19 @@ https://forums.mysql.com/read.php?10,400933,401057#msg-401057
 +---------------+-------+
 1 row in set (0.00 sec)
 ```
-ならラッキー，いける．
+ならラッキー、いける。
 OFFなら自分にはお手上げ😭🙌
 
-ONだったら，
+ONだったら、
 `show variables like 'general_log_file';`
-でわかるファイルをみてみる．
+でわかるファイルをみてみる。
 
 **実験した**
-1. デフォではOFFだったので，
-`mysql> set global general_log = 'ON';`を設定．
-2. 色々コマンドを打つ．
+1. デフォではOFFだったので、
+`mysql> set global general_log = 'ON';`を設定。
+2. 色々コマンドを打つ。
 3. `cat /var/lib/mysql/${general_log_file's value}.log`
-4. 表示される例．
+4. 表示される例。
 ```
 /usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -114,11 +114,11 @@ Time                 Id Command    Argument
 
 ### 問2について
 
-状況にて，バックアップの復旧方法を教えてくれてるのでそれをする．(括弧内は自分が打ったコマンド．ログも実際も私の物．)
+状況にて、バックアップの復旧方法を教えてくれてるのでそれをする。(括弧内は自分が打ったコマンド。ログも実際も私の物。)
 
 1. `mysqldump --opt --single-transaction --master-data=2 --default-character-set=utf8mb4 --databases sysbench > /root/backup/backup.dump` (を打つべきだけどこの時は手を抜いて`mysqldump hunadb > dump.sql`)
-2. `mysql -u root -p < /root/backup/backup.dump`(実際に打ったのは，`mysql hunadb < dump.sql`)
-3. `.mysql_history`を確認してみる．
+2. `mysql -u root -p < /root/backup/backup.dump`(実際に打ったのは、`mysql hunadb < dump.sql`)
+3. `.mysql_history`を確認してみる。
 ```
 /usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -274,23 +274,23 @@ Time                 Id Command    Argument
 2021-08-16T10:14:16.344213Z	   24 Quit	
 ```
 
-ログの見方がよくわからないけど，これのバックアップが始まってそうな部分を見つけて，それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）
+ログの見方がよくわからないけど、これのバックアップが始まってそうな部分を見つけて、それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）
 
 ---- 
 
 ## 解説
 
-公式の解説が丁寧なのでそちらを参照．
+公式の解説が丁寧なのでそちらを参照。
 
 ### 解説に対するメモ
 
-- 'DML' = Data Manipulation Language(select文，insert文など)[参考](https://e-words.jp/w/DML.html) 
-- `--base64-output=DECODE-ROWS` はバイナリログが元々ROW形式なので読めるようにするためにつける．
+- 'DML' = Data Manipulation Language(select文、insert文など)[参考](https://e-words.jp/w/DML.html) 
+- `--base64-output=DECODE-ROWS` はバイナリログが元々ROW形式なので読めるようにするためにつける。
 - `-vv` = `--verbose --verbose` (詳細なメッセージを表示) 
-- `-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;` の `binlog.000018` と `34626719`が大事． 
-- `binlog.000018` からバックアップ後のデータを復旧する．
-- startpositionは`34626719` になる．
-- `mysqlbinlog` は MySQLのバイナリログの解析に使われる．
+- `-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;` の `binlog.000018` と `34626719`が大事。 
+- `binlog.000018` からバックアップ後のデータを復旧する。
+- startpositionは`34626719` になる。
+- `mysqlbinlog` は MySQLのバイナリログの解析に使われる。
 
 ### 試してみた
 
@@ -298,20 +298,20 @@ Time                 Id Command    Argument
 
 `mysqldump --password=passwordh --opt --single-transaction --master-data=2  hunadb > dump.sql`
 
---master-data=2が大事だったとは（ちゃんと調べてなきゃ．．）[参考](https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html)
+--master-data=2が大事だったとは（ちゃんと調べてなきゃ。。）[参考](https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html)
 
-`dump.sql`の`-- CHANGE MASTER TO ` のとこの情報をバックアップ以降の更新の始まりを知るべく確認．
+`dump.sql`の`-- CHANGE MASTER TO ` のとこの情報をバックアップ以降の更新の始まりを知るべく確認。
 
 `binlog`もあったのでこれに対して
 
 `mysqlbinlog --no-defaults --base64-output=DECODE-ROWS -vv --start-position=$MASTER_LOG_POS  binlog.000002 | grep -B 10 truncate`
-で，出てきた．
+で、出てきた。
 
-truncateを打った時のtimestampがわかったので，
-問1は，`select from_unixtime(timestamp);`を打てば良さそう．
+truncateを打った時のtimestampがわかったので、
+問1は、`select from_unixtime(timestamp);`を打てば良さそう。
 
 `mysqlbinlog --no-defaults --start-position=$MASTER_LOG_POS --stop-position=$timestamp binlog.000018 | mysql -u root -p`
-で，復旧の手順は行えることが確認できたと思う．（最初の設定ミスってて，データのバックアップをとってすぐにtrancateしたので確認できなかった😂）
+で、復旧の手順は行えることが確認できたと思う。（最初の設定ミスってて、データのバックアップをとってすぐにtrancateしたので確認できなかった😂）
 
 ### 感想
 全然違くて🥺 DBの授業取ってたのに🥺
