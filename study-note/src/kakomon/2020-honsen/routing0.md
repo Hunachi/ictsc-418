@@ -1,5 +1,7 @@
 # インターネット壊れた
-[問題リンク](https://blog.icttoracon.net/2021/03/16/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e5%a3%8a%e3%82%8c%e3%81%9f/)
+解いた人:[nonnonno](https://github.com/nonnonno)
+
+参照した問題・解説のサイト:[インターネット壊れた](https://blog.icttoracon.net/2021/03/16/%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e5%a3%8a%e3%82%8c%e3%81%9f/)
 
 ## 使用環境・ツール
 BGP(プロトコル)  

@@ -1,6 +1,7 @@
 # 名前解決ができなくなった？
+解いた人:[momom-i](https://github.com/momom-i)
 
-[名前解決ができなくなった？](https://blog.icttoracon.net/2021/03/16/%e5%90%8d%e5%89%8d%e8%a7%a3%e6%b1%ba%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9f%ef%bc%9f/)
+参照した問題・解説のサイト:[名前解決ができなくなった？](https://blog.icttoracon.net/2021/03/16/%e5%90%8d%e5%89%8d%e8%a7%a3%e6%b1%ba%e3%81%8c%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%8f%e3%81%aa%e3%81%a3%e3%81%9f%ef%bc%9f/)
 
 ## 前提条件
 

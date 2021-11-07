@@ -1,6 +1,7 @@
 # Server Sent Eventsが動作しない‼
+解いた人:[maimai-y](https://github.com/maimai-y)
 
-[Server Sent Eventsが動作しない‼](https://blog.icttoracon.net/2021/03/16/server-sent-events%e3%81%8c%e5%8b%95%e4%bd%9c%e3%81%97%e3%81%aa%e3%81%84%e2%80%bc/)
+参照した問題・解説のサイト:[Server Sent Eventsが動作しない‼](https://blog.icttoracon.net/2021/03/16/server-sent-events%e3%81%8c%e5%8b%95%e4%bd%9c%e3%81%97%e3%81%aa%e3%81%84%e2%80%bc/)
 
 ## 使用環境・ツール
 - nginx

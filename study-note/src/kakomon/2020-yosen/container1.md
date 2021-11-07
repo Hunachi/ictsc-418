@@ -1,6 +1,7 @@
 # hostnameでつながらない！！
+みんなでワイワイ解いた。
 
-[hostnameでつながらない！！](https://blog.icttoracon.net/2020/11/02/hostname%e3%81%a7%e3%81%a4%e3%81%aa%e3%81%8c%e3%82%89%e3%81%aa%e3%81%84%ef%bc%81%ef%bc%81/)
+参照した問題・解説のサイト:[hostnameでつながらない！！](https://blog.icttoracon.net/2020/11/02/hostname%e3%81%a7%e3%81%a4%e3%81%aa%e3%81%8c%e3%82%89%e3%81%aa%e3%81%84%ef%bc%81%ef%bc%81/)
 
 ## 使用環境・ツール
 - docker-compose

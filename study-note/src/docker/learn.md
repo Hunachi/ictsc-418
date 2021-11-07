@@ -1,4 +1,5 @@
 # Docker について学ぶ
+書いた人:[Hunachi](https://twitter.com/_hunachi)
 
 ## Docker の使われ方
 以下のような時に使われる
@@ -28,7 +29,7 @@ http://docs.docker.jp/get-started/overview.html#　を読んでいく．
 
 https://docs.docker.jp/engine/reference/commandline/run.html
 
-![launch container](http://docs.docker.jp/_images/architecture.png)
+https://docs.docker.jp/engine/introduction/understanding-docker.html の画像がわかりやすい。
 
 ## コマンドたちの説明
 
@@ -55,10 +56,6 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 - -p オプション
     - どのホストのポートでどのコンテナのポートを公開するか指定するためのオプション
     - -p host-port:container-port　のように使う．（例：-p 8080:80）
-
-(↓メモ、後で消す)
-- これはみんなで勉強会中に調べる！
-- 何から参照してもOK！ただし、正しい情報であるだろうということと、使い方が少しでも説明できる場合のみ書いてOK．
 
 ## Docker Composeとは
 

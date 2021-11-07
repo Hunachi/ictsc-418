@@ -1,6 +1,7 @@
 # 適当に俳句投稿サービス作ったらXSRF脆弱性孕んでた件。
+解いた人:[maimai-y](https://github.com/maimai-y)
 
-[適当に俳句投稿サービス作ったらXSRF脆弱性孕んでた件。](https://blog.icttoracon.net/2020/03/01/適当に俳句投稿サービス作ったらxsrf脆弱性孕んで/)
+参照した問題・解説のサイト:[適当に俳句投稿サービス作ったらXSRF脆弱性孕んでた件。](https://blog.icttoracon.net/2020/03/01/適当に俳句投稿サービス作ったらxsrf脆弱性孕んで/)
 
 ## 問題文
 

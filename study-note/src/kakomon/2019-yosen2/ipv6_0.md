@@ -1,6 +1,7 @@
 # Welcome to Nginx のページを表示したい！
+解いた人:[momom-i](https://github.com/momom-i)
 
-[Welcome to Nginx のページを表示したい！](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-welcome-to-nginx%e3%81%ae%e3%83%9a%e3%83%bc%e3%82%b8%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%9f%e3%81%84%ef%bc%81/)
+参照した問題・解説のサイト:[Welcome to Nginx のページを表示したい！](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-welcome-to-nginx%e3%81%ae%e3%83%9a%e3%83%bc%e3%82%b8%e3%82%92%e8%a1%a8%e7%a4%ba%e3%81%97%e3%81%9f%e3%81%84%ef%bc%81/)
 
 # 問題
 
@@ -18,8 +19,6 @@ CSR1000V と nginx のホストには固定で IPv6 アドレスを割り当て�
 DNS サーバは CSR1000V を使用します。
 各ノードには ssh/telnet 用に IPv4 アドレスが設定されていますので必要に応じて使用してください。
 予選終了後に実環境で採点されるので、スコアサーバでの解答は不要です。
-
-![](https://blog.icttoracon.net/wp-content/uploads/2019/12/S79G61efjftfWeUGKU2Yut9N.jpeg)
 
 ### 接続環境
 
@@ -375,5 +374,3 @@ REJECT     all      anywhere             anywhere            reject-with icmp6-a
 ```
 
 クライアントでアクセスしてみると、Welcome to Nginx のページが表示されます。
-
-![](https://blog.icttoracon.net/wp-content/uploads/2019/12/5de7c6a22f8d9c005abff401.png)

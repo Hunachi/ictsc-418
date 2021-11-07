@@ -1,6 +1,7 @@
 # メールを送りたい！
+解いた人:[momom-i](https://github.com/momom-i)
 
-[メールを送りたい！](https://blog.icttoracon.net/2020/03/01/%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8A%E3%81%9F%E3%81%84%EF%BC%81/)
+参照した問題・解説のサイト:[メールを送りたい！](https://blog.icttoracon.net/2020/03/01/%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81%E3%82%8A%E3%81%9F%E3%81%84%EF%BC%81/)
 
 ## アクセス情報
 

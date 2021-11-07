@@ -1,6 +1,7 @@
 # MySQLの復旧をお願いします！！
+解いた人:[Hunachi](https://twitter.com/_hunachi)
 
-[MySQLの復旧をお願いします！！](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-mysql%e3%81%ae%e5%be%a9%e6%97%a7%e3%82%92%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99%ef%bc%81%ef%bc%81/)
+参照した問題・解説のサイト:[MySQLの復旧をお願いします！！](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-mysql%e3%81%ae%e5%be%a9%e6%97%a7%e3%82%92%e3%81%8a%e9%a1%98%e3%81%84%e3%81%97%e3%81%be%e3%81%99%ef%bc%81%ef%bc%81/)
 
 ## 使用環境・ツール
 

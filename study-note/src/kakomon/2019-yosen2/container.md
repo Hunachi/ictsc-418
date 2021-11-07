@@ -1,7 +1,7 @@
 # 君k8s得意って言っていたよね？
-Edit by 鳥山
+解いた人:[とり](https://twitter.com/lnamikol)
 
-[君k8s得意って言っていたよね？](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-%e5%90%9bk8s%e5%be%97%e6%84%8f%e3%81%a3%e3%81%a6%e8%a8%80%e3%81%a3%e3%81%a6%e3%81%84%e3%81%9f%e3%82%88%e3%81%ad/)
+参照した問題・解説のサイト:[君k8s得意って言っていたよね？](https://blog.icttoracon.net/2019/12/10/ictsc2019-%e4%ba%8c%e6%ac%a1%e4%ba%88%e9%81%b8-%e5%95%8f%e9%a1%8c%e8%a7%a3%e8%aa%ac-%e5%90%9bk8s%e5%be%97%e6%84%8f%e3%81%a3%e3%81%a6%e8%a8%80%e3%81%a3%e3%81%a6%e3%81%84%e3%81%9f%e3%82%88%e3%81%ad/)
 
 ## 使用環境・ツール
 - Kubernetes
