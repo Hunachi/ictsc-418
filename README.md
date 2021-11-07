@@ -1,8 +1,5 @@
 # ICTSC2021 夏の陣のために勉強した時の記録
 
-中身は https://github.com/Hunachi/ictsc-418/tree/develop/study-note/src にあります。
-
-
 ## 注意事項
 - このリポジトリで紹介している問題は、[ICTSC tech blog](https://blog.icttoracon.net/) から参照しており、私たちや弊サイトに著作権はありません。
 - この内容を読んでバカにする/誹謗中傷等のことはやめてください。
