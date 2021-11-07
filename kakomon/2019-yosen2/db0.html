@@ -165,7 +165,7 @@
 <ul>
 <li>実行されたmysqlコマンドの履歴を表示する方法
 <code>cat ~/.mysql_history</code>
-で実行されたmysqlコマンドの履歴を表示することができるはず．<a href="https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries">参考</a></li>
+で実行されたmysqlコマンドの履歴を表示することができるはず。<a href="https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries">参考</a></li>
 </ul>
 <p>これで試した結果(dockerで環境作ってクエリを適当に打った)</p>
 <pre><code># cat ~/.mysql_history
@@ -173,7 +173,7 @@ _HiStOrY_V2_
 show\040databases;
 quit;
 </code></pre>
-<p>\040はASCIIコードのスペースだけど，見づらいのでこれはスペースで表示させるようにする．</p>
+<p>\040はASCIIコードのスペースだけど、見づらいのでこれはスペースで表示させるようにする。</p>
 <pre><code># sed &quot;s/\\\040/ /g&quot;  ~/.mysql_history
 _HiStOrY_V2_
 show databases;
@@ -181,13 +181,13 @@ quit;
 </code></pre>
 <p><a href="https://hydrocul.github.io/wiki/commands/sed.html">sedコマンドについて参考になるサイト</a></p>
 <p>日時が表示されてないのでだめ！</p>
-<p>どうやらデフォで日時を取得する方法ないかも．．? 　
+<p>どうやらデフォで日時を取得する方法ないかも。。? 　
 https://forums.mysql.com/read.php?10,400933
 https://forums.mysql.com/read.php?10,400933,401057#msg-401057</p>
-<p>そこで，
-<code>general_log</code>が有効になっているかを確認する．
+<p>そこで、
+<code>general_log</code>が有効になっているかを確認する。
 <code>show variables like 'general_log';</code>
-もし，</p>
+もし、</p>
 <pre><code class="language-mysql&gt;showvariableslike'general_log';">+---------------+-------+
 | Variable_name | Value |
 +---------------+-------+
@@ -195,18 +195,18 @@ https://forums.mysql.com/read.php?10,400933,401057#msg-401057</p>
 +---------------+-------+
 1 row in set (0.00 sec)
 </code></pre>
-<p>ならラッキー，いける．
+<p>ならラッキー、いける。
 OFFなら自分にはお手上げ😭🙌</p>
-<p>ONだったら，
+<p>ONだったら、
 <code>show variables like 'general_log_file';</code>
-でわかるファイルをみてみる．</p>
+でわかるファイルをみてみる。</p>
 <p><strong>実験した</strong></p>
 <ol>
-<li>デフォではOFFだったので，
-<code>mysql&gt; set global general_log = 'ON';</code>を設定．</li>
-<li>色々コマンドを打つ．</li>
+<li>デフォではOFFだったので、
+<code>mysql&gt; set global general_log = 'ON';</code>を設定。</li>
+<li>色々コマンドを打つ。</li>
 <li><code>cat /var/lib/mysql/${general_log_file's value}.log</code></li>
-<li>表示される例．</li>
+<li>表示される例。</li>
 </ol>
 <pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -227,11 +227,11 @@ Time                 Id Command    Argument
 </code></pre>
 <p>↑の日時を解答として提出すれば良さそう！！</p>
 <h3><a class="header" href="#問2について" id="問2について">問2について</a></h3>
-<p>状況にて，バックアップの復旧方法を教えてくれてるのでそれをする．(括弧内は自分が打ったコマンド．ログも実際も私の物．)</p>
+<p>状況にて、バックアップの復旧方法を教えてくれてるのでそれをする。(括弧内は自分が打ったコマンド。ログも実際も私の物。)</p>
 <ol>
 <li><code>mysqldump --opt --single-transaction --master-data=2 --default-character-set=utf8mb4 --databases sysbench &gt; /root/backup/backup.dump</code> (を打つべきだけどこの時は手を抜いて<code>mysqldump hunadb &gt; dump.sql</code>)</li>
-<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>(実際に打ったのは，<code>mysql hunadb &lt; dump.sql</code>)</li>
-<li><code>.mysql_history</code>を確認してみる．</li>
+<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>(実際に打ったのは、<code>mysql hunadb &lt; dump.sql</code>)</li>
+<li><code>.mysql_history</code>を確認してみる。</li>
 </ol>
 <pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -386,32 +386,32 @@ Time                 Id Command    Argument
 2021-08-16T10:14:13.866961Z	   24 Query	show tables
 2021-08-16T10:14:16.344213Z	   24 Quit	
 </code></pre>
-<p>ログの見方がよくわからないけど，これのバックアップが始まってそうな部分を見つけて，それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）</p>
+<p>ログの見方がよくわからないけど、これのバックアップが始まってそうな部分を見つけて、それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）</p>
 <hr />
 <h2><a class="header" href="#解説" id="解説">解説</a></h2>
-<p>公式の解説が丁寧なのでそちらを参照．</p>
+<p>公式の解説が丁寧なのでそちらを参照。</p>
 <h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
 <ul>
-<li>'DML' = Data Manipulation Language(select文，insert文など)<a href="https://e-words.jp/w/DML.html">参考</a> </li>
-<li><code>--base64-output=DECODE-ROWS</code> はバイナリログが元々ROW形式なので読めるようにするためにつける．</li>
+<li>'DML' = Data Manipulation Language(select文、insert文など)<a href="https://e-words.jp/w/DML.html">参考</a> </li>
+<li><code>--base64-output=DECODE-ROWS</code> はバイナリログが元々ROW形式なので読めるようにするためにつける。</li>
 <li><code>-vv</code> = <code>--verbose --verbose</code> (詳細なメッセージを表示) </li>
-<li><code>-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;</code> の <code>binlog.000018</code> と <code>34626719</code>が大事． </li>
-<li><code>binlog.000018</code> からバックアップ後のデータを復旧する．</li>
-<li>startpositionは<code>34626719</code> になる．</li>
-<li><code>mysqlbinlog</code> は MySQLのバイナリログの解析に使われる．</li>
+<li><code>-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;</code> の <code>binlog.000018</code> と <code>34626719</code>が大事。 </li>
+<li><code>binlog.000018</code> からバックアップ後のデータを復旧する。</li>
+<li>startpositionは<code>34626719</code> になる。</li>
+<li><code>mysqlbinlog</code> は MySQLのバイナリログの解析に使われる。</li>
 </ul>
 <h3><a class="header" href="#試してみた" id="試してみた">試してみた</a></h3>
 <p>（私の環境に合わせたコマンドにしてる）</p>
 <p><code>mysqldump --password=passwordh --opt --single-transaction --master-data=2  hunadb &gt; dump.sql</code></p>
-<p>--master-data=2が大事だったとは（ちゃんと調べてなきゃ．．）<a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">参考</a></p>
-<p><code>dump.sql</code>の<code>-- CHANGE MASTER TO </code> のとこの情報をバックアップ以降の更新の始まりを知るべく確認．</p>
+<p>--master-data=2が大事だったとは（ちゃんと調べてなきゃ。。）<a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">参考</a></p>
+<p><code>dump.sql</code>の<code>-- CHANGE MASTER TO </code> のとこの情報をバックアップ以降の更新の始まりを知るべく確認。</p>
 <p><code>binlog</code>もあったのでこれに対して</p>
 <p><code>mysqlbinlog --no-defaults --base64-output=DECODE-ROWS -vv --start-position=$MASTER_LOG_POS  binlog.000002 | grep -B 10 truncate</code>
-で，出てきた．</p>
-<p>truncateを打った時のtimestampがわかったので，
-問1は，<code>select from_unixtime(timestamp);</code>を打てば良さそう．</p>
+で、出てきた。</p>
+<p>truncateを打った時のtimestampがわかったので、
+問1は、<code>select from_unixtime(timestamp);</code>を打てば良さそう。</p>
 <p><code>mysqlbinlog --no-defaults --start-position=$MASTER_LOG_POS --stop-position=$timestamp binlog.000018 | mysql -u root -p</code>
-で，復旧の手順は行えることが確認できたと思う．（最初の設定ミスってて，データのバックアップをとってすぐにtrancateしたので確認できなかった😂）</p>
+で、復旧の手順は行えることが確認できたと思う。（最初の設定ミスってて、データのバックアップをとってすぐにtrancateしたので確認できなかった😂）</p>
 <h3><a class="header" href="#感想" id="感想">感想</a></h3>
 <p>全然違くて🥺 DBの授業取ってたのに🥺</p>
 <h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>

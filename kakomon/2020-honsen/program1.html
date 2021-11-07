@@ -142,7 +142,7 @@
 <li>Django</li>
 </ul>
 <h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
-<p><code>curl 192.168.7.2:8000/message/</code>ではエラーが返ってくる．</p>
+<p><code>curl 192.168.7.2:8000/message/</code>ではエラーが返ってくる。</p>
 <h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
 <p><code>192.168.7.2:8000/message/</code>にアクセスし、メッセージを確認できるようにすること</p>
 <h2><a class="header" href="#初期状態" id="初期状態">初期状態</a></h2>
@@ -150,9 +150,9 @@
 <hr />
 <h2><a class="header" href="#考えられる検証修正手順" id="考えられる検証修正手順">考えられる検証、修正手順</a></h2>
 <ul>
-<li>curlを叩いた時のエラーの内容を確認する．
+<li>curlを叩いた時のエラーの内容を確認する。
 <ul>
-<li><code>curl -v</code>などする．</li>
+<li><code>curl -v</code>などする。</li>
 </ul>
 </li>
 <li><code>python3 manage.py runserver</code>でググる
@@ -171,9 +171,9 @@
 <li>https://www.djangoproject.com/</li>
 </ul>
 </li>
-<li><code>Pycharm</code>でプロジェクトを作った．
+<li><code>Pycharm</code>でプロジェクトを作った。
 <ul>
-<li>ぼたんぽちぽちするだけ．</li>
+<li>ぼたんぽちぽちするだけ。</li>
 </ul>
 </li>
 <li>セットアップするためのコマンドをぽちぽち
@@ -188,29 +188,29 @@
 <li>　<code>Starting development server at http://127.0.0.1:8000/</code>とのことなので， <code>curl http://127.0.0.1:8000/</code></li>
 <li>　なんかエラーもテキストも返ってこなかった.</li>
 <li>　アクセスすると<img src="https://i.imgur.com/lmbYQUR.png" alt="" /></li>
-<li>　寂しいので，　<code>urlpatterns</code> に<code>path('', admin.site.urls),</code>を追加した．（←なぜかadminページを表示させる人．．）</li>
+<li>　寂しいので，　<code>urlpatterns</code> に<code>path('', admin.site.urls),</code>を追加した。（←なぜかadminページを表示させる人。。）</li>
 <li>　verboseオプションつけてリベンジだぜ！</li>
-<li><code>&lt; HTTP/1.1 302 Found　&lt; Date: Mon, 23 Aug 2021 10:00:00 GMT　&lt; Server: WSGIServer/0.2 CPython/3.9.6　&lt; Content-Type:　text/html; charset=utf-8　&lt; Location: /admin/login/?next=/　</code>とのことなので， <code>curl http://127.0.0.1:8000/admin/login/</code> で結果を見てみる．</li>
-<li>いい感じにhtmlが返ってきていた．</li>
-<li>　せっかくなのでアクセスもしてみる．<img src="https://i.imgur.com/vzpbXTD.png" alt="" /></li>
-<li>　なんかいい感じに表示されていた．動いてそう．</li>
+<li><code>&lt; HTTP/1.1 302 Found　&lt; Date: Mon, 23 Aug 2021 10:00:00 GMT　&lt; Server: WSGIServer/0.2 CPython/3.9.6　&lt; Content-Type:　text/html; charset=utf-8　&lt; Location: /admin/login/?next=/　</code>とのことなので， <code>curl http://127.0.0.1:8000/admin/login/</code> で結果を見てみる。</li>
+<li>いい感じにhtmlが返ってきていた。</li>
+<li>　せっかくなのでアクセスもしてみる。<img src="https://i.imgur.com/vzpbXTD.png" alt="" /></li>
+<li>　なんかいい感じに表示されていた。動いてそう。</li>
 </ul>
 </li>
-<li>/message/時の動きも知りたい．
+<li>/message/時の動きも知りたい。
 <ul>
-<li>とりあえず<code>http://127.0.0.1:8000/message/</code>ができるようにしする．</li>
-<li>公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく．</li>
-<li>王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる．</li>
+<li>とりあえず<code>http://127.0.0.1:8000/message/</code>ができるようにしする。</li>
+<li>公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく。</li>
+<li>王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる。</li>
 <li><code>python3 manage.py startapp message</code></li>
-<li>なんかmessageディレクトリができた．楽ちんだ．</li>
-<li>あとはチュートリアルを真似て<code>views.py</code>のコード書いた．
+<li>なんかmessageディレクトリができた。楽ちんだ。</li>
+<li>あとはチュートリアルを真似て<code>views.py</code>のコード書いた。
 <ul>
 <li>https://docs.djangoproject.com/en/3.2/intro/tutorial01/#write-your-first-view</li>
 <li><code>def index(request): return HttpResponse(&quot;This is Message's View.&quot;)</code></li>
 </ul>
 </li>
-<li><code>urls.py</code>の<code>urlpatterns</code>に<code>path('message/', message.views.index),</code>追加.（チュートリアルより最短経路なので真面目に何か作るときは<code>message.urls.py</code>も作るなどちゃんとしたがいいと思われる．）</li>
-<li><code>python3 manage.py runserver</code>し直す．</li>
+<li><code>urls.py</code>の<code>urlpatterns</code>に<code>path('message/', message.views.index),</code>追加.（チュートリアルより最短経路なので真面目に何か作るときは<code>message.urls.py</code>も作るなどちゃんとしたがいいと思われる。）</li>
+<li><code>python3 manage.py runserver</code>し直す。</li>
 <li><code>curl http://127.0.0.1:8000/message/</code>
 <ul>
 <li>結果：<code>This is Message's View.%</code></li>
@@ -223,17 +223,17 @@
 <li>ループバックアドレス以外を指定してみたいので，自分の環境で使えるIPアドレスを探した
 <ul>
 <li><code>172.16.0.21</code>が自分のPCに割り当てられてたのでこれを使う</li>
-<li>もっといい方法色々ありそうだなぁ．</li>
+<li>もっといい方法色々ありそうだなぁ。</li>
 </ul>
 </li>
 <li><code>python3 manage.py runserver 172.16.0.21:8000</code></li>
 <li><code> curl http://172.16.0.21:8000/message</code></li>
-<li>なんかさっきと違う．．</li>
+<li>なんかさっきと違う。。</li>
 <li>サイトを見てみる
 <img src="https://i.imgur.com/ORxnwD5.png" alt="" /></li>
 <li><code>settings.py</code>で<code>ALLOW_HOSTS = ['172.16.0.21']</code>
 <ul>
-<li>同じエラーを起こして<a href="https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159">ブログ</a>書いてる人がいた．</li>
+<li>同じエラーを起こして<a href="https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159">ブログ</a>書いてる人がいた。</li>
 </ul>
 </li>
 <li>治った! <code>http://172.16.0.21:8000/message</code><img src="https://i.imgur.com/yzED450.png" alt="" /></li>
@@ -249,7 +249,7 @@
 <hr />
 <h2><a class="header" href="#解説" id="解説">解説</a></h2>
 <h3><a class="header" href="#原因" id="原因">原因</a></h3>
-<p><code>Django</code>の<code>settings.py</code>の中の<code>ALLOWED_HOSTS</code>に何も指定されていなかったため、トラブルが発生していた．</p>
+<p><code>Django</code>の<code>settings.py</code>の中の<code>ALLOWED_HOSTS</code>に何も指定されていなかったため、トラブルが発生していた。</p>
 <p>解決方法は，↑の技術調査と同じ◎！</p>
 <p><code>curl</code>した時に，</p>
 <pre><code>&lt;div id=&quot;explanation&quot;&gt;
@@ -260,9 +260,9 @@
     &lt;/p&gt;
   &lt;/div&gt;
 </code></pre>
-<p>をみると<code>debug</code>がTrueになっているからバグってると言われるので，これをFalseにする．つまり<code>settings.py</code>の<code>DEBUG=False</code>にする．</p>
+<p>をみると<code>debug</code>がTrueになっているからバグってると言われるので，これをFalseにする。つまり<code>settings.py</code>の<code>DEBUG=False</code>にする。</p>
 <p>すると，
-<code>CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.</code>というエラーが出るので，<code>ALLOW_HOSTS = ['172.16.0.21']</code>としてあげる．</p>
+<code>CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.</code>というエラーが出るので，<code>ALLOW_HOSTS = ['172.16.0.21']</code>としてあげる。</p>
 <h2><a class="header" href="#ふなちの感想" id="ふなちの感想">ふなちの感想</a></h2>
 <p>:100:</p>
 <p><code>curl</code>の結果だけで解決できるようになりたい！</p>

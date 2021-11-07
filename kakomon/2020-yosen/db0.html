@@ -171,27 +171,27 @@
 <h4><a class="header" href="#csvを生成する方法" id="csvを生成する方法">CSVを生成する方法</a></h4>
 <pre><code class="language-sql">SELECT * FROM {DB_NAME} INFO OUTFILE 'hoge.csv'
 </code></pre>
-<p><code> INTO OUTFILE 'hoge.csv'</code>のところで出力するファイルを指定している．</p>
+<p><code> INTO OUTFILE 'hoge.csv'</code>のところで出力するファイルを指定している。</p>
 <p>参考：https://qiita.com/catatsuy/items/9fdf4423d5f4885b9bf9
 csvからデータのimportをする方法も書いてるサイト：
 https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 <h4><a class="header" href="#テーブルの結合方法" id="テーブルの結合方法">テーブルの結合方法</a></h4>
 <h5><a class="header" href="#外部結合" id="外部結合">外部結合</a></h5>
-<p>条件に一致するもの同士を結合させるのに加えて，どちらかのテーブルにしか存在しないレコードも残して結合する． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
-<p><code>LEFT OUTER JOIN</code>の場合は，先に書いたテーブル側のカラムが消えない．
-<code>RIGHT OUTER JOIN</code>の場合は，後に書いたテーブルのカラムが消えない．</p>
+<p>条件に一致するもの同士を結合させるのに加えて、どちらかのテーブルにしか存在しないレコードも残して結合する。 https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<p><code>LEFT OUTER JOIN</code>の場合は、先に書いたテーブル側のカラムが消えない。
+<code>RIGHT OUTER JOIN</code>の場合は、後に書いたテーブルのカラムが消えない。</p>
 <pre><code>SELECT * FROM hoge
     LEFT OUTER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
-<p>↑hogeのうち，どのpiyo.idとも一致しないhoge.idのレコードも残されてpiyoの方の値はnullになる．どのhoge.idとも一致しないレコードは消される．</p>
+<p>↑hogeのうち、どのpiyo.idとも一致しないhoge.idのレコードも残されてpiyoの方の値はnullになる。どのhoge.idとも一致しないレコードは消される。</p>
 <h5><a class="header" href="#内部結合" id="内部結合">内部結合</a></h5>
-<p>テーブルの指定したカラムが一致するものだけを結合する方法．
-条件に合う相手がいないレコードは消される． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<p>テーブルの指定したカラムが一致するものだけを結合する方法。
+条件に合う相手がいないレコードは消される。 https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
 <pre><code>SELECT * FROM hoge
     INNER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
 <h5><a class="header" href="#自然結合" id="自然結合">自然結合</a></h5>
-<p>結合条件として，同じ名前のカラム同士で結合する場合，<code>NATURAL</code>を付けることで結合条件を省略することができる方法． https://www.dbonline.jp/sqlite/join/index4.html</p>
+<p>結合条件として、同じ名前のカラム同士で結合する場合、<code>NATURAL</code>を付けることで結合条件を省略することができる方法。 https://www.dbonline.jp/sqlite/join/index4.html</p>
 <pre><code>SELECT * FROM hoge
     NATURAL INNER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
@@ -200,11 +200,11 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
     INNER JOIN piyo ON hoge.id = piyo.id
     INNER JOIN fuga ON piyo.f_id = fuga.id;
 </code></pre>
-<p>のように書けばいい．</p>
+<p>のように書けばいい。</p>
 <h2><a class="header" href="#解決方法" id="解決方法">解決方法</a></h2>
-<p>コーディングテストのようにいい感じのSELECT文を書けば良さそう．（トラブルシューティングではなさそう）</p>
+<p>コーディングテストのようにいい感じのSELECT文を書けば良さそう。（トラブルシューティングではなさそう）</p>
 <h3><a class="header" href="#step-0" id="step-0">STEP 0.</a></h3>
-<p>DB(List)に接続する．</p>
+<p>DB(List)に接続する。</p>
 <ul>
 <li><code>sudo mysql</code></li>
 <li><code>mysql&gt; use List;</code></li>
@@ -214,11 +214,11 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 <li><code>mysql&gt; desc List;</code></li>
 </ul>
 <h3><a class="header" href="#step-1" id="step-1">STEP 1.</a></h3>
-<p>各テーブルのカラムを確認するために，それぞれに対して
-<code>mysql&gt; SELECT * FROM {DB_NAME}</code> をする．</p>
-<p>IDの指定が被っている部分を確認して結合する時の条件を考える．</p>
+<p>各テーブルのカラムを確認するために、それぞれに対して
+<code>mysql&gt; SELECT * FROM {DB_NAME}</code> をする。</p>
+<p>IDの指定が被っている部分を確認して結合する時の条件を考える。</p>
 <h3><a class="header" href="#step-2" id="step-2">STEP 2.</a></h3>
-<p>SELECT文をかく．</p>
+<p>SELECT文をかく。</p>
 <ol start="0">
 <li>必要なカラムを出力するようにする</li>
 </ol>
@@ -226,7 +226,7 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 </code></pre>
 <ol>
 <li>テーブルの結合を行う
-どういうデータが入ってるのかよくわからないので，内部結合で行うべきか外部結合で行うべきかわからないぞ．(内部結合で書いてみるぞい．)</li>
+どういうデータが入ってるのかよくわからないので、内部結合で行うべきか外部結合で行うべきかわからないぞ。(内部結合で書いてみるぞい。)</li>
 </ol>
 <pre><code class="language-sql">FROM Equipment_list as e 
 INNER JOIN Order_company_list as o ON {条件} 
@@ -256,8 +256,8 @@ ORDER BY e.price DESC;
 </code></pre>
 <hr />
 <h2><a class="header" href="#解説" id="解説">解説</a></h2>
-<p>複数のテーブルから必要な情報を結合し情報を出力できるかという問題です．
-余分なデータを表示させたくないため内部結合を使います．</p>
+<p>複数のテーブルから必要な情報を結合し情報を出力できるかという問題です。
+余分なデータを表示させたくないため内部結合を使います。</p>
 <p><code>Equipment_list</code>のIDを各テーブルのIDと結合させ表示、そして条件に合わせて検索、ソートを行うという問題でした。</p>
 <h3><a class="header" href="#答え" id="答え">答え</a></h3>
 <pre><code class="language-sql">select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Date,Equipment_list.Price  from Equipment_list 
@@ -267,10 +267,10 @@ inner join Location_list on Equipment_list.Use_place = Location_list.ID
 where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
 order by Price DESC
 </code></pre>
-<p>で確認した後，</p>
+<p>で確認した後、</p>
 <pre><code class="language-sql">$(sudo) mysql -u root -p -D List -e &quot; select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Price  from Equipment_list inner join Order_company_list on Equipment_list.Order_company= Order_company_list.ID inner join Manufacturing_company_list on Equipment_list.Manufacturing_company = Manufacturing_company_list.ID inner join Location_list on Equipment_list.Use_place = Location_list.ID where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5 order by Price DESC;&quot; |sed 's/\t/,/g'&gt; re.csv
 </code></pre>
-<p>CSV形式で出力↑．</p>
+<p>CSV形式で出力↑。</p>
 <pre><code class="language-sql">$cat re.csv
 ID,Name,Name,Name,Price
 24,pc_x,Order_company_E,Manufacturing_company_E,1600
@@ -279,14 +279,14 @@ ID,Name,Name,Name,Price
 <h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
 <p>コマンドラインのオプションたち
 参考：https://qiita.com/yulily@github/items/54cb6ccaacf39977455c</p>
-<p>自分が，<code>特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい</code>という条件をつけろという部分の意味が理解できてなくて， <code>where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5</code> をつけ忘れたことが判明した．</p>
+<p>自分が、<code>特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい</code>という条件をつけろという部分の意味が理解できてなくて、 <code>where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5</code> をつけ忘れたことが判明した。</p>
 <h4><a class="header" href="#本来すべきだったと思われる追加の作業" id="本来すべきだったと思われる追加の作業">本来すべきだったと思われる追加の作業</a></h4>
-<p>特定の条件を見つける．</p>
+<p>特定の条件を見つける。</p>
 <pre><code class="language-sql">SELECT * FROM Manufacturing_company_list　WHERE Manufacturing_company_list.Name = 'Manufacturing_company_E';
 </code></pre>
 <pre><code class="language-sql">SELECT * FROM Location_list　WHERE Location_list.Name = 'HQ';
 </code></pre>
-<p>これらの結果から，以下を見出す必要があった．</p>
+<p>これらの結果から、以下を見出す必要があった。</p>
 <pre><code class="language-sql">where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
 </code></pre>
 <h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>

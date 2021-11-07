@@ -143,11 +143,11 @@
 </ul>
 <p>などなど．．</p>
 <h2><a class="header" href="#もっと詳しくdockerの基礎を学ぶ" id="もっと詳しくdockerの基礎を学ぶ">もっと詳しくDockerの基礎を学ぶ</a></h2>
-<p>http://docs.docker.jp/get-started/overview.html#　を読んでいく．</p>
+<p>http://docs.docker.jp/get-started/overview.html#　を読んでいく。</p>
 <h2><a class="header" href="#仮想化とコンテナ" id="仮想化とコンテナ">仮想化とコンテナ</a></h2>
-<p>（ホスト型）仮想化とは、CPUやメモリ、I/Oまでも仮想化し、複数のOSを単一のシステム上で実行できるようにする技術． これを実現するソフトウェアのことをハイパーバイザー（hypervisor）という．</p>
+<p>（ホスト型）仮想化とは、CPUやメモリ、I/Oまでも仮想化し、複数のOSを単一のシステム上で実行できるようにする技術。 これを実現するソフトウェアのことをハイパーバイザー（hypervisor）という。</p>
 <p><img src="./image/hypervisor_system.png" alt="hypervisor system image" /></p>
-<p>コンテナ（型仮想化）とは、カーネルランドよりも上を仮想化する技術．つまり、コンテナが作られる土台となる基盤システムと互換性のあるコンテナしか作れない．</p>
+<p>コンテナ（型仮想化）とは、カーネルランドよりも上を仮想化する技術。つまり、コンテナが作られる土台となる基盤システムと互換性のあるコンテナしか作れない。</p>
 <p><img src="./image/docker_system.png" alt="docker image" /></p>
 <h2><a class="header" href="#docker-の挙動" id="docker-の挙動">Docker の挙動</a></h2>
 <h3><a class="header" href="#コンテナが起動される時の挙動" id="コンテナが起動される時の挙動">コンテナが起動される時の挙動</a></h3>
@@ -155,7 +155,7 @@
 <p>https://docs.docker.jp/engine/introduction/understanding-docker.html の画像がわかりやすい。</p>
 <h2><a class="header" href="#コマンドたちの説明" id="コマンドたちの説明">コマンドたちの説明</a></h2>
 <h3><a class="header" href="#docker-run" id="docker-run">docker run</a></h3>
-<p>指定したイメージ（image）からコンテナの作成、起動を行う．</p>
+<p>指定したイメージ（image）からコンテナの作成、起動を行う。</p>
 <p><strong>使い方</strong></p>
 <p>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</p>
 <p><strong>オプション</strong></p>
@@ -172,24 +172,24 @@
 <p>--name オプション</p>
 <ul>
 <li>コンテナに名前をつけるためのオプション</li>
-<li>--name　container-name のように使う．</li>
+<li>--name　container-name のように使う。</li>
 </ul>
 </li>
 <li>
 <p>-p オプション</p>
 <ul>
 <li>どのホストのポートでどのコンテナのポートを公開するか指定するためのオプション</li>
-<li>-p host-port:container-port　のように使う．（例：-p 8080:80）</li>
+<li>-p host-port:container-port　のように使う。（例：-p 8080:80）</li>
 </ul>
 </li>
 </ul>
 <h2><a class="header" href="#docker-composeとは" id="docker-composeとは">Docker Composeとは</a></h2>
 <p>https://docs.docker.com/compose/</p>
-<p>複数のコンテナを使って、アプリケーションを起動させたい時に使われる． yamlファイルを使ってアプリケーションのサービス（コンテナたち）の設定を書いて、その設定でサービス（コンテナたち）を起動する．　複数のコンテナを使う場合はこの方法を取らないと通信の設定がとても面倒になったりする．</p>
+<p>複数のコンテナを使って、アプリケーションを起動させたい時に使われる。 yamlファイルを使ってアプリケーションのサービス（コンテナたち）の設定を書いて、その設定でサービス（コンテナたち）を起動する。　複数のコンテナを使う場合はこの方法を取らないと通信の設定がとても面倒になったりする。</p>
 <p><code>docker-compose.yaml</code>があるディレクトリ内（同じ階層）で</p>
 <p><code>docker compose up</code></p>
-<p>コマンドを実行すると起動することができる．
-バックグラウンドで動かしたい場合は、<code>-d</code>をつけるのを忘れないように．</p>
+<p>コマンドを実行すると起動することができる。
+バックグラウンドで動かしたい場合は、<code>-d</code>をつけるのを忘れないように。</p>
 
                     </main>
 

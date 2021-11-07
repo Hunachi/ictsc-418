@@ -145,12 +145,12 @@
 <li>Go</li>
 </ul>
 <h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
-<p>Dockerのマルチステージビルドを使って,Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない.
+<p>Dockerのマルチステージビルドを使って、Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない.
 Dockerfileが間違えている.</p>
-<p><code>~/app/Dockerfile</code>を用いて<code>docker image build -t ictsc2020:0.1 .</code>したあとに,<code>docker run -p 80:1323 [コンテナID]</code>をするとエラーが表示され,コンテナ上のバイナリが正常に実行できない.</p>
+<p><code>~/app/Dockerfile</code>を用いて<code>docker image build -t ictsc2020:0.1 .</code>したあとに、<code>docker run -p 80:1323 [コンテナID]</code>をするとエラーが表示され、コンテナ上のバイナリが正常に実行できない.</p>
 <h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
 <p><code>curl localhost</code>で<code>Welcome to ICTSC2020!</code>が返ってくる.
-また,問題の解決が永続化されている．</p>
+また、問題の解決が永続化されている。</p>
 <hr />
 <h2><a class="header" href="#技術調査" id="技術調査">技術調査</a></h2>
 <h4><a class="header" href="#dockerのマルチステージビルドとは" id="dockerのマルチステージビルドとは">Dockerのマルチステージビルドとは？</a></h4>
@@ -160,7 +160,7 @@ Dockerfileが間違えている.</p>
 <li>↑の訳らしい: https://qiita.com/carimatics/items/01663d32bf9983cfbcfe</li>
 </ul>
 </li>
-<li>必要なバイナリorファイルだけをコピーしてきたイメージを楽に作ることができるようになる．</li>
+<li>必要なバイナリorファイルだけをコピーしてきたイメージを楽に作ることができるようになる。</li>
 </ul>
 <h4><a class="header" href="#dockerfileの内容をみてみる" id="dockerfileの内容をみてみる">Dockerfileの内容をみてみる</a></h4>
 <pre><code>// ~/app/Dockerfileの内容
@@ -185,21 +185,21 @@ Dockerfileが間違えている.</p>
 <ul>
 <li>1つ目のコンテナの作成</li>
 <li>golang:1.15.0を親イメージとして指定</li>
-<li>ビルドステージに builder という名前をつけている．（デフォルトでは 0 から連番で付けられる．）</li>
+<li>ビルドステージに builder という名前をつけている。（デフォルトでは 0 から連番で付けられる。）</li>
 </ul>
 </li>
 <li>
 <p>2行目：　Go modulesを使うという指定</p>
 <ul>
-<li>何も指定しないor auto指定だとgo.modファイルがある時だけGo modulesを使うとみなされる．</li>
-<li>Go modulesを使うと，importしたいライブラリと，ライブラリの依存ファイルをgo.modに書いてあげるとダウンロードしてくれてビルドしてくれるようになる．</li>
+<li>何も指定しないor auto指定だとgo.modファイルがある時だけGo modulesを使うとみなされる。</li>
+<li>Go modulesを使うと、importしたいライブラリと、ライブラリの依存ファイルをgo.modに書いてあげるとダウンロードしてくれてビルドしてくれるようになる。</li>
 </ul>
 </li>
 <li>
 <p>3行目:Goのファイルたちが置いてあるパスの指定</p>
 <ul>
-<li>特に指定してない．</li>
-<li>import文の解決に使うために設定するらしい．</li>
+<li>特に指定してない。</li>
+<li>import文の解決に使うために設定するらしい。</li>
 </ul>
 </li>
 <li>
@@ -256,7 +256,7 @@ Dockerfileが間違えている.</p>
 </ul>
 <h4><a class="header" href="#原因ではなさそうなこと" id="原因ではなさそうなこと">原因ではなさそうなこと</a></h4>
 <ul>
-<li>imageは作成できており実行時エラーのため,Dockerファイル内のコマンドが途中で転けているとかではない</li>
+<li>imageは作成できており実行時エラーのため、Dockerファイル内のコマンドが途中で転けているとかではない</li>
 <li>ポートの指定方法</li>
 </ul>
 <hr />
@@ -266,11 +266,11 @@ Dockerfileが間違えている.</p>
 <p>golangで書いたプログラムを<code>go build</code>すると、基本的には静的リンクになるが<code>net</code>パッケージを使用していた場合、自動的に動的リンクになる。(go1.4から)</p>
 </blockquote>
 <h3><a class="header" href="#原因" id="原因">原因</a></h3>
-<p>Dockerのマルチステージビルドをする際に、ビルドされたバイナリが動的リンクなせいでコンテナ間を移動させたあとに実行しようしてもうまくいかなかったため．</p>
+<p>Dockerのマルチステージビルドをする際に、ビルドされたバイナリが動的リンクなせいでコンテナ間を移動させたあとに実行しようしてもうまくいかなかったため。</p>
 <h3><a class="header" href="#解決方法" id="解決方法">解決方法</a></h3>
 <ol>
 <li><code>~/app/Dockerfile</code>の6行目の<code>RUN go build -o /app ./main.go</code>を<code>RUN CGO_ENABLED=0 go build -o /app ./main.go</code>に変更</li>
-<li>コンテナをbuildし直す．　<code>docker image build -t ictsc2020:0.1 </code></li>
+<li>コンテナをbuildし直す。　<code>docker image build -t ictsc2020:0.1 </code></li>
 <li>実行し直す <code>docker run -p 80:1323 [コンテナID]</code></li>
 </ol>
 <h4><a class="header" href="#想定外解放としてあったもの" id="想定外解放としてあったもの">想定外解放としてあったもの</a></h4>
@@ -280,10 +280,10 @@ Dockerfileが間違えている.</p>
 <h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
 <ul>
 <li>
-<p>実行時に<code>Not Found</code>っていうエラーが起きた時は，動的リンクがうまくいっていないパターンも考えるといいっぽい．<a href="https://e-words.jp/w/%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF.html#:%7E:text=%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%A8%E3%81%AF,%E3%81%97%E3%81%A6%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%80%82">動的リンク</a></p>
+<p>実行時に<code>Not Found</code>っていうエラーが起きた時は、動的リンクがうまくいっていないパターンも考えるといいっぽい。<a href="https://e-words.jp/w/%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF.html#:%7E:text=%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%A8%E3%81%AF,%E3%81%97%E3%81%A6%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%80%82">動的リンク</a></p>
 </li>
 <li>
-<p>バイナリを静的にコンパイルさせる為には<code>CGO_ENABLED=0</code>を付ける．</p>
+<p>バイナリを静的にコンパイルさせる為には<code>CGO_ENABLED=0</code>を付ける。</p>
 <ul>
 <li>https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/</li>
 </ul>
@@ -291,9 +291,9 @@ Dockerfileが間違えている.</p>
 <li>
 <p><code>ldd</code>コマンド</p>
 <ul>
-<li>すべての依存関係のパス名をリストで表示してくれる．</li>
+<li>すべての依存関係のパス名をリストで表示してくれる。</li>
 <li>動的リンクやファイルの依存関係のエラーの時に役に立ちそう？</li>
-<li>多分 <code>ldd app</code> で調べることができる．</li>
+<li>多分 <code>ldd app</code> で調べることができる。</li>
 <li>https://www.ibm.com/docs/ja/ssw_aix_71/l_commands/ldd.html</li>
 <li>https://wa3.i-3-i.info/word13813.html</li>
 </ul>

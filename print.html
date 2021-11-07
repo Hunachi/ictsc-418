@@ -1162,7 +1162,7 @@ pv0002   20Gi       RWO            Recycle          Bound    default/my-release-
 <ul>
 <li>実行されたmysqlコマンドの履歴を表示する方法
 <code>cat ~/.mysql_history</code>
-で実行されたmysqlコマンドの履歴を表示することができるはず．<a href="https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries">参考</a></li>
+で実行されたmysqlコマンドの履歴を表示することができるはず。<a href="https://codehero.jp/mysql/7818031/sql-command-to-display-history-of-queries">参考</a></li>
 </ul>
 <p>これで試した結果(dockerで環境作ってクエリを適当に打った)</p>
 <pre><code># cat ~/.mysql_history
@@ -1170,7 +1170,7 @@ _HiStOrY_V2_
 show\040databases;
 quit;
 </code></pre>
-<p>\040はASCIIコードのスペースだけど，見づらいのでこれはスペースで表示させるようにする．</p>
+<p>\040はASCIIコードのスペースだけど、見づらいのでこれはスペースで表示させるようにする。</p>
 <pre><code># sed &quot;s/\\\040/ /g&quot;  ~/.mysql_history
 _HiStOrY_V2_
 show databases;
@@ -1178,13 +1178,13 @@ quit;
 </code></pre>
 <p><a href="https://hydrocul.github.io/wiki/commands/sed.html">sedコマンドについて参考になるサイト</a></p>
 <p>日時が表示されてないのでだめ！</p>
-<p>どうやらデフォで日時を取得する方法ないかも．．? 　
+<p>どうやらデフォで日時を取得する方法ないかも。。? 　
 https://forums.mysql.com/read.php?10,400933
 https://forums.mysql.com/read.php?10,400933,401057#msg-401057</p>
-<p>そこで，
-<code>general_log</code>が有効になっているかを確認する．
+<p>そこで、
+<code>general_log</code>が有効になっているかを確認する。
 <code>show variables like 'general_log';</code>
-もし，</p>
+もし、</p>
 <pre><code class="language-mysql&gt;showvariableslike'general_log';">+---------------+-------+
 | Variable_name | Value |
 +---------------+-------+
@@ -1192,18 +1192,18 @@ https://forums.mysql.com/read.php?10,400933,401057#msg-401057</p>
 +---------------+-------+
 1 row in set (0.00 sec)
 </code></pre>
-<p>ならラッキー，いける．
+<p>ならラッキー、いける。
 OFFなら自分にはお手上げ😭🙌</p>
-<p>ONだったら，
+<p>ONだったら、
 <code>show variables like 'general_log_file';</code>
-でわかるファイルをみてみる．</p>
+でわかるファイルをみてみる。</p>
 <p><strong>実験した</strong></p>
 <ol>
-<li>デフォではOFFだったので，
-<code>mysql&gt; set global general_log = 'ON';</code>を設定．</li>
-<li>色々コマンドを打つ．</li>
+<li>デフォではOFFだったので、
+<code>mysql&gt; set global general_log = 'ON';</code>を設定。</li>
+<li>色々コマンドを打つ。</li>
 <li><code>cat /var/lib/mysql/${general_log_file's value}.log</code></li>
-<li>表示される例．</li>
+<li>表示される例。</li>
 </ol>
 <pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -1224,11 +1224,11 @@ Time                 Id Command    Argument
 </code></pre>
 <p>↑の日時を解答として提出すれば良さそう！！</p>
 <h3><a class="header" href="#問2について" id="問2について">問2について</a></h3>
-<p>状況にて，バックアップの復旧方法を教えてくれてるのでそれをする．(括弧内は自分が打ったコマンド．ログも実際も私の物．)</p>
+<p>状況にて、バックアップの復旧方法を教えてくれてるのでそれをする。(括弧内は自分が打ったコマンド。ログも実際も私の物。)</p>
 <ol>
 <li><code>mysqldump --opt --single-transaction --master-data=2 --default-character-set=utf8mb4 --databases sysbench &gt; /root/backup/backup.dump</code> (を打つべきだけどこの時は手を抜いて<code>mysqldump hunadb &gt; dump.sql</code>)</li>
-<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>(実際に打ったのは，<code>mysql hunadb &lt; dump.sql</code>)</li>
-<li><code>.mysql_history</code>を確認してみる．</li>
+<li><code>mysql -u root -p &lt; /root/backup/backup.dump</code>(実際に打ったのは、<code>mysql hunadb &lt; dump.sql</code>)</li>
+<li><code>.mysql_history</code>を確認してみる。</li>
 </ol>
 <pre><code>/usr/sbin/mysqld, Version: 8.0.25 (MySQL Community Server - GPL). started with:
 Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
@@ -1383,32 +1383,32 @@ Time                 Id Command    Argument
 2021-08-16T10:14:13.866961Z	   24 Query	show tables
 2021-08-16T10:14:16.344213Z	   24 Quit	
 </code></pre>
-<p>ログの見方がよくわからないけど，これのバックアップが始まってそうな部分を見つけて，それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）</p>
+<p>ログの見方がよくわからないけど、これのバックアップが始まってそうな部分を見つけて、それ以外の部分のlogに書いてあるコマンドを打っていけばいいのでは？（筋肉で解決）</p>
 <hr />
 <h2><a class="header" href="#解説-9" id="解説-9">解説</a></h2>
-<p>公式の解説が丁寧なのでそちらを参照．</p>
+<p>公式の解説が丁寧なのでそちらを参照。</p>
 <h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
 <ul>
-<li>'DML' = Data Manipulation Language(select文，insert文など)<a href="https://e-words.jp/w/DML.html">参考</a> </li>
-<li><code>--base64-output=DECODE-ROWS</code> はバイナリログが元々ROW形式なので読めるようにするためにつける．</li>
+<li>'DML' = Data Manipulation Language(select文、insert文など)<a href="https://e-words.jp/w/DML.html">参考</a> </li>
+<li><code>--base64-output=DECODE-ROWS</code> はバイナリログが元々ROW形式なので読めるようにするためにつける。</li>
 <li><code>-vv</code> = <code>--verbose --verbose</code> (詳細なメッセージを表示) </li>
-<li><code>-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;</code> の <code>binlog.000018</code> と <code>34626719</code>が大事． </li>
-<li><code>binlog.000018</code> からバックアップ後のデータを復旧する．</li>
-<li>startpositionは<code>34626719</code> になる．</li>
-<li><code>mysqlbinlog</code> は MySQLのバイナリログの解析に使われる．</li>
+<li><code>-- CHANGE MASTER TO MASTER_LOG_FILE='binlog.000018', MASTER_LOG_POS=34626719;</code> の <code>binlog.000018</code> と <code>34626719</code>が大事。 </li>
+<li><code>binlog.000018</code> からバックアップ後のデータを復旧する。</li>
+<li>startpositionは<code>34626719</code> になる。</li>
+<li><code>mysqlbinlog</code> は MySQLのバイナリログの解析に使われる。</li>
 </ul>
 <h3><a class="header" href="#試してみた" id="試してみた">試してみた</a></h3>
 <p>（私の環境に合わせたコマンドにしてる）</p>
 <p><code>mysqldump --password=passwordh --opt --single-transaction --master-data=2  hunadb &gt; dump.sql</code></p>
-<p>--master-data=2が大事だったとは（ちゃんと調べてなきゃ．．）<a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">参考</a></p>
-<p><code>dump.sql</code>の<code>-- CHANGE MASTER TO </code> のとこの情報をバックアップ以降の更新の始まりを知るべく確認．</p>
+<p>--master-data=2が大事だったとは（ちゃんと調べてなきゃ。。）<a href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">参考</a></p>
+<p><code>dump.sql</code>の<code>-- CHANGE MASTER TO </code> のとこの情報をバックアップ以降の更新の始まりを知るべく確認。</p>
 <p><code>binlog</code>もあったのでこれに対して</p>
 <p><code>mysqlbinlog --no-defaults --base64-output=DECODE-ROWS -vv --start-position=$MASTER_LOG_POS  binlog.000002 | grep -B 10 truncate</code>
-で，出てきた．</p>
-<p>truncateを打った時のtimestampがわかったので，
-問1は，<code>select from_unixtime(timestamp);</code>を打てば良さそう．</p>
+で、出てきた。</p>
+<p>truncateを打った時のtimestampがわかったので、
+問1は、<code>select from_unixtime(timestamp);</code>を打てば良さそう。</p>
 <p><code>mysqlbinlog --no-defaults --start-position=$MASTER_LOG_POS --stop-position=$timestamp binlog.000018 | mysql -u root -p</code>
-で，復旧の手順は行えることが確認できたと思う．（最初の設定ミスってて，データのバックアップをとってすぐにtrancateしたので確認できなかった😂）</p>
+で、復旧の手順は行えることが確認できたと思う。（最初の設定ミスってて、データのバックアップをとってすぐにtrancateしたので確認できなかった😂）</p>
 <h3><a class="header" href="#感想" id="感想">感想</a></h3>
 <p>全然違くて🥺 DBの授業取ってたのに🥺</p>
 <h2><a class="header" href="#採点基準-2" id="採点基準-2">採点基準</a></h2>
@@ -2778,24 +2778,24 @@ PendingになっているPVCを<code>kubectl describe pvc cephfs-pvc</code> で�
 <ul>
 <li><a href="https://github.com/spf13/cobra">Cobra</a>
 <ul>
-<li>モダンなCLIアプリケーションを簡単に作れるようにしてくれるライブラリ．</li>
+<li>モダンなCLIアプリケーションを簡単に作れるようにしてくれるライブラリ。</li>
 </ul>
 </li>
 </ul>
 <h2><a class="header" href="#バグの内容-4" id="バグの内容-4">バグの内容</a></h2>
 <p><a href="https://blog.icttoracon.net/2021/03/16/%e4%bd%95%e3%81%8b%e3%81%8c%e3%81%8a%e3%81%8b%e3%81%97%e3%81%84%e3%80%82%e3%80%82%e3%80%82%e3%80%82/">何かがおかしい。。。。</a>の1枚目の画像を参照する。
-R1にて自作のルーティングアプリケーションを作ったが，そのアプリケーションのミスでそれぞれのHostにpingを飛ばしてもパケットロスを起こしてしまう。</p>
+R1にて自作のルーティングアプリケーションを作ったが、そのアプリケーションのミスでそれぞれのHostにpingを飛ばしてもパケットロスを起こしてしまう。</p>
 <p>それぞれのHostにpingを飛ばしても、パケットロスを起こしてしまう。
 (pingができる時と出来ないときがある。)</p>
 <h2><a class="header" href="#前提条件-4" id="前提条件-4">前提条件</a></h2>
 <ul>
-<li>kernelパラメーターの変更をしてはならない．</li>
+<li>kernelパラメーターの変更をしてはならない。</li>
 </ul>
 <h2><a class="header" href="#理想の終了状態-7" id="理想の終了状態-7">理想の終了状態</a></h2>
 <ul>
-<li>それぞれのHostにpingを飛ばして、パケットロスが起こらない状態にする．</li>
+<li>それぞれのHostにpingを飛ばして、パケットロスが起こらない状態にする。</li>
 </ul>
-<h2><a class="header" href="#その他公開してくれている情報" id="その他公開してくれている情報">その他，公開してくれている情報</a></h2>
+<h2><a class="header" href="#その他公開してくれている情報" id="その他公開してくれている情報">その他、公開してくれている情報</a></h2>
 <p>ーー起動方法ーー</p>
 <blockquote>
 <p>cd ~/go/src/github.com/yoneyan/ictsc-ace/cmd/routing
@@ -2814,7 +2814,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <h4><a class="header" href="#コードを読んでみる" id="コードを読んでみる">コードを読んでみる</a></h4>
 <ul>
 <li>
-<p>CLIアプリケーションを作るためのライブラリとしてCobraが使われてた．</p>
+<p>CLIアプリケーションを作るためのライブラリとしてCobraが使われてた。</p>
 <ul>
 <li><a href="https://github.com/Hunachi/minihuna">あそんだ</a></li>
 </ul>
@@ -2822,7 +2822,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <li>
 <p>buildとかはできた</p>
 <ul>
-<li>NICを用意したりパケットを飛ばし合うのが無理だったので，実際に動かして確認はできなかった．</li>
+<li>NICを用意したりパケットを飛ばし合うのが無理だったので、実際に動かして確認はできなかった。</li>
 </ul>
 </li>
 <li>
@@ -2845,7 +2845,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <ul>
 <li>cmd/routing/routing.go
 <ul>
-<li>メイン関数が書いてあるだけ．</li>
+<li>メイン関数が書いてあるだけ。</li>
 </ul>
 </li>
 <li>pkg/routing/arp/*
@@ -2893,7 +2893,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <ul>
 <li>Ipv6に対応してないから？
 <ul>
-<li>これだったらトラコンじゃない．</li>
+<li>これだったらトラコンじゃない。</li>
 </ul>
 </li>
 <li>MacアドレスとIPアドレスの組みが変わったときに対応できないから？</li>
@@ -2926,7 +2926,7 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 
 </code></pre>
 <h3><a class="header" href="#解説に対するメモ-1" id="解説に対するメモ-1">解説に対するメモ</a></h3>
-<p><code>router.go</code>内の，</p>
+<p><code>router.go</code>内の、</p>
 <pre><code class="language-go">msg := &lt;-packets
 			if msg.Interface == mac.String() {
 				err := handle.WritePacketData(msg.Packets)
@@ -2935,8 +2935,8 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 				}
 			}
 </code></pre>
-<p>の部分で，あるスレッド（goroutine）が指定したネットワークデバイス(NIC)で送信しないパケットを受け取った場合にパケットを破棄してしまっていることが原因．
-本当は，自分が送信するパケットじゃなかったら他のNICを指定したスレッド（goroutine）に渡してあげないといけない．
+<p>の部分で、あるスレッド（goroutine）が指定したネットワークデバイス(NIC)で送信しないパケットを受け取った場合にパケットを破棄してしまっていることが原因。
+本当は、自分が送信するパケットじゃなかったら他のNICを指定したスレッド（goroutine）に渡してあげないといけない。
 と言うことに気が付けなくてﾋﾟｴﾝ🥺</p>
 <h2><a class="header" href="#採点基準-3" id="採点基準-3">採点基準</a></h2>
 <p>パケットロスをせずにpingが飛ぶこと(100%)</p>
@@ -2950,7 +2950,7 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <li>Django</li>
 </ul>
 <h2><a class="header" href="#バグの内容-5" id="バグの内容-5">バグの内容</a></h2>
-<p><code>curl 192.168.7.2:8000/message/</code>ではエラーが返ってくる．</p>
+<p><code>curl 192.168.7.2:8000/message/</code>ではエラーが返ってくる。</p>
 <h2><a class="header" href="#理想の終了状態-8" id="理想の終了状態-8">理想の終了状態</a></h2>
 <p><code>192.168.7.2:8000/message/</code>にアクセスし、メッセージを確認できるようにすること</p>
 <h2><a class="header" href="#初期状態-3" id="初期状態-3">初期状態</a></h2>
@@ -2958,9 +2958,9 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <hr />
 <h2><a class="header" href="#考えられる検証修正手順-5" id="考えられる検証修正手順-5">考えられる検証、修正手順</a></h2>
 <ul>
-<li>curlを叩いた時のエラーの内容を確認する．
+<li>curlを叩いた時のエラーの内容を確認する。
 <ul>
-<li><code>curl -v</code>などする．</li>
+<li><code>curl -v</code>などする。</li>
 </ul>
 </li>
 <li><code>python3 manage.py runserver</code>でググる
@@ -2979,9 +2979,9 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <li>https://www.djangoproject.com/</li>
 </ul>
 </li>
-<li><code>Pycharm</code>でプロジェクトを作った．
+<li><code>Pycharm</code>でプロジェクトを作った。
 <ul>
-<li>ぼたんぽちぽちするだけ．</li>
+<li>ぼたんぽちぽちするだけ。</li>
 </ul>
 </li>
 <li>セットアップするためのコマンドをぽちぽち
@@ -2996,29 +2996,29 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <li>　<code>Starting development server at http://127.0.0.1:8000/</code>とのことなので， <code>curl http://127.0.0.1:8000/</code></li>
 <li>　なんかエラーもテキストも返ってこなかった.</li>
 <li>　アクセスすると<img src="https://i.imgur.com/lmbYQUR.png" alt="" /></li>
-<li>　寂しいので，　<code>urlpatterns</code> に<code>path('', admin.site.urls),</code>を追加した．（←なぜかadminページを表示させる人．．）</li>
+<li>　寂しいので，　<code>urlpatterns</code> に<code>path('', admin.site.urls),</code>を追加した。（←なぜかadminページを表示させる人。。）</li>
 <li>　verboseオプションつけてリベンジだぜ！</li>
-<li><code>&lt; HTTP/1.1 302 Found　&lt; Date: Mon, 23 Aug 2021 10:00:00 GMT　&lt; Server: WSGIServer/0.2 CPython/3.9.6　&lt; Content-Type:　text/html; charset=utf-8　&lt; Location: /admin/login/?next=/　</code>とのことなので， <code>curl http://127.0.0.1:8000/admin/login/</code> で結果を見てみる．</li>
-<li>いい感じにhtmlが返ってきていた．</li>
-<li>　せっかくなのでアクセスもしてみる．<img src="https://i.imgur.com/vzpbXTD.png" alt="" /></li>
-<li>　なんかいい感じに表示されていた．動いてそう．</li>
+<li><code>&lt; HTTP/1.1 302 Found　&lt; Date: Mon, 23 Aug 2021 10:00:00 GMT　&lt; Server: WSGIServer/0.2 CPython/3.9.6　&lt; Content-Type:　text/html; charset=utf-8　&lt; Location: /admin/login/?next=/　</code>とのことなので， <code>curl http://127.0.0.1:8000/admin/login/</code> で結果を見てみる。</li>
+<li>いい感じにhtmlが返ってきていた。</li>
+<li>　せっかくなのでアクセスもしてみる。<img src="https://i.imgur.com/vzpbXTD.png" alt="" /></li>
+<li>　なんかいい感じに表示されていた。動いてそう。</li>
 </ul>
 </li>
-<li>/message/時の動きも知りたい．
+<li>/message/時の動きも知りたい。
 <ul>
-<li>とりあえず<code>http://127.0.0.1:8000/message/</code>ができるようにしする．</li>
-<li>公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく．</li>
-<li>王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる．</li>
+<li>とりあえず<code>http://127.0.0.1:8000/message/</code>ができるようにしする。</li>
+<li>公式チュートリアル https://docs.djangoproject.com/en/3.2/intro/tutorial01/#the-development-server　を参考に進めていく。</li>
+<li>王道を行きたいので公式の真似して（公式ではpollsだけど）message appを作ってみる。</li>
 <li><code>python3 manage.py startapp message</code></li>
-<li>なんかmessageディレクトリができた．楽ちんだ．</li>
-<li>あとはチュートリアルを真似て<code>views.py</code>のコード書いた．
+<li>なんかmessageディレクトリができた。楽ちんだ。</li>
+<li>あとはチュートリアルを真似て<code>views.py</code>のコード書いた。
 <ul>
 <li>https://docs.djangoproject.com/en/3.2/intro/tutorial01/#write-your-first-view</li>
 <li><code>def index(request): return HttpResponse(&quot;This is Message's View.&quot;)</code></li>
 </ul>
 </li>
-<li><code>urls.py</code>の<code>urlpatterns</code>に<code>path('message/', message.views.index),</code>追加.（チュートリアルより最短経路なので真面目に何か作るときは<code>message.urls.py</code>も作るなどちゃんとしたがいいと思われる．）</li>
-<li><code>python3 manage.py runserver</code>し直す．</li>
+<li><code>urls.py</code>の<code>urlpatterns</code>に<code>path('message/', message.views.index),</code>追加.（チュートリアルより最短経路なので真面目に何か作るときは<code>message.urls.py</code>も作るなどちゃんとしたがいいと思われる。）</li>
+<li><code>python3 manage.py runserver</code>し直す。</li>
 <li><code>curl http://127.0.0.1:8000/message/</code>
 <ul>
 <li>結果：<code>This is Message's View.%</code></li>
@@ -3031,17 +3031,17 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <li>ループバックアドレス以外を指定してみたいので，自分の環境で使えるIPアドレスを探した
 <ul>
 <li><code>172.16.0.21</code>が自分のPCに割り当てられてたのでこれを使う</li>
-<li>もっといい方法色々ありそうだなぁ．</li>
+<li>もっといい方法色々ありそうだなぁ。</li>
 </ul>
 </li>
 <li><code>python3 manage.py runserver 172.16.0.21:8000</code></li>
 <li><code> curl http://172.16.0.21:8000/message</code></li>
-<li>なんかさっきと違う．．</li>
+<li>なんかさっきと違う。。</li>
 <li>サイトを見てみる
 <img src="https://i.imgur.com/ORxnwD5.png" alt="" /></li>
 <li><code>settings.py</code>で<code>ALLOW_HOSTS = ['172.16.0.21']</code>
 <ul>
-<li>同じエラーを起こして<a href="https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159">ブログ</a>書いてる人がいた．</li>
+<li>同じエラーを起こして<a href="https://yoshida-ahiru.hatenablog.com/entry/2017/08/13/020159">ブログ</a>書いてる人がいた。</li>
 </ul>
 </li>
 <li>治った! <code>http://172.16.0.21:8000/message</code><img src="https://i.imgur.com/yzED450.png" alt="" /></li>
@@ -3057,7 +3057,7 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 <hr />
 <h2><a class="header" href="#解説-16" id="解説-16">解説</a></h2>
 <h3><a class="header" href="#原因-3" id="原因-3">原因</a></h3>
-<p><code>Django</code>の<code>settings.py</code>の中の<code>ALLOWED_HOSTS</code>に何も指定されていなかったため、トラブルが発生していた．</p>
+<p><code>Django</code>の<code>settings.py</code>の中の<code>ALLOWED_HOSTS</code>に何も指定されていなかったため、トラブルが発生していた。</p>
 <p>解決方法は，↑の技術調査と同じ◎！</p>
 <p><code>curl</code>した時に，</p>
 <pre><code>&lt;div id=&quot;explanation&quot;&gt;
@@ -3068,9 +3068,9 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
     &lt;/p&gt;
   &lt;/div&gt;
 </code></pre>
-<p>をみると<code>debug</code>がTrueになっているからバグってると言われるので，これをFalseにする．つまり<code>settings.py</code>の<code>DEBUG=False</code>にする．</p>
+<p>をみると<code>debug</code>がTrueになっているからバグってると言われるので，これをFalseにする。つまり<code>settings.py</code>の<code>DEBUG=False</code>にする。</p>
 <p>すると，
-<code>CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.</code>というエラーが出るので，<code>ALLOW_HOSTS = ['172.16.0.21']</code>としてあげる．</p>
+<code>CommandError: You must set settings.ALLOWED_HOSTS if DEBUG is False.</code>というエラーが出るので，<code>ALLOW_HOSTS = ['172.16.0.21']</code>としてあげる。</p>
 <h2><a class="header" href="#ふなちの感想" id="ふなちの感想">ふなちの感想</a></h2>
 <p>:100:</p>
 <p><code>curl</code>の結果だけで解決できるようになりたい！</p>
@@ -3725,27 +3725,27 @@ CMD [&quot;./app&quot;]
 <h4><a class="header" href="#csvを生成する方法" id="csvを生成する方法">CSVを生成する方法</a></h4>
 <pre><code class="language-sql">SELECT * FROM {DB_NAME} INFO OUTFILE 'hoge.csv'
 </code></pre>
-<p><code> INTO OUTFILE 'hoge.csv'</code>のところで出力するファイルを指定している．</p>
+<p><code> INTO OUTFILE 'hoge.csv'</code>のところで出力するファイルを指定している。</p>
 <p>参考：https://qiita.com/catatsuy/items/9fdf4423d5f4885b9bf9
 csvからデータのimportをする方法も書いてるサイト：
 https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 <h4><a class="header" href="#テーブルの結合方法" id="テーブルの結合方法">テーブルの結合方法</a></h4>
 <h5><a class="header" href="#外部結合" id="外部結合">外部結合</a></h5>
-<p>条件に一致するもの同士を結合させるのに加えて，どちらかのテーブルにしか存在しないレコードも残して結合する． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
-<p><code>LEFT OUTER JOIN</code>の場合は，先に書いたテーブル側のカラムが消えない．
-<code>RIGHT OUTER JOIN</code>の場合は，後に書いたテーブルのカラムが消えない．</p>
+<p>条件に一致するもの同士を結合させるのに加えて、どちらかのテーブルにしか存在しないレコードも残して結合する。 https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<p><code>LEFT OUTER JOIN</code>の場合は、先に書いたテーブル側のカラムが消えない。
+<code>RIGHT OUTER JOIN</code>の場合は、後に書いたテーブルのカラムが消えない。</p>
 <pre><code>SELECT * FROM hoge
     LEFT OUTER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
-<p>↑hogeのうち，どのpiyo.idとも一致しないhoge.idのレコードも残されてpiyoの方の値はnullになる．どのhoge.idとも一致しないレコードは消される．</p>
+<p>↑hogeのうち、どのpiyo.idとも一致しないhoge.idのレコードも残されてpiyoの方の値はnullになる。どのhoge.idとも一致しないレコードは消される。</p>
 <h5><a class="header" href="#内部結合" id="内部結合">内部結合</a></h5>
-<p>テーブルの指定したカラムが一致するものだけを結合する方法．
-条件に合う相手がいないレコードは消される． https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
+<p>テーブルの指定したカラムが一致するものだけを結合する方法。
+条件に合う相手がいないレコードは消される。 https://zenn.dev/naoki_mochizuki/articles/60603b2cdc273cd51c59</p>
 <pre><code>SELECT * FROM hoge
     INNER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
 <h5><a class="header" href="#自然結合" id="自然結合">自然結合</a></h5>
-<p>結合条件として，同じ名前のカラム同士で結合する場合，<code>NATURAL</code>を付けることで結合条件を省略することができる方法． https://www.dbonline.jp/sqlite/join/index4.html</p>
+<p>結合条件として、同じ名前のカラム同士で結合する場合、<code>NATURAL</code>を付けることで結合条件を省略することができる方法。 https://www.dbonline.jp/sqlite/join/index4.html</p>
 <pre><code>SELECT * FROM hoge
     NATURAL INNER JOIN piyo ON hoge.id = piyo.id;
 </code></pre>
@@ -3754,11 +3754,11 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
     INNER JOIN piyo ON hoge.id = piyo.id
     INNER JOIN fuga ON piyo.f_id = fuga.id;
 </code></pre>
-<p>のように書けばいい．</p>
+<p>のように書けばいい。</p>
 <h2><a class="header" href="#解決方法-6" id="解決方法-6">解決方法</a></h2>
-<p>コーディングテストのようにいい感じのSELECT文を書けば良さそう．（トラブルシューティングではなさそう）</p>
+<p>コーディングテストのようにいい感じのSELECT文を書けば良さそう。（トラブルシューティングではなさそう）</p>
 <h3><a class="header" href="#step-0" id="step-0">STEP 0.</a></h3>
-<p>DB(List)に接続する．</p>
+<p>DB(List)に接続する。</p>
 <ul>
 <li><code>sudo mysql</code></li>
 <li><code>mysql&gt; use List;</code></li>
@@ -3768,11 +3768,11 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 <li><code>mysql&gt; desc List;</code></li>
 </ul>
 <h3><a class="header" href="#step-1" id="step-1">STEP 1.</a></h3>
-<p>各テーブルのカラムを確認するために，それぞれに対して
-<code>mysql&gt; SELECT * FROM {DB_NAME}</code> をする．</p>
-<p>IDの指定が被っている部分を確認して結合する時の条件を考える．</p>
+<p>各テーブルのカラムを確認するために、それぞれに対して
+<code>mysql&gt; SELECT * FROM {DB_NAME}</code> をする。</p>
+<p>IDの指定が被っている部分を確認して結合する時の条件を考える。</p>
 <h3><a class="header" href="#step-2" id="step-2">STEP 2.</a></h3>
-<p>SELECT文をかく．</p>
+<p>SELECT文をかく。</p>
 <ol start="0">
 <li>必要なカラムを出力するようにする</li>
 </ol>
@@ -3780,7 +3780,7 @@ https://proengineer.internous.co.jp/content/columnfeature/6776#section100</p>
 </code></pre>
 <ol>
 <li>テーブルの結合を行う
-どういうデータが入ってるのかよくわからないので，内部結合で行うべきか外部結合で行うべきかわからないぞ．(内部結合で書いてみるぞい．)</li>
+どういうデータが入ってるのかよくわからないので、内部結合で行うべきか外部結合で行うべきかわからないぞ。(内部結合で書いてみるぞい。)</li>
 </ol>
 <pre><code class="language-sql">FROM Equipment_list as e 
 INNER JOIN Order_company_list as o ON {条件} 
@@ -3810,8 +3810,8 @@ ORDER BY e.price DESC;
 </code></pre>
 <hr />
 <h2><a class="header" href="#解説-22" id="解説-22">解説</a></h2>
-<p>複数のテーブルから必要な情報を結合し情報を出力できるかという問題です．
-余分なデータを表示させたくないため内部結合を使います．</p>
+<p>複数のテーブルから必要な情報を結合し情報を出力できるかという問題です。
+余分なデータを表示させたくないため内部結合を使います。</p>
 <p><code>Equipment_list</code>のIDを各テーブルのIDと結合させ表示、そして条件に合わせて検索、ソートを行うという問題でした。</p>
 <h3><a class="header" href="#答え" id="答え">答え</a></h3>
 <pre><code class="language-sql">select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Date,Equipment_list.Price  from Equipment_list 
@@ -3821,10 +3821,10 @@ inner join Location_list on Equipment_list.Use_place = Location_list.ID
 where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
 order by Price DESC
 </code></pre>
-<p>で確認した後，</p>
+<p>で確認した後、</p>
 <pre><code class="language-sql">$(sudo) mysql -u root -p -D List -e &quot; select Equipment_list.ID,Equipment_list.Name,Order_company_list.Name,Manufacturing_company_list.Name,Equipment_list.Price  from Equipment_list inner join Order_company_list on Equipment_list.Order_company= Order_company_list.ID inner join Manufacturing_company_list on Equipment_list.Manufacturing_company = Manufacturing_company_list.ID inner join Location_list on Equipment_list.Use_place = Location_list.ID where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5 order by Price DESC;&quot; |sed 's/\t/,/g'&gt; re.csv
 </code></pre>
-<p>CSV形式で出力↑．</p>
+<p>CSV形式で出力↑。</p>
 <pre><code class="language-sql">$cat re.csv
 ID,Name,Name,Name,Price
 24,pc_x,Order_company_E,Manufacturing_company_E,1600
@@ -3833,14 +3833,14 @@ ID,Name,Name,Name,Price
 <h3><a class="header" href="#解説に対するメモ-2" id="解説に対するメモ-2">解説に対するメモ</a></h3>
 <p>コマンドラインのオプションたち
 参考：https://qiita.com/yulily@github/items/54cb6ccaacf39977455c</p>
-<p>自分が，<code>特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい</code>という条件をつけろという部分の意味が理解できてなくて， <code>where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5</code> をつけ忘れたことが判明した．</p>
+<p>自分が、<code>特定の製造会社のパソコン（Manufacturing_company_E）、特定の建物（HQ）で相性が悪く交換するためリストを作成してほしい</code>という条件をつけろという部分の意味が理解できてなくて、 <code>where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5</code> をつけ忘れたことが判明した。</p>
 <h4><a class="header" href="#本来すべきだったと思われる追加の作業" id="本来すべきだったと思われる追加の作業">本来すべきだったと思われる追加の作業</a></h4>
-<p>特定の条件を見つける．</p>
+<p>特定の条件を見つける。</p>
 <pre><code class="language-sql">SELECT * FROM Manufacturing_company_list　WHERE Manufacturing_company_list.Name = 'Manufacturing_company_E';
 </code></pre>
 <pre><code class="language-sql">SELECT * FROM Location_list　WHERE Location_list.Name = 'HQ';
 </code></pre>
-<p>これらの結果から，以下を見出す必要があった．</p>
+<p>これらの結果から、以下を見出す必要があった。</p>
 <pre><code class="language-sql">where Manufacturing_company_list.ID=5 and Location_list.ID&lt;=5
 </code></pre>
 <h2><a class="header" href="#採点基準-6" id="採点基準-6">採点基準</a></h2>
@@ -4083,12 +4083,12 @@ networkコマンドで通知するためには、前提としてそのルート�
 <li>Go</li>
 </ul>
 <h2><a class="header" href="#バグの内容-13" id="バグの内容-13">バグの内容</a></h2>
-<p>Dockerのマルチステージビルドを使って,Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない.
+<p>Dockerのマルチステージビルドを使って、Goのバイナリをコンテナ上で実行しようとしたらうまく立ち上がらない.
 Dockerfileが間違えている.</p>
-<p><code>~/app/Dockerfile</code>を用いて<code>docker image build -t ictsc2020:0.1 .</code>したあとに,<code>docker run -p 80:1323 [コンテナID]</code>をするとエラーが表示され,コンテナ上のバイナリが正常に実行できない.</p>
+<p><code>~/app/Dockerfile</code>を用いて<code>docker image build -t ictsc2020:0.1 .</code>したあとに、<code>docker run -p 80:1323 [コンテナID]</code>をするとエラーが表示され、コンテナ上のバイナリが正常に実行できない.</p>
 <h2><a class="header" href="#理想の終了状態-16" id="理想の終了状態-16">理想の終了状態</a></h2>
 <p><code>curl localhost</code>で<code>Welcome to ICTSC2020!</code>が返ってくる.
-また,問題の解決が永続化されている．</p>
+また、問題の解決が永続化されている。</p>
 <hr />
 <h2><a class="header" href="#技術調査-4" id="技術調査-4">技術調査</a></h2>
 <h4><a class="header" href="#dockerのマルチステージビルドとは" id="dockerのマルチステージビルドとは">Dockerのマルチステージビルドとは？</a></h4>
@@ -4098,7 +4098,7 @@ Dockerfileが間違えている.</p>
 <li>↑の訳らしい: https://qiita.com/carimatics/items/01663d32bf9983cfbcfe</li>
 </ul>
 </li>
-<li>必要なバイナリorファイルだけをコピーしてきたイメージを楽に作ることができるようになる．</li>
+<li>必要なバイナリorファイルだけをコピーしてきたイメージを楽に作ることができるようになる。</li>
 </ul>
 <h4><a class="header" href="#dockerfileの内容をみてみる" id="dockerfileの内容をみてみる">Dockerfileの内容をみてみる</a></h4>
 <pre><code>// ~/app/Dockerfileの内容
@@ -4123,21 +4123,21 @@ Dockerfileが間違えている.</p>
 <ul>
 <li>1つ目のコンテナの作成</li>
 <li>golang:1.15.0を親イメージとして指定</li>
-<li>ビルドステージに builder という名前をつけている．（デフォルトでは 0 から連番で付けられる．）</li>
+<li>ビルドステージに builder という名前をつけている。（デフォルトでは 0 から連番で付けられる。）</li>
 </ul>
 </li>
 <li>
 <p>2行目：　Go modulesを使うという指定</p>
 <ul>
-<li>何も指定しないor auto指定だとgo.modファイルがある時だけGo modulesを使うとみなされる．</li>
-<li>Go modulesを使うと，importしたいライブラリと，ライブラリの依存ファイルをgo.modに書いてあげるとダウンロードしてくれてビルドしてくれるようになる．</li>
+<li>何も指定しないor auto指定だとgo.modファイルがある時だけGo modulesを使うとみなされる。</li>
+<li>Go modulesを使うと、importしたいライブラリと、ライブラリの依存ファイルをgo.modに書いてあげるとダウンロードしてくれてビルドしてくれるようになる。</li>
 </ul>
 </li>
 <li>
 <p>3行目:Goのファイルたちが置いてあるパスの指定</p>
 <ul>
-<li>特に指定してない．</li>
-<li>import文の解決に使うために設定するらしい．</li>
+<li>特に指定してない。</li>
+<li>import文の解決に使うために設定するらしい。</li>
 </ul>
 </li>
 <li>
@@ -4194,7 +4194,7 @@ Dockerfileが間違えている.</p>
 </ul>
 <h4><a class="header" href="#原因ではなさそうなこと" id="原因ではなさそうなこと">原因ではなさそうなこと</a></h4>
 <ul>
-<li>imageは作成できており実行時エラーのため,Dockerファイル内のコマンドが途中で転けているとかではない</li>
+<li>imageは作成できており実行時エラーのため、Dockerファイル内のコマンドが途中で転けているとかではない</li>
 <li>ポートの指定方法</li>
 </ul>
 <hr />
@@ -4204,11 +4204,11 @@ Dockerfileが間違えている.</p>
 <p>golangで書いたプログラムを<code>go build</code>すると、基本的には静的リンクになるが<code>net</code>パッケージを使用していた場合、自動的に動的リンクになる。(go1.4から)</p>
 </blockquote>
 <h3><a class="header" href="#原因-9" id="原因-9">原因</a></h3>
-<p>Dockerのマルチステージビルドをする際に、ビルドされたバイナリが動的リンクなせいでコンテナ間を移動させたあとに実行しようしてもうまくいかなかったため．</p>
+<p>Dockerのマルチステージビルドをする際に、ビルドされたバイナリが動的リンクなせいでコンテナ間を移動させたあとに実行しようしてもうまくいかなかったため。</p>
 <h3><a class="header" href="#解決方法-8" id="解決方法-8">解決方法</a></h3>
 <ol>
 <li><code>~/app/Dockerfile</code>の6行目の<code>RUN go build -o /app ./main.go</code>を<code>RUN CGO_ENABLED=0 go build -o /app ./main.go</code>に変更</li>
-<li>コンテナをbuildし直す．　<code>docker image build -t ictsc2020:0.1 </code></li>
+<li>コンテナをbuildし直す。　<code>docker image build -t ictsc2020:0.1 </code></li>
 <li>実行し直す <code>docker run -p 80:1323 [コンテナID]</code></li>
 </ol>
 <h4><a class="header" href="#想定外解放としてあったもの" id="想定外解放としてあったもの">想定外解放としてあったもの</a></h4>
@@ -4218,10 +4218,10 @@ Dockerfileが間違えている.</p>
 <h3><a class="header" href="#解説に対するメモ-3" id="解説に対するメモ-3">解説に対するメモ</a></h3>
 <ul>
 <li>
-<p>実行時に<code>Not Found</code>っていうエラーが起きた時は，動的リンクがうまくいっていないパターンも考えるといいっぽい．<a href="https://e-words.jp/w/%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF.html#:%7E:text=%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%A8%E3%81%AF,%E3%81%97%E3%81%A6%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%80%82">動的リンク</a></p>
+<p>実行時に<code>Not Found</code>っていうエラーが起きた時は、動的リンクがうまくいっていないパターンも考えるといいっぽい。<a href="https://e-words.jp/w/%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF.html#:%7E:text=%E5%8B%95%E7%9A%84%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%A8%E3%81%AF,%E3%81%97%E3%81%A6%E8%B5%B7%E5%8B%95%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%80%82">動的リンク</a></p>
 </li>
 <li>
-<p>バイナリを静的にコンパイルさせる為には<code>CGO_ENABLED=0</code>を付ける．</p>
+<p>バイナリを静的にコンパイルさせる為には<code>CGO_ENABLED=0</code>を付ける。</p>
 <ul>
 <li>https://www.docker.com/blog/containerize-your-go-developer-environment-part-1/</li>
 </ul>
@@ -4229,9 +4229,9 @@ Dockerfileが間違えている.</p>
 <li>
 <p><code>ldd</code>コマンド</p>
 <ul>
-<li>すべての依存関係のパス名をリストで表示してくれる．</li>
+<li>すべての依存関係のパス名をリストで表示してくれる。</li>
 <li>動的リンクやファイルの依存関係のエラーの時に役に立ちそう？</li>
-<li>多分 <code>ldd app</code> で調べることができる．</li>
+<li>多分 <code>ldd app</code> で調べることができる。</li>
 <li>https://www.ibm.com/docs/ja/ssw_aix_71/l_commands/ldd.html</li>
 <li>https://wa3.i-3-i.info/word13813.html</li>
 </ul>
@@ -4385,11 +4385,11 @@ chconはSELinuxコンテキスト変更のコマンド(<a href="https://access.r
 </ul>
 <p>などなど．．</p>
 <h2><a class="header" href="#もっと詳しくdockerの基礎を学ぶ" id="もっと詳しくdockerの基礎を学ぶ">もっと詳しくDockerの基礎を学ぶ</a></h2>
-<p>http://docs.docker.jp/get-started/overview.html#　を読んでいく．</p>
+<p>http://docs.docker.jp/get-started/overview.html#　を読んでいく。</p>
 <h2><a class="header" href="#仮想化とコンテナ" id="仮想化とコンテナ">仮想化とコンテナ</a></h2>
-<p>（ホスト型）仮想化とは、CPUやメモリ、I/Oまでも仮想化し、複数のOSを単一のシステム上で実行できるようにする技術． これを実現するソフトウェアのことをハイパーバイザー（hypervisor）という．</p>
+<p>（ホスト型）仮想化とは、CPUやメモリ、I/Oまでも仮想化し、複数のOSを単一のシステム上で実行できるようにする技術。 これを実現するソフトウェアのことをハイパーバイザー（hypervisor）という。</p>
 <p><img src="docker/./image/hypervisor_system.png" alt="hypervisor system image" /></p>
-<p>コンテナ（型仮想化）とは、カーネルランドよりも上を仮想化する技術．つまり、コンテナが作られる土台となる基盤システムと互換性のあるコンテナしか作れない．</p>
+<p>コンテナ（型仮想化）とは、カーネルランドよりも上を仮想化する技術。つまり、コンテナが作られる土台となる基盤システムと互換性のあるコンテナしか作れない。</p>
 <p><img src="docker/./image/docker_system.png" alt="docker image" /></p>
 <h2><a class="header" href="#docker-の挙動" id="docker-の挙動">Docker の挙動</a></h2>
 <h3><a class="header" href="#コンテナが起動される時の挙動" id="コンテナが起動される時の挙動">コンテナが起動される時の挙動</a></h3>
@@ -4397,7 +4397,7 @@ chconはSELinuxコンテキスト変更のコマンド(<a href="https://access.r
 <p>https://docs.docker.jp/engine/introduction/understanding-docker.html の画像がわかりやすい。</p>
 <h2><a class="header" href="#コマンドたちの説明" id="コマンドたちの説明">コマンドたちの説明</a></h2>
 <h3><a class="header" href="#docker-run" id="docker-run">docker run</a></h3>
-<p>指定したイメージ（image）からコンテナの作成、起動を行う．</p>
+<p>指定したイメージ（image）からコンテナの作成、起動を行う。</p>
 <p><strong>使い方</strong></p>
 <p>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</p>
 <p><strong>オプション</strong></p>
@@ -4414,37 +4414,37 @@ chconはSELinuxコンテキスト変更のコマンド(<a href="https://access.r
 <p>--name オプション</p>
 <ul>
 <li>コンテナに名前をつけるためのオプション</li>
-<li>--name　container-name のように使う．</li>
+<li>--name　container-name のように使う。</li>
 </ul>
 </li>
 <li>
 <p>-p オプション</p>
 <ul>
 <li>どのホストのポートでどのコンテナのポートを公開するか指定するためのオプション</li>
-<li>-p host-port:container-port　のように使う．（例：-p 8080:80）</li>
+<li>-p host-port:container-port　のように使う。（例：-p 8080:80）</li>
 </ul>
 </li>
 </ul>
 <h2><a class="header" href="#docker-composeとは" id="docker-composeとは">Docker Composeとは</a></h2>
 <p>https://docs.docker.com/compose/</p>
-<p>複数のコンテナを使って、アプリケーションを起動させたい時に使われる． yamlファイルを使ってアプリケーションのサービス（コンテナたち）の設定を書いて、その設定でサービス（コンテナたち）を起動する．　複数のコンテナを使う場合はこの方法を取らないと通信の設定がとても面倒になったりする．</p>
+<p>複数のコンテナを使って、アプリケーションを起動させたい時に使われる。 yamlファイルを使ってアプリケーションのサービス（コンテナたち）の設定を書いて、その設定でサービス（コンテナたち）を起動する。　複数のコンテナを使う場合はこの方法を取らないと通信の設定がとても面倒になったりする。</p>
 <p><code>docker-compose.yaml</code>があるディレクトリ内（同じ階層）で</p>
 <p><code>docker compose up</code></p>
-<p>コマンドを実行すると起動することができる．
-バックグラウンドで動かしたい場合は、<code>-d</code>をつけるのを忘れないように．</p>
+<p>コマンドを実行すると起動することができる。
+バックグラウンドで動かしたい場合は、<code>-d</code>をつけるのを忘れないように。</p>
 <h1><a class="header" href="#docker-を触ってみる" id="docker-を触ってみる">Docker を触ってみる</a></h1>
 <p>書いた人:<a href="https://twitter.com/_hunachi">Hunachi</a></p>
 <h2><a class="header" href="#docker-を使うための環境構築" id="docker-を使うための環境構築">Docker を使うための環境構築</a></h2>
-<p>Docker DesktopのDownloadとinstallをする．
+<p>Docker DesktopのDownloadとinstallをする。
 https://www.docker.com/get-started</p>
 <h2><a class="header" href="#dockerチュートリアルのコンテナを作る" id="dockerチュートリアルのコンテナを作る">Dockerチュートリアルのコンテナを作る</a></h2>
 <ol>
 <li>https://www.docker.com/101-tutorial
-の以下のコマンドを打つ</li>
+の以下のコマンドを打つ。</li>
 </ol>
 <p><code>docker run -dp 80:80 docker/getting-started</code></p>
 <ol start="2">
-<li><code>http://localhost</code>でチュートリアルが表示されているかを確認する．</li>
+<li><code>http://localhost</code>でチュートリアルが表示されているかを確認する。</li>
 </ol>
 
                     </main>

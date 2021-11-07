@@ -143,24 +143,24 @@
 <ul>
 <li><a href="https://github.com/spf13/cobra">Cobra</a>
 <ul>
-<li>モダンなCLIアプリケーションを簡単に作れるようにしてくれるライブラリ．</li>
+<li>モダンなCLIアプリケーションを簡単に作れるようにしてくれるライブラリ。</li>
 </ul>
 </li>
 </ul>
 <h2><a class="header" href="#バグの内容" id="バグの内容">バグの内容</a></h2>
 <p><a href="https://blog.icttoracon.net/2021/03/16/%e4%bd%95%e3%81%8b%e3%81%8c%e3%81%8a%e3%81%8b%e3%81%97%e3%81%84%e3%80%82%e3%80%82%e3%80%82%e3%80%82/">何かがおかしい。。。。</a>の1枚目の画像を参照する。
-R1にて自作のルーティングアプリケーションを作ったが，そのアプリケーションのミスでそれぞれのHostにpingを飛ばしてもパケットロスを起こしてしまう。</p>
+R1にて自作のルーティングアプリケーションを作ったが、そのアプリケーションのミスでそれぞれのHostにpingを飛ばしてもパケットロスを起こしてしまう。</p>
 <p>それぞれのHostにpingを飛ばしても、パケットロスを起こしてしまう。
 (pingができる時と出来ないときがある。)</p>
 <h2><a class="header" href="#前提条件" id="前提条件">前提条件</a></h2>
 <ul>
-<li>kernelパラメーターの変更をしてはならない．</li>
+<li>kernelパラメーターの変更をしてはならない。</li>
 </ul>
 <h2><a class="header" href="#理想の終了状態" id="理想の終了状態">理想の終了状態</a></h2>
 <ul>
-<li>それぞれのHostにpingを飛ばして、パケットロスが起こらない状態にする．</li>
+<li>それぞれのHostにpingを飛ばして、パケットロスが起こらない状態にする。</li>
 </ul>
-<h2><a class="header" href="#その他公開してくれている情報" id="その他公開してくれている情報">その他，公開してくれている情報</a></h2>
+<h2><a class="header" href="#その他公開してくれている情報" id="その他公開してくれている情報">その他、公開してくれている情報</a></h2>
 <p>ーー起動方法ーー</p>
 <blockquote>
 <p>cd ~/go/src/github.com/yoneyan/ictsc-ace/cmd/routing
@@ -179,7 +179,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <h4><a class="header" href="#コードを読んでみる" id="コードを読んでみる">コードを読んでみる</a></h4>
 <ul>
 <li>
-<p>CLIアプリケーションを作るためのライブラリとしてCobraが使われてた．</p>
+<p>CLIアプリケーションを作るためのライブラリとしてCobraが使われてた。</p>
 <ul>
 <li><a href="https://github.com/Hunachi/minihuna">あそんだ</a></li>
 </ul>
@@ -187,7 +187,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <li>
 <p>buildとかはできた</p>
 <ul>
-<li>NICを用意したりパケットを飛ばし合うのが無理だったので，実際に動かして確認はできなかった．</li>
+<li>NICを用意したりパケットを飛ばし合うのが無理だったので、実際に動かして確認はできなかった。</li>
 </ul>
 </li>
 <li>
@@ -210,7 +210,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <ul>
 <li>cmd/routing/routing.go
 <ul>
-<li>メイン関数が書いてあるだけ．</li>
+<li>メイン関数が書いてあるだけ。</li>
 </ul>
 </li>
 <li>pkg/routing/arp/*
@@ -258,7 +258,7 @@ sudo ./routing start eth1 eth2 eth3 eth4</p>
 <ul>
 <li>Ipv6に対応してないから？
 <ul>
-<li>これだったらトラコンじゃない．</li>
+<li>これだったらトラコンじゃない。</li>
 </ul>
 </li>
 <li>MacアドレスとIPアドレスの組みが変わったときに対応できないから？</li>
@@ -291,7 +291,7 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 
 </code></pre>
 <h3><a class="header" href="#解説に対するメモ" id="解説に対するメモ">解説に対するメモ</a></h3>
-<p><code>router.go</code>内の，</p>
+<p><code>router.go</code>内の、</p>
 <pre><code class="language-go">msg := &lt;-packets
 			if msg.Interface == mac.String() {
 				err := handle.WritePacketData(msg.Packets)
@@ -300,8 +300,8 @@ Golangにて、Channelを使った処理にミスが生じており、適切なN
 				}
 			}
 </code></pre>
-<p>の部分で，あるスレッド（goroutine）が指定したネットワークデバイス(NIC)で送信しないパケットを受け取った場合にパケットを破棄してしまっていることが原因．
-本当は，自分が送信するパケットじゃなかったら他のNICを指定したスレッド（goroutine）に渡してあげないといけない．
+<p>の部分で、あるスレッド（goroutine）が指定したネットワークデバイス(NIC)で送信しないパケットを受け取った場合にパケットを破棄してしまっていることが原因。
+本当は、自分が送信するパケットじゃなかったら他のNICを指定したスレッド（goroutine）に渡してあげないといけない。
 と言うことに気が付けなくてﾋﾟｴﾝ🥺</p>
 <h2><a class="header" href="#採点基準" id="採点基準">採点基準</a></h2>
 <p>パケットロスをせずにpingが飛ぶこと(100%)</p>
