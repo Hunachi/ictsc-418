@@ -1,6 +1,6 @@
 FROM rust:latest
 
-WORKDIR study-note
+WORKDIR /study-note
 
 RUN cargo install mdbook --no-default-features --features output --vers "^0.3.5"
 
